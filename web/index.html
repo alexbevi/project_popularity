@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Popularity Viewer</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main>
+    <h1>Project Popularity</h1>
+    <div class="controls">
+      <label>Language
+        <select id="filter-language"><option value="">All</option></select>
+      </label>
+      <label>Type
+        <select id="filter-type"><option value="">All</option></select>
+      </label>
+      <label>Search
+        <input id="filter-search" placeholder="search name or repo" />
+      </label>
+      <button id="clear">Clear</button>
+    </div>
+
+    <div id="status" class="status">Loading data…</div>
+
+    <div class="table-wrap">
+      <table id="results">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Language</th>
+            <th>Type</th>
+            <th>Index</th>
+            <th>Stars</th>
+            <th>Weekly downloads</th>
+            <th>SO recent (6mo)</th>
+            <th>Discussions recent (6mo)</th>
+            <th>Contributors</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
