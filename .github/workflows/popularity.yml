@@ -53,10 +53,17 @@ jobs:
           # remove all files and dirs except .git
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + || true
 
-          # move data and web files into repo root
-          cp -R "$TMP_DIR"/* . || true
+          # move web files contents into repo root (so the SPA is served from root)
+          if [ -d "$TMP_DIR/web" ]; then
+            cp -R "$TMP_DIR/web/." . || true
+          fi
+          # move data directory into ./data at repo root
+          if [ -d "$TMP_DIR/data" ]; then
+            mkdir -p data
+            cp -R "$TMP_DIR/data/." ./data || true
+          fi
           # also copy the main JSON into repo root as popularity.json for the SPA
-          if [ -f data/popularity.json ]; then cp data/popularity.json ./popularity.json || true; fi
+          if [ -f ./data/popularity.json ]; then cp ./data/popularity.json ./popularity.json || true; fi
           rm -rf "$TMP_DIR"
 
           # stage and commit only the generated files at repo root
