@@ -30,14 +30,14 @@ jobs:
         run: |
           # generate a simple README from the JSON sorted by index
           python3 - <<'PY'
-import json,sys
-data=json.load(open('data/popularity.json'))
-data=sorted(data,key=lambda r: -r.get('index',0))
-rows=['| Rank | Name | Index | Stars | Weekly downloads |']
-rows.append('|---|---:|---:|---:|---:|')
-for r in data:
-    rows.append(f"| {r.get('rank','')} | [{r.get('name','')}](https://github.com/{r.get('repo','')}) | {r.get('index','')} | {r.get('stars','')} | {r.get('weekly_downloads','')} |")
-open('data/README.md','w').write('# Popularity data\n\n'+"\n".join(rows)+"\n")
+            import json,sys
+            data=json.load(open('data/popularity.json'))
+            data=sorted(data,key=lambda r: -r.get('index',0))
+            rows=['| Rank | Name | Index | Stars | Weekly downloads |']
+            rows.append('|---|---:|---:|---:|---:|')
+            for r in data:
+                rows.append(f"| {r.get('rank','')} | [{r.get('name','')}](https://github.com/{r.get('repo','')}) | {r.get('index','')} | {r.get('stars','')} | {r.get('weekly_downloads','')} |")
+            open('data/README.md','w').write('# Popularity data\n\n'+"\n".join(rows)+"\n")
           PY
 
       - name: Push data to output branch
