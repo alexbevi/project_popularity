@@ -9,7 +9,8 @@ import { fetchNuGet } from "./fetchers/nuget.js";
 import { fetchRubyGems } from "./fetchers/rubygems.js";
 import { fetchCrates } from "./fetchers/crates.js";
 import { fetchPyPI } from "./fetchers/pypi.js";
-import { fetchMaven } from "./fetchers/maven.js"; // currently returns { weekly_downloads: 0 }
+import { fetchMaven } from "./fetchers/maven.js";
+import { fetchGo } from "./fetchers/go.js";
 import { fetchStackOverflow } from "./fetchers/stackoverflow.js";
 import { fetchDiscussions } from "./fetchers/discussions.js";
 import { fetchPackagist } from "./fetchers/packagist.js";
@@ -37,7 +38,7 @@ async function fetchMetrics(p) {
   const verbose = process.env.LOG_VERBOSE === '1';
   if (verbose) console.log(`[build] fetching metrics for ${p.name} (${p.repo})`);
 
-  const [gh, npm, nuget, rubygems, crates, pypi, maven, packagist, stackoverflow, discussions] = await Promise.all([
+  const [gh, npm, nuget, rubygems, crates, pypi, maven, packagist, stackoverflow, discussions, go] = await Promise.all([
     safe(() => { if (verbose) console.log(`[build] fetchGitHub ${p.repo}`); return fetchGitHub(p.repo); }),
   safe(() => { if (verbose && p.npm) console.log(`[build] fetchNpm ${p.npm}`); return p.npm ? fetchNpm(p.npm) : { weekly_downloads: 0 }; }),
   safe(() => { if (verbose && p.nuget) console.log(`[build] fetchNuGet ${p.nuget}`); return p.nuget ? fetchNuGet(p.nuget) : { weekly_downloads: 0 }; }),
