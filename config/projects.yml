@@ -55,135 +55,160 @@ projects:
     language: Ruby
     type: Driver
     repo: "mongodb/mongo-ruby-driver"
+    stackoverflow: "mongodb"
 
   - name: node-mongodb-native
     language: JavaScript
     type: Driver
     repo: "mongodb/node-mongodb-native"
     npm: "mongodb"
+    stackoverflow: "mongodb"
 
   - name: mongo-java-driver
     language: Java
     type: Driver
     repo: "mongodb/mongo-java-driver"
+    stackoverflow: "mongodb"
 
   - name: mongo-python-driver
     language: Python
     type: Driver
     repo: "mongodb/mongo-python-driver"
+    stackoverflow: "mongodb"
 
   - name: mongo-go-driver
     language: Go
     type: Driver
     repo: "mongodb/mongo-go-driver"
+    stackoverflow: "mongodb"
 
   - name: drizzle-orm
     language: JavaScript
     type: ORM
     repo: "drizzle-team/drizzle-orm"
     npm: "drizzle-orm"
+    stackoverflow: "drizzle-orm"
 
   - name: mongoengine
     language: Python
     type: ODM
     repo: "MongoEngine/mongoengine"
     pypi: "mongoengine"
+    stackoverflow: "mongoengine"
 
   - name: typeorm
     language: JavaScript
     type: ORM
     repo: "typeorm/typeorm"
     npm: "typeorm"
+    stackoverflow: "typeorm"
 
   - name: langchaingo
     language: Go
     type: AI
     repo: "tmc/langchaingo"
+    stackoverflow: "langchaingo"
 
   - name: langchainjs
     language: JavaScript
     type: AI
     repo: "langchain-ai/langchainjs"
     npm: "langchain"
+    stackoverflow: "langchain"
 
   - name: langchain-mongodb
     language: Python
     type: AI
     repo: "langchain-ai/langchain-mongodb"
     pypi: "langchain"
+    stackoverflow: "langchain"
 
   - name: llama_index
     language: Python
     type: AI
     repo: "run-llama/llama_index"
     pypi: "llama-index"
+    stackoverflow: "llama-index"
 
   - name: mongomapper
     language: Ruby
     type: ODM
     repo: "mongomapper/mongomapper"
+    stackoverflow: "mongomapper"
 
   - name: beanie
     language: Python
     type: ODM
     repo: "BeanieODM/beanie"
     pypi: "beanie"
+    stackoverflow: "beanie"
 
   - name: doctrine-mongodb-odm
     language: PHP
     type: ODM
     repo: "doctrine/mongodb-odm"
+    stackoverflow: "doctrine-mongodb-odm"
 
   - name: txmongo
     language: Python
     type: Driver
     repo: "twisted/txmongo"
     pypi: "txmongo"
+    stackoverflow: "txmongo"
 
   - name: djongo
     language: Python
     type: Framework
     repo: "doableware/djongo"
     pypi: "djongo"
+    stackoverflow: "djongo"
 
   - name: mongo_dart
     language: Dart
     type: Driver
     repo: "mongo-dart/mongo_dart"
+    stackoverflow: "mongo-dart"
 
   - name: morphia
     language: Java
     type: Framework
     repo: "MorphiaOrg/morphia"
+    stackoverflow: "morphia"
 
   - name: langchain4j
     language: Java
     type: AI
     repo: "langchain4j/langchain4j"
+    stackoverflow: "langchain4j"
 
   - name: mongo-php-library
     language: PHP
     type: Driver
     repo: "mongodb/mongo-php-library"
+    stackoverflow: "mongodb"
 
   - name: laravel-mongodb
     language: PHP
     type: Framework
     repo: "mongodb/laravel-mongodb"
+    stackoverflow: "mongodb"
 
   - name: mongo-efcore-provider
     language: CSharp
     type: Framework
     repo: "mongodb/mongo-efcore-provider"
     nuget: "MongoDB.EntityFrameworkCore"
+    stackoverflow: "mongodb"
 
   - name: DoctrineMongoDBBundle
     language: PHP
     type: Framework
     repo: "doctrine/DoctrineMongoDBBundle"
+    stackoverflow: "doctrine-mongodb-bundle"
 
   - name: django-mongodb-backend
     language: Python
     type: Framework
     repo: "mongodb/django-mongodb-backend"
     pypi: "django-mongodb-backend"
+    stackoverflow: "django-mongodb-backend"
