@@ -60,7 +60,7 @@ projects:
     language: JavaScript
     type: Driver
     repo: "mongodb/node-mongodb-native"
-  npm: "mongodb"
+    npm: "mongodb"
 
   - name: mongo-java-driver
     language: Java
@@ -81,19 +81,19 @@ projects:
     language: JavaScript
     type: ORM
     repo: "drizzle-team/drizzle-orm"
-  npm: "drizzle-orm"
+    npm: "drizzle-orm"
 
   - name: mongoengine
     language: Python
     type: ODM
     repo: "MongoEngine/mongoengine"
-  pypi: "mongoengine"
+    pypi: "mongoengine"
 
   - name: typeorm
     language: JavaScript
     type: ORM
     repo: "typeorm/typeorm"
-  npm: "typeorm"
+    npm: "typeorm"
 
   - name: langchaingo
     language: Go
@@ -104,19 +104,19 @@ projects:
     language: JavaScript
     type: AI
     repo: "langchain-ai/langchainjs"
-  npm: "langchain"
+    npm: "langchain"
 
   - name: langchain-mongodb
     language: Python
     type: AI
     repo: "langchain-ai/langchain-mongodb"
-  pypi: "langchain"
+    pypi: "langchain"
 
   - name: llama_index
     language: Python
     type: AI
     repo: "run-llama/llama_index"
-  pypi: "llama-index"
+    pypi: "llama-index"
 
   - name: mongomapper
     language: Ruby
@@ -127,7 +127,7 @@ projects:
     language: Python
     type: ODM
     repo: "BeanieODM/beanie"
-  pypi: "beanie"
+    pypi: "beanie"
 
   - name: doctrine-mongodb-odm
     language: PHP
@@ -138,13 +138,13 @@ projects:
     language: Python
     type: Driver
     repo: "twisted/txmongo"
-  pypi: "txmongo"
+    pypi: "txmongo"
 
   - name: djongo
     language: Python
     type: Framework
     repo: "doableware/djongo"
-  pypi: "djongo"
+    pypi: "djongo"
 
   - name: mongo_dart
     language: Dart
@@ -175,7 +175,7 @@ projects:
     language: CSharp
     type: Framework
     repo: "mongodb/mongo-efcore-provider"
-  nuget: "MongoDB.EntityFrameworkCore"
+    nuget: "MongoDB.EntityFrameworkCore"
 
   - name: DoctrineMongoDBBundle
     language: PHP
@@ -186,4 +186,4 @@ projects:
     language: Python
     type: Framework
     repo: "mongodb/django-mongodb-backend"
-  pypi: "django-mongodb-backend"
+    pypi: "django-mongodb-backend"
