@@ -119,11 +119,11 @@ function groupAndSort(rows) {
 
   const grouped = groupAndSort(results);
 
-  // Flatten with rank inside each group
+  // Flatten groups (preserve sort by index). Do NOT add a rank field; we'll sort/display by index only.
   const output = [];
   for (const [key, rows] of Object.entries(grouped)) {
     const [language, type] = key.split("::");
-    rows.forEach((r, i) => output.push({ rank: i + 1, language, type, ...r }));
+    rows.forEach((r) => output.push({ language, type, ...r }));
   }
 
   // Write JSON
