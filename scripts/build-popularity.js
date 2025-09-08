@@ -19,7 +19,37 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 const cfg = JSON.parse(fs.readFileSync(path.join(__dirname, "../config/popularity.config.json")));
 const projectsYaml = yaml.load(fs.readFileSync(path.join(__dirname, "../config/projects.yml"), "utf8"));
-const projects = projectsYaml.projects || [];
+let projects = projectsYaml.projects || [];
+
+// CLI: allow testing a single repo by name or repo substring
+// Usage: node scripts/build-popularity.js --repo=morphia  OR  -r morphia
+const argv = process.argv.slice(2);
+let singleRepo = null;
+for (let i = 0; i < argv.length; i++) {
+  const a = argv[i];
+  if (a.startsWith("--repo=")) {
+    singleRepo = a.split("=")[1];
+  } else if (a === "-r") {
+    if (argv[i + 1]) { singleRepo = argv[i + 1]; i++; }
+  } else if (a.startsWith("-r=")) {
+    singleRepo = a.split("=")[1];
+  }
+}
+if (singleRepo) {
+  const q = singleRepo.toLowerCase();
+  const filtered = projects.filter(p => {
+    if (!p) return false;
+    const name = (p.name || "").toLowerCase();
+    const repo = (p.repo || "").toLowerCase();
+    return name === q || name.includes(q) || repo.includes(q) || repo.endsWith(q);
+  });
+  if (filtered.length === 0) {
+    console.error(`[build] --repo ${singleRepo} matched no project; exiting`);
+    process.exit(2);
+  }
+  console.log(`[build] filtering to ${filtered.length} project(s) matching '${singleRepo}'`);
+  projects = filtered;
+}
 
 function log10(x) { return Math.log10(x); }
 
@@ -48,7 +78,9 @@ async function fetchMetrics(p) {
   safe(() => { if (verbose && p.maven) console.log(`[build] fetchMaven ${JSON.stringify(p.maven)}`); return p.maven ? fetchMaven(p.maven) : { weekly_downloads: 0 }; }),
   safe(() => { if (verbose && p.packagist) console.log(`[build] fetchPackagist ${p.packagist}`); return p.packagist ? fetchPackagist(p.packagist) : { weekly_downloads: 0 }; }),
   safe(() => { if (verbose && p.stackoverflow) console.log(`[build] fetchStackOverflow ${p.stackoverflow}`); return p.stackoverflow ? fetchStackOverflow(p.stackoverflow) : { total_questions: 0, recent_questions_last_6mo: 0 }; }),
-    safe(() => { if (verbose) console.log(`[build] fetchDiscussions ${p.repo}`); return fetchDiscussions(p.repo); })
+    safe(() => { if (verbose) console.log(`[build] fetchDiscussions ${p.repo}`); return fetchDiscussions(p.repo); }),
+    // call fetchGo for Go projects or when p.go is provided; pass p.go or fallback to repo
+    safe(() => { if (verbose && (p.go || p.language === 'Go')) console.log(`[build] fetchGo ${p.go || p.repo}`); return (p.go || p.language === 'Go') ? fetchGo(p.go || p.repo) : { weekly_downloads: 0 }; })
   ]);
 
   // pick the max weekly_downloads across ecosystems (a project may publish in more than one)
@@ -59,14 +91,15 @@ async function fetchMetrics(p) {
     crates.weekly_downloads || 0,
   pypi.weekly_downloads || 0,
   maven.weekly_downloads || 0,
-  packagist.weekly_downloads || 0
+  packagist.weekly_downloads || 0,
+  go.weekly_downloads || 0
   );
 
   return {
     stars: gh.stars || 0,
     forks: gh.forks || 0,
     weekly_downloads,
-  sources: { gh, npm, nuget, rubygems, crates, pypi, maven, stackoverflow, discussions }
+  sources: { gh, npm, nuget, rubygems, crates, pypi, maven, packagist, stackoverflow, discussions, go }
   };
 }
 
