@@ -4,12 +4,14 @@ projects:
     type: ODM
     repo: "Automattic/mongoose"
     npm: "mongoose"
+    stackoverflow: "mongoose"
 
   - name: Prisma MongoDB
     language: JavaScript
     type: ORM
     repo: "prisma/prisma"
     npm: "prisma"
+    stackoverflow: "prisma"
 
   - name: Spring Data MongoDB
     language: Java
@@ -18,27 +20,32 @@ projects:
     maven:
       group: "org.springframework.data"
       artifact: "spring-data-mongodb"
+    stackoverflow: "spring-data-mongodb"
 
   - name: MongoDB.Driver
     language: C#
     type: Driver
     repo: "mongodb/mongo-csharp-driver"
     nuget: "MongoDB.Driver"
+    stackoverflow: "mongodb"
 
   - name: Mongoid
     language: Ruby
     type: ODM
     repo: "mongodb/mongoid"
     rubygems: "mongoid"
+    stackoverflow: "mongoid"
 
   - name: Motor
     language: Python
     type: Async ODM
     repo: "mongodb/motor"
     pypi: "motor"
+    stackoverflow: "motor"
 
   - name: mongodb Rust driver
     language: Rust
     type: Driver
     repo: "mongodb/mongo-rust-driver"
     crates: "mongodb"
+    stackoverflow: "mongodb"

@@ -10,6 +10,8 @@ import { fetchRubyGems } from "./fetchers/rubygems.js";
 import { fetchCrates } from "./fetchers/crates.js";
 import { fetchPyPI } from "./fetchers/pypi.js";
 import { fetchMaven } from "./fetchers/maven.js"; // currently returns { weekly_downloads: 0 }
+import { fetchStackOverflow } from "./fetchers/stackoverflow.js";
+import { fetchDiscussions } from "./fetchers/discussions.js";
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
@@ -38,7 +40,9 @@ async function fetchMetrics(p) {
     safe(() => p.rubygems ? fetchRubyGems(p.rubygems) : { weekly_downloads: 0 }),
     safe(() => p.crates ? fetchCrates(p.crates) : { weekly_downloads: 0 }),
     safe(() => p.pypi ? fetchPyPI(p.pypi) : { weekly_downloads: 0 }),
-    safe(() => p.maven ? fetchMaven(p.maven) : { weekly_downloads: 0 })
+  safe(() => p.maven ? fetchMaven(p.maven) : { weekly_downloads: 0 }),
+  safe(() => p.stackoverflow ? fetchStackOverflow(p.stackoverflow) : { total_questions: 0, recent_questions_last_6mo: 0 }),
+  safe(() => fetchDiscussions(p.repo))
   ]);
 
   // pick the max weekly_downloads across ecosystems (a project may publish in more than one)
@@ -55,7 +59,7 @@ async function fetchMetrics(p) {
     stars: gh.stars || 0,
     forks: gh.forks || 0,
     weekly_downloads,
-    sources: { gh, npm, nuget, rubygems, crates, pypi, maven }
+  sources: { gh, npm, nuget, rubygems, crates, pypi, maven, stackoverflow: arguments[7], discussions: arguments[8] }
   };
 }
 
@@ -100,6 +104,11 @@ function groupAndSort(rows) {
   merged_prs_last_6mo: m.sources?.gh?.merged_prs_last_6mo ?? 0,
   releases_count: m.sources?.gh?.releases_count ?? 0,
   release_frequency_per_year: m.sources?.gh?.release_frequency_per_year ?? null,
+  // Stack Overflow & Discussions
+  stackoverflow_total_questions: m.sources?.stackoverflow?.total_questions ?? 0,
+  stackoverflow_recent_questions_last_6mo: m.sources?.stackoverflow?.recent_questions_last_6mo ?? 0,
+  discussions_count: m.sources?.discussions?.discussions_count ?? 0,
+  discussions_recent_activity_last_6mo: m.sources?.discussions?.recent_activity_last_6mo ?? 0,
       weekly_downloads: m.weekly_downloads,
       index: Number(index.toFixed(6))
     });
