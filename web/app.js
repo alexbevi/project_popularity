@@ -24,7 +24,7 @@ function setTheme(theme){
   else document.documentElement.classList.remove('light');
   localStorage.setItem('theme', theme);
   const btn = document.getElementById('theme-toggle');
-  if(btn) btn.textContent = theme === 'light' ? '🌞' : '🌙';
+  if(btn) btn.textContent = theme === 'light' ? '☀️ Light' : '🌙 Dark';
 }
 
 function initTheme(){
@@ -35,10 +35,14 @@ function initTheme(){
     setTheme(prefersLight ? 'light' : 'dark');
   }
   const btn = document.getElementById('theme-toggle');
-  if(btn) btn.addEventListener('click', ()=>{
-    const now = document.documentElement.classList.contains('light') ? 'dark' : 'light';
-    setTheme(now);
-  });
+    if(btn){
+      btn.setAttribute('aria-pressed', document.documentElement.classList.contains('light'));
+      btn.addEventListener('click', ()=>{
+        const now = document.documentElement.classList.contains('light') ? 'dark' : 'light';
+        setTheme(now);
+        btn.setAttribute('aria-pressed', now === 'light');
+      });
+    }
 }
 
 function unique(values){return Array.from(new Set(values.filter(v=>v!==undefined && v!==null && v!==''))).sort()}
@@ -83,6 +87,8 @@ function applyFilters(data){
   if(q) rows = rows.filter(r=> (r.name||'').toLowerCase().includes(q) || (r.repo||'').toLowerCase().includes(q));
   renderTable(rows);
 }
+
+initTheme();
 
 (async function(){
   const data = await loadData();
