@@ -69,6 +69,9 @@ projects:
     language: Java
     type: Driver
     repo: "mongodb/mongo-java-driver"
+    maven:
+      group: "org.mongodb"
+      artifact: "mongodb-driver"
     stackoverflow: "mongodb"
 
   - name: mongo-python-driver
@@ -176,12 +179,18 @@ projects:
     language: Java
     type: Framework
     repo: "MorphiaOrg/morphia"
+    maven:
+      group: "dev.morphia"
+      artifact: "morphia-core"
     stackoverflow: "morphia"
 
   - name: langchain4j
     language: Java
     type: AI
     repo: "langchain4j/langchain4j"
+    maven:
+      group: "dev.langchain4j"
+      artifact: "langchain4j"
     stackoverflow: "langchain4j"
 
   - name: mongo-php-library
