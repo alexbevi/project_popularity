@@ -1,0 +1,32 @@
+name: Popularity Index
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"  # 03:17 UTC daily
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build popularity data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/build-popularity.js
+
+      - name: Commit results
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(popularity): refresh data"
+          file_pattern: data/*.json data/*.csv

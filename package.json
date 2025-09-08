@@ -1,0 +1,13 @@
+{
+  "name": "project_popularity",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-popularity.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.4",
+  "csv-stringify": "^6.5.0",
+    "js-yaml": "^4.1.0"
+  }
+}
