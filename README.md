@@ -61,6 +61,12 @@ Edit `config/projects.yml` and add or update entries. Supply any registry IDs yo
 
 GitHub Actions runs nightly and auto-commits updates to `data/popularity.json`.
 
+## CI output branch
+
+The workflow pushes generated data to a dedicated orphan branch (by default named `output`). The branch contains only the generated files (they are placed at the repository root on that branch), so it does not include the project source files. This branch is force-updated by the workflow when there are changes.
+
+If you prefer the generated files to live under a `data/` folder on the `output` branch instead of the repository root, update the workflow or tell me and I can change it.
+
 ## Extending the project
 
 - To add more signals (Stack Overflow, GitHub Discussions), add a new fetcher under `scripts/fetchers/` that returns the expected shape and include it in the orchestrator.

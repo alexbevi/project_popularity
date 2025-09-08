@@ -25,8 +25,38 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/build-popularity.js
 
-      - name: Commit results
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(popularity): refresh data"
-          file_pattern: data/*.json data/*.csv
+      - name: Push data to output branch
+        env:
+          OUTPUT_BRANCH: output
+          GIT_EMAIL: actions@github.com
+          GIT_NAME: github-actions
+        run: |
+          # configure git
+          git config user.email "$GIT_EMAIL"
+          git config user.name "$GIT_NAME"
+
+          # create an orphan branch so it contains only generated data
+          git checkout --orphan $OUTPUT_BRANCH
+
+          # ensure index is empty
+          git rm -rf --cached . || true
+
+          # copy data out to a temp location, remove everything except .git, then move data files to repo root
+          TMP_DIR=$(mktemp -d)
+          cp -R data/* "$TMP_DIR" || true
+
+          # remove all files and dirs except .git
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + || true
+
+          # move data files into repo root
+          cp -R "$TMP_DIR"/* . || true
+          rm -rf "$TMP_DIR"
+
+          # stage and commit only the generated files at repo root
+          git add --all
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(popularity): refresh data"
+            git push --force origin $OUTPUT_BRANCH
+          fi
