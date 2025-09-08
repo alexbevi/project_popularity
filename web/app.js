@@ -18,6 +18,29 @@ async function loadData(){
   }
 }
 
+// Theme handling
+function setTheme(theme){
+  if(theme === 'light') document.documentElement.classList.add('light');
+  else document.documentElement.classList.remove('light');
+  localStorage.setItem('theme', theme);
+  const btn = document.getElementById('theme-toggle');
+  if(btn) btn.textContent = theme === 'light' ? '🌞' : '🌙';
+}
+
+function initTheme(){
+  const saved = localStorage.getItem('theme');
+  if(saved) setTheme(saved);
+  else {
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    setTheme(prefersLight ? 'light' : 'dark');
+  }
+  const btn = document.getElementById('theme-toggle');
+  if(btn) btn.addEventListener('click', ()=>{
+    const now = document.documentElement.classList.contains('light') ? 'dark' : 'light';
+    setTheme(now);
+  });
+}
+
 function unique(values){return Array.from(new Set(values.filter(v=>v!==undefined && v!==null && v!==''))).sort()}
 
 function makeOption(value){const o=document.createElement('option');o.value=value;o.textContent=value;return o}
