@@ -1,19 +1,19 @@
 :root{
-	--bg: #0f1720;
-	--card: #0b1220;
+	--bg: #0b1220;
+	--card: #071021;
 	--muted: #9aa4b2;
 	--text: #e6eef6;
-	--accent: #4f46e5;
+	--accent: #00a86b; /* MongoDB SpringGreen */
 	--glass: rgba(255,255,255,0.03);
 	--table-border: rgba(255,255,255,0.04);
 }
 
 :root.light{
-	--bg: #f6f8fa;
+	--bg: #fbfdfb;
 	--card: #ffffff;
-	--muted: #5b6b78;
-	--text: #0b1220;
-	--accent: #0366d6;
+	--muted: #4b5563;
+	--text: #042023;
+	--accent: #00a86b; /* keep spring green */
 	--glass: rgba(11,18,32,0.02);
 	--table-border: rgba(11,18,32,0.06);
 }
@@ -24,18 +24,21 @@ main{max-width:1200px;margin:0 auto}
 .page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 h1{margin:0;font-size:20px}
 .header-actions{display:flex;gap:8px}
-#theme-toggle{background:transparent;border:1px solid transparent;padding:6px 8px;border-radius:8px;cursor:pointer;font-size:16px}
+#theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px 10px;border-radius:12px;cursor:pointer;font-size:16px}
 
 .controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
 .controls label{font-size:13px;color:var(--muted)}
-.controls select,input{margin-left:6px;padding:8px 10px;border-radius:8px;border:1px solid var(--table-border);background:var(--card);color:var(--text)}
-button#clear{padding:8px 10px;border-radius:8px;border:1px solid var(--table-border);background:var(--glass);color:var(--text)}
+.controls select,input{margin-left:6px;padding:8px 10px;border-radius:12px;border:1px solid var(--table-border);background:var(--card);color:var(--text)}
+button#clear{padding:8px 10px;border-radius:12px;border:1px solid var(--table-border);background:var(--glass);color:var(--text)}
 .status{margin:8px 0;color:var(--muted)}
 .table-wrap{overflow:auto;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 6px 18px rgba(2,6,23,0.4);border:1px solid var(--table-border)}
-table{width:100%;border-collapse:collapse}
+table{width:100%;border-collapse:separate;border-spacing:0}
 th,td{padding:12px 14px;border-bottom:1px solid var(--table-border);text-align:left}
 th{background:transparent;font-weight:600;color:var(--muted);font-size:13px}
 tbody tr:hover{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent)}
 a{color:var(--accent);text-decoration:none}
+
+/* accent bar for index */
+td.index-cell{font-weight:600;color:var(--accent)}
 
 @media (max-width:900px){.controls{flex-direction:column;align-items:stretch}th,td{font-size:13px;padding:8px}}
