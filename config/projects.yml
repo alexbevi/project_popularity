@@ -38,7 +38,7 @@ projects:
 
   - name: Motor
     language: Python
-    type: Async ODM
+    type: ODM
     repo: "mongodb/motor"
     pypi: "motor"
     stackoverflow: "motor"
