@@ -2,7 +2,8 @@
   "weights": {
     "weekly_downloads": 0.45,
     "stars": 0.45,
-    "forks": 0.10
+  "forks": 0.10,
+  "release_frequency": 0.10
   },
   "output": {
     "json": "data/popularity.json",

@@ -3,6 +3,34 @@ const dataUrl = './popularity.json';
 function $id(id){return document.getElementById(id)}
 function fmtNumber(n){if(n===undefined||n===null||n==='')return ''; return new Intl.NumberFormat().format(n)}
 
+function pkgSourceUrl(r){
+  // Prefer ecosystem package pages in this order
+  try{
+    if(r.npm) return `https://www.npmjs.com/package/${encodeURIComponent(r.npm)}`;
+    if(r.pypi) return `https://pypi.org/project/${encodeURIComponent(r.pypi)}/`;
+    if(r.nuget) return `https://www.nuget.org/packages/${encodeURIComponent(r.nuget)}`;
+    if(r.rubygems) return `https://rubygems.org/gems/${encodeURIComponent(r.rubygems)}`;
+    if(r.crates) return `https://crates.io/crates/${encodeURIComponent(r.crates)}`;
+    if(r.packagist) return `https://packagist.org/packages/${encodeURIComponent(r.packagist)}`;
+    if(r.maven && r.maven.group && r.maven.artifact) return `https://search.maven.org/artifact/${encodeURIComponent(r.maven.group)}/${encodeURIComponent(r.maven.artifact)}`;
+    if(r.go) return `https://pkg.go.dev/${encodeURIComponent(r.go)}`;
+    if(r.repo) return `https://github.com/${r.repo}`;
+  }catch(e){/* ignore */}
+  return '#';
+}
+
+function stackOverflowUrl(r){
+  if(r.stackoverflow) return `https://stackoverflow.com/questions/tagged/${encodeURIComponent(r.stackoverflow)}`;
+  // fallback: search by repo/name
+  const q = encodeURIComponent((r.name || r.repo || '').trim());
+  return q ? `https://stackoverflow.com/search?q=${q}` : '#';
+}
+
+function discussionsUrl(r){
+  if(r.repo) return `https://github.com/${r.repo}/discussions`;
+  return '#';
+}
+
 async function loadData(){
   const status = $id('status');
   try{
@@ -66,12 +94,43 @@ function renderTable(rows){
     const type = document.createElement('td'); type.textContent = r.type || '';
     const index = document.createElement('td'); index.textContent = (r.index===undefined||r.index===null)?'':Number(r.index).toFixed(6);
     const stars = document.createElement('td'); stars.textContent = fmtNumber(r.stars);
-    const weekly = document.createElement('td'); weekly.textContent = fmtNumber(r.weekly_downloads);
-    const so = document.createElement('td'); so.textContent = fmtNumber(r.stackoverflow_recent_questions_last_6mo);
-    const disc = document.createElement('td'); disc.textContent = fmtNumber(r.discussions_recent_activity_last_6mo);
-    const contributors = document.createElement('td'); contributors.textContent = fmtNumber(r.contributors_count);
+  const weekly = document.createElement('td');
+  const weeklyLink = document.createElement('a');
+  weeklyLink.href = pkgSourceUrl(r);
+  weeklyLink.target = '_blank';
+  weeklyLink.rel = 'noopener noreferrer';
+  weeklyLink.textContent = fmtNumber(r.weekly_downloads);
+  weekly.appendChild(weeklyLink);
 
-    tr.appendChild(language); tr.appendChild(type); tr.appendChild(index); tr.appendChild(stars); tr.appendChild(weekly); tr.appendChild(so); tr.appendChild(disc); tr.appendChild(contributors);
+  const so = document.createElement('td');
+  const soLink = document.createElement('a');
+  soLink.href = stackOverflowUrl(r);
+  soLink.target = '_blank';
+  soLink.rel = 'noopener noreferrer';
+  soLink.textContent = fmtNumber(r.stackoverflow_recent_questions_last_6mo);
+  so.appendChild(soLink);
+
+  const disc = document.createElement('td');
+  const discLink = document.createElement('a');
+  discLink.href = discussionsUrl(r);
+  discLink.target = '_blank';
+  discLink.rel = 'noopener noreferrer';
+  discLink.textContent = fmtNumber(r.discussions_recent_activity_last_6mo);
+  disc.appendChild(discLink);
+  const releasesTd = document.createElement('td');
+  const relLink = document.createElement('a');
+  relLink.href = r.repo ? `https://github.com/${r.repo}/releases` : '#';
+  relLink.target = '_blank';
+  relLink.rel = 'noopener noreferrer';
+  relLink.textContent = fmtNumber(r.releases_count);
+  releasesTd.appendChild(relLink);
+
+  const relFreqTd = document.createElement('td');
+  relFreqTd.textContent = r.release_frequency_per_year ? Number(r.release_frequency_per_year).toFixed(2) : '';
+
+  const contributors = document.createElement('td'); contributors.textContent = fmtNumber(r.contributors_count);
+
+  tr.appendChild(language); tr.appendChild(type); tr.appendChild(index); tr.appendChild(stars); tr.appendChild(weekly); tr.appendChild(so); tr.appendChild(disc); tr.appendChild(releasesTd); tr.appendChild(relFreqTd); tr.appendChild(contributors);
 
     tbody.appendChild(tr);
   }

@@ -19,3 +19,4 @@ export async function fetchGo(modulePath) {
     return { weekly_downloads: 0, _error: `go proxy failed: ${err?.response?.status || ''} ${err?.message || ''}`.trim() };
   }
 }
+

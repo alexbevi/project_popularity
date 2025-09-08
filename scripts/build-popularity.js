@@ -53,11 +53,13 @@ if (singleRepo) {
 
 function log10(x) { return Math.log10(x); }
 
-function computeIndex({ stars=0, forks=0, weekly_downloads=0 }, weights) {
+function computeIndex({ stars=0, forks=0, weekly_downloads=0, release_frequency=0 }, weights) {
   const s = log10(1 + stars);
   const f = log10(1 + forks);
   const d = log10(1 + weekly_downloads);
-  return weights.stars * s + weights.forks * f + weights.weekly_downloads * d;
+  const rf = log10(1 + (release_frequency || 0));
+  // include release_frequency weight if present
+  return (weights.stars * s) + (weights.forks * f) + (weights.weekly_downloads * d) + ((weights.release_frequency || 0) * rf);
 }
 
 async function safe(fn, fallback = {}) {
@@ -99,6 +101,7 @@ async function fetchMetrics(p) {
     stars: gh.stars || 0,
     forks: gh.forks || 0,
     weekly_downloads,
+  release_frequency: gh.release_frequency_per_year || 0,
   sources: { gh, npm, nuget, rubygems, crates, pypi, maven, packagist, stackoverflow, discussions, go }
   };
 }
