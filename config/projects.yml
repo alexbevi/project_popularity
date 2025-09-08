@@ -84,6 +84,7 @@ projects:
     language: Go
     type: Driver
     repo: "mongodb/mongo-go-driver"
+    go: "go.mongodb.org/mongo-driver"
     stackoverflow: "mongodb"
 
   - name: drizzle-orm
@@ -111,6 +112,7 @@ projects:
     language: Go
     type: AI
     repo: "tmc/langchaingo"
+    go: "github.com/tmc/langchaingo"
     stackoverflow: "langchaingo"
 
   - name: langchainjs
