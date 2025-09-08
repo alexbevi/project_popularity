@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import yaml from "js-yaml";
 import axios from "axios";
-import { stringify as toCSV } from "csv-stringify/sync";
 
 import { fetchGitHub } from "./fetchers/github.js";
 import { fetchNpm } from "./fetchers/npm.js";
@@ -94,6 +93,13 @@ function groupAndSort(rows) {
       maven: p.maven || null,
       stars: m.stars,
       forks: m.forks,
+  // GitHub engagement fields (if available)
+  contributors_count: m.sources?.gh?.contributors_count ?? 0,
+  closed_issues: m.sources?.gh?.closed_issues ?? 0,
+  avg_pr_merge_days: m.sources?.gh?.avg_pr_merge_days ?? null,
+  merged_prs_last_6mo: m.sources?.gh?.merged_prs_last_6mo ?? 0,
+  releases_count: m.sources?.gh?.releases_count ?? 0,
+  release_frequency_per_year: m.sources?.gh?.release_frequency_per_year ?? null,
       weekly_downloads: m.weekly_downloads,
       index: Number(index.toFixed(6))
     });
@@ -112,15 +118,5 @@ function groupAndSort(rows) {
   fs.mkdirSync(path.join(__dirname, "../data"), { recursive: true });
   fs.writeFileSync(path.join(__dirname, "../" + cfg.output.json), JSON.stringify(output, null, 2));
 
-  // Write CSV
-  const csv = toCSV(output, {
-    header: true,
-    columns: [
-      "rank","language","type","name","repo","npm","nuget","rubygems","crates","pypi","maven",
-      "stars","forks","weekly_downloads","index"
-    ]
-  });
-  fs.writeFileSync(path.join(__dirname, "../" + cfg.output.csv), csv);
-
-  console.log(`Wrote ${output.length} rows to ${cfg.output.json} and ${cfg.output.csv}`);
+  console.log(`Wrote ${output.length} rows to ${cfg.output.json}`);
 })();
