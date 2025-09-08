@@ -55,6 +55,7 @@ projects:
     language: Ruby
     type: Driver
     repo: "mongodb/mongo-ruby-driver"
+    rubygems: "mongo"
     stackoverflow: "mongodb"
 
   - name: node-mongodb-native
@@ -134,6 +135,7 @@ projects:
     language: Ruby
     type: ODM
     repo: "mongomapper/mongomapper"
+    rubygems: "mongomapper"
     stackoverflow: "mongomapper"
 
   - name: beanie
@@ -147,6 +149,7 @@ projects:
     language: PHP
     type: ODM
     repo: "doctrine/mongodb-odm"
+    packagist: "doctrine/mongodb-odm"
     stackoverflow: "doctrine-mongodb-odm"
 
   - name: txmongo
@@ -185,16 +188,18 @@ projects:
     language: PHP
     type: Driver
     repo: "mongodb/mongo-php-library"
+    packagist: "mongodb/mongo-php-library"
     stackoverflow: "mongodb"
 
   - name: laravel-mongodb
     language: PHP
     type: Framework
     repo: "mongodb/laravel-mongodb"
+    packagist: "mongodb/laravel-mongodb"
     stackoverflow: "mongodb"
 
   - name: mongo-efcore-provider
-    language: CSharp
+    language: C#
     type: Framework
     repo: "mongodb/mongo-efcore-provider"
     nuget: "MongoDB.EntityFrameworkCore"
@@ -204,6 +209,7 @@ projects:
     language: PHP
     type: Framework
     repo: "doctrine/DoctrineMongoDBBundle"
+    packagist: "doctrine/doctrine-mongodb-bundle"
     stackoverflow: "doctrine-mongodb-bundle"
 
   - name: django-mongodb-backend

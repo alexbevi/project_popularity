@@ -12,6 +12,7 @@ import { fetchPyPI } from "./fetchers/pypi.js";
 import { fetchMaven } from "./fetchers/maven.js"; // currently returns { weekly_downloads: 0 }
 import { fetchStackOverflow } from "./fetchers/stackoverflow.js";
 import { fetchDiscussions } from "./fetchers/discussions.js";
+import { fetchPackagist } from "./fetchers/packagist.js";
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
@@ -36,7 +37,7 @@ async function fetchMetrics(p) {
   const verbose = process.env.LOG_VERBOSE === '1';
   if (verbose) console.log(`[build] fetching metrics for ${p.name} (${p.repo})`);
 
-  const [gh, npm, nuget, rubygems, crates, pypi, maven, stackoverflow, discussions] = await Promise.all([
+  const [gh, npm, nuget, rubygems, crates, pypi, maven, packagist, stackoverflow, discussions] = await Promise.all([
     safe(() => { if (verbose) console.log(`[build] fetchGitHub ${p.repo}`); return fetchGitHub(p.repo); }),
   safe(() => { if (verbose && p.npm) console.log(`[build] fetchNpm ${p.npm}`); return p.npm ? fetchNpm(p.npm) : { weekly_downloads: 0 }; }),
   safe(() => { if (verbose && p.nuget) console.log(`[build] fetchNuGet ${p.nuget}`); return p.nuget ? fetchNuGet(p.nuget) : { weekly_downloads: 0 }; }),
@@ -44,6 +45,7 @@ async function fetchMetrics(p) {
   safe(() => { if (verbose && p.crates) console.log(`[build] fetchCrates ${p.crates}`); return p.crates ? fetchCrates(p.crates) : { weekly_downloads: 0 }; }),
   safe(() => { if (verbose && p.pypi) console.log(`[build] fetchPyPI ${p.pypi}`); return p.pypi ? fetchPyPI(p.pypi) : { weekly_downloads: 0 }; }),
   safe(() => { if (verbose && p.maven) console.log(`[build] fetchMaven ${JSON.stringify(p.maven)}`); return p.maven ? fetchMaven(p.maven) : { weekly_downloads: 0 }; }),
+  safe(() => { if (verbose && p.packagist) console.log(`[build] fetchPackagist ${p.packagist}`); return p.packagist ? fetchPackagist(p.packagist) : { weekly_downloads: 0 }; }),
   safe(() => { if (verbose && p.stackoverflow) console.log(`[build] fetchStackOverflow ${p.stackoverflow}`); return p.stackoverflow ? fetchStackOverflow(p.stackoverflow) : { total_questions: 0, recent_questions_last_6mo: 0 }; }),
     safe(() => { if (verbose) console.log(`[build] fetchDiscussions ${p.repo}`); return fetchDiscussions(p.repo); })
   ]);
@@ -54,8 +56,9 @@ async function fetchMetrics(p) {
     nuget.weekly_downloads || 0,
     rubygems.weekly_downloads || 0,
     crates.weekly_downloads || 0,
-    pypi.weekly_downloads || 0,
-    maven.weekly_downloads || 0
+  pypi.weekly_downloads || 0,
+  maven.weekly_downloads || 0,
+  packagist.weekly_downloads || 0
   );
 
   return {
