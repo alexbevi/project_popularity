@@ -184,7 +184,7 @@ function renderTable(rows){
     contributors.textContent = fmtNumber(r.contributors_count);
   }
 
-  tr.appendChild(language); tr.appendChild(type); tr.appendChild(index); tr.appendChild(stars); tr.appendChild(weekly); tr.appendChild(so); tr.appendChild(disc); tr.appendChild(releasesTd); tr.appendChild(relFreqTd); tr.appendChild(contributors);
+  tr.appendChild(language); tr.appendChild(type); tr.appendChild(index); tr.appendChild(stars); tr.appendChild(weekly); tr.appendChild(so); tr.appendChild(disc); tr.appendChild(releasesTd); tr.appendChild(relFreqTd); tr.appendChild(dependentsTd); tr.appendChild(contributors);
 
     tbody.appendChild(tr);
   }
