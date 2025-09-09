@@ -229,3 +229,455 @@ projects:
     repo: "mongodb/django-mongodb-backend"
     pypi: "django-mongodb-backend"
     stackoverflow: "django-mongodb-backend"
+
+  # --- appended projects (only new ones from user's list) ---
+  - name: .NET Aspire
+    language: C#
+    type: Framework
+    repo: "dotnet/aspire"
+    stackoverflow: "dotnet-aspire"
+
+  - name: Actix
+    language: Rust
+    type: Framework
+    repo: "actix/actix-web"
+    stackoverflow: "actix"
+
+  - name: Aeria
+    language: JavaScript
+    type: Framework
+    repo: "aeria-org/aeria"
+    stackoverflow: "aeria"
+
+  - name: Agno
+    language: Python
+    type: AI
+    repo: "agno-io/agno"
+    stackoverflow: "agno"
+
+  - name: Apache Beam
+    language: Multi
+    type: Framework
+    repo: "apache/beam"
+    stackoverflow: "apache-beam"
+
+  - name: Axum
+    language: Rust
+    type: Framework
+    repo: "tokio-rs/axum"
+    stackoverflow: "axum"
+
+  - name: cryomongo
+    language: Crystal
+    type: Library
+    repo: "cryomongo"
+    stackoverflow: "cryomongo"
+
+  - name: Dart Driver
+    language: Dart
+    type: Library
+    repo: "mongo-dart/mongo_dart"
+    stackoverflow: "dart"
+
+  - name: Diesel
+    language: Rust
+    type: ORM
+    repo: "diesel-rs/diesel"
+    stackoverflow: "diesel"
+
+  - name: Elixir Driver
+    language: Elixir
+    type: Library
+    repo: "zookzook/elixir-mongodb-driver"
+    stackoverflow: "elixir"
+
+  - name: Elsa Workflows
+    language: C#
+    type: Library
+    repo: "elsa-workflows/elsa-core"
+    stackoverflow: "elsa-workflows"
+
+  - name: Entity Framework Core
+    language: C#
+    type: Framework
+    repo: "dotnet/efcore"
+    stackoverflow: "entity-framework-core"
+
+  - name: FastAPI
+    language: Python
+    type: Framework
+    repo: "fastapi/fastapi"
+    stackoverflow: "fastapi"
+
+  - name: Flask
+    language: Python
+    type: Framework
+    repo: "pallets/flask"
+    stackoverflow: "flask"
+
+  - name: Flask PyMongo
+    language: Python
+    type: Framework
+    repo: "mongodb-labs/flask-pymongo"
+    stackoverflow: "flask-pymongo"
+
+  - name: Flowise
+    language: JavaScript
+    type: AI
+    repo: "flowiseai/flowise"
+    stackoverflow: "flowise"
+
+  - name: FormIO
+    language: JavaScript
+    type: Other
+    repo: "formio/formio"
+    stackoverflow: "formio"
+
+  - name: GORM
+    language: Go
+    type: Framework
+    repo: "go-gorm/gorm"
+    stackoverflow: "gorm"
+
+  - name: GORM for MongoDB
+    language: Java
+    type: Framework
+    repo: "gorm-mongodb"
+    stackoverflow: "gorm"
+
+  - name: Gotham
+    language: Rust
+    type: Framework
+    repo: "gotham-rs/gotham"
+    stackoverflow: "gotham"
+
+  - name: Hangfire
+    language: C#
+    type: Library
+    repo: "HangfireIO/Hangfire"
+    stackoverflow: "hangfire"
+
+  - name: Hangfire.Mongo
+    language: C#
+    type: Library
+    repo: "Hangfire.Mongo"
+    stackoverflow: "hangfire"
+
+  - name: Haskell Driver
+    language: Haskell
+    type: Driver
+    repo: "mongodb-haskell/mongodb"
+    stackoverflow: "haskell"
+
+  - name: Hasura
+    language: Rust
+    type: Other
+    repo: "hasura/graphql-engine"
+    stackoverflow: "hasura"
+
+  - name: Haystack
+    language: Python
+    type: AI
+    repo: "deepset-ai/haystack"
+    stackoverflow: "haystack"
+
+  - name: MongoDB Extension for Hibernate
+    language: Java
+    type: Framework
+    repo: "mongodb/mongo-hibernate"
+    stackoverflow: "hibernate"
+
+  - name: Hibernate OGM
+    language: Java
+    type: Framework
+    repo: "hibernate/hibernate-ogm"
+    stackoverflow: "hibernate-ogm"
+
+  - name: KeystoneJS
+    language: JavaScript
+    type: Framework
+    repo: "keystonejs/keystone"
+    stackoverflow: "keystonejs"
+
+  - name: Langgraph
+    language: Multi
+    type: AI
+    repo: "langchain-ai/langgraph"
+    stackoverflow: "langgraph"
+
+  - name: Laravel
+    language: PHP
+    type: Framework
+    repo: "laravel/laravel"
+    stackoverflow: "laravel"
+
+  - name: Loco
+    language: Rust
+    type: Framework
+    repo: "loco-rs/loco"
+    stackoverflow: "loco"
+
+  - name: MassTransit
+    language: C#
+    type: Framework
+    repo: "MassTransit/MassTransit"
+    stackoverflow: "masstransit"
+
+  - name: Meteor
+    language: JavaScript
+    type: Framework
+    repo: "meteor/meteor"
+    stackoverflow: "meteor"
+
+  - name: mgo
+    language: Go
+    type: Driver
+    repo: "globalsign/mgo"
+    stackoverflow: "mgo"
+
+  - name: Microsoft Semantic Kernel
+    language: Multi
+    type: AI
+    repo: "microsoft/semantic-kernel"
+    stackoverflow: "semantic-kernel"
+
+  - name: MikroORM
+    language: JavaScript
+    type: ORM
+    repo: "mikro-orm/mikro-orm"
+    stackoverflow: "mikroorm"
+
+  - name: Monarch
+    language: JavaScript
+    type: ORM
+    repo: "monarch-orm/monarch"
+    stackoverflow: "monarch"
+
+  - name: mongolite
+    language: R
+    type: Driver
+    repo: "jeroen/mongolite"
+    stackoverflow: "mongolite"
+
+  - name: mongoon
+    language: Crystal
+    type: ODM
+    repo: "elbywan/moongoon"
+    stackoverflow: "mongoon"
+
+  - name: mORMot2
+    language: Pascal
+    type: Library
+    repos: "synopse/mORMot2"
+    stackoverflow: "mormot2"
+
+  - name: OData
+    language: C#
+    type: Library
+    repo: "OData/AspNetCoreOData"
+    stackoverflow: "odata"
+
+  - name: ODMantic
+    language: Python
+    type: ORM/ODM
+    repo: "art049/odmantic"
+    stackoverflow: "odmantic"
+
+  - name: Papr
+    language: JavaScript
+    type: Library
+    repo: "plexinc/papr"
+    stackoverflow: "papr"
+
+  - name: Pavex
+    language: Rust
+    type: Framework
+    repo: "LukeMathWalker/pavex"
+    stackoverflow: "pavex"
+
+  - name: Perl Driver
+    language: Perl
+    type: Driver
+    repo: "mongodb-labs/mongo-perl-driver"
+    stackoverflow: "perl"
+
+  - name: Poem
+    language: Rust
+    type: Framework
+    repo: "poem-web/poem"
+    stackoverflow: "poem"
+
+  - name: PyMODM
+    language: Python
+    type: ODM
+    repo: "mongodb/pymodm"
+    stackoverflow: "pymodm"
+
+  - name: Quarkus
+    language: Java
+    type: Framework
+    repo: "quarkusio/quarkus"
+    stackoverflow: "quarkus"
+
+  - name: Redwood
+    language: JavaScript
+    type: Framework
+    repo: "redwoodjs/graphql"
+    stackoverflow: "redwoodjs"
+
+  - name: RESTHeart
+    language: Java
+    type: Framework
+    repo: "softinstigate/restheart"
+    stackoverflow: "restheart"
+
+  - name: Rocket
+    language: Rust
+    type: Framework
+    repo: "SergioBenitez/rocket"
+    stackoverflow: "rocket"
+
+  - name: RxDB
+    language: JavaScript
+    type: Other
+    repo: "pubkey/rxdb"
+    stackoverflow: "rxdb"
+
+  - name: Sails
+    language: JavaScript
+    type: Framework
+    repo: "balderdashy/sails"
+    stackoverflow: "sailsjs"
+
+  - name: Sails MongoDB
+    language: JavaScript
+    type: Library
+    repo: "balderdashy/sails-mongo"
+    stackoverflow: "sailsjs"
+
+  - name: Salvo
+    language: Rust
+    type: Framework
+    repo: "salvo-rs/salvo"
+    stackoverflow: "salvo"
+
+  - name: Sea-ORM
+    language: Rust
+    type: ORM
+    repo: "SeaQL/sea-orm"
+    stackoverflow: "sea-orm"
+
+  - name: Spring Boot
+    language: Java
+    type: Framework
+    repo: "spring-projects/spring-boot"
+    stackoverflow: "spring-boot"
+
+  - name: Symfony
+    language: PHP
+    type: Framework
+    repo: "symfony/symfony"
+    stackoverflow: "symfony"
+
+  - name: Thruster
+    language: Rust
+    type: Framework
+    repo: "thruster-rs/thruster"
+    stackoverflow: "thruster"
+
+  - name: Tide
+    language: Rust
+    type: Framework
+    repo: "http-rs/tide"
+    stackoverflow: "tide"
+
+  - name: Toasty
+    language: Rust
+    type: ORM
+    repo: "tokio-rs/toasty"
+    stackoverflow: "toasty"
+
+  - name: unstorage
+    language: JavaScript
+    type: Library
+    repo: "unjs/unstorage"
+    stackoverflow: "unstorage"
+
+  - name: Warp
+    language: Rust
+    type: Framework
+    repo: "seanmonstar/warp"
+    stackoverflow: "warp"
+
+  - name: Waterline
+    language: JavaScript
+    type: ORM
+    repo: "balderdashy/waterline"
+    stackoverflow: "waterline"
+
+  - name: Zig Driver
+    language: Zig
+    type: Driver
+    repo: "softprops/zig-mongodb"
+    stackoverflow: "zig"
+
+  - name: Parse Server
+    language: JavaScript
+    type: Framework
+    repo: "parse-community/parse-server"
+    stackoverflow: "parse-server"
+
+  - name: PowerSync
+    language: JavaScript
+    type: Framework
+    repo: "powersync-ja/powersync-service"
+    stackoverflow: "powersync"
+
+  - name: Mongeese
+    language: JavaScript
+    type: Other
+    repo: "michael-nwuju/mongeese"
+    stackoverflow: "mongeese"
+
+  - name: n8n
+    language: JavaScript
+    type: AI
+    repo: "n8n-io/n8n"
+    stackoverflow: "n8n"
+
+  - name: Litestar
+    language: Python
+    type: Framework
+    repo: "litestar-org/litestar"
+    stackoverflow: "litestar"
+
+  - name: Quartz MongoDB
+    language: Java
+    type: Library
+    repo: "avi-sanwal/quartz-mongodb"
+    stackoverflow: "quartz-scheduler"
+
+  - name: Quartz Scheduler
+    language: Java
+    type: Library
+    repo: "quartz-scheduler/quartz"
+    stackoverflow: "quartz-scheduler"
+
+  - name: KMongo
+    language: Kotlin
+    type: Driver
+    repo: "Litote/kmongo"
+    stackoverflow: "kmongo"
+
+
+  - name: PowerShell Cmdlets
+    language: C#
+    type: Library
+    repo: "nightroman/Mdbc"
+    stackoverflow: "powershell mongodb"
+
+  - name: MongoKitten
+    language: Swift
+    type: Driver
+    repo: "OpenKitten/MongoKitten"
+    stackoverflow: "mongokitten"
