@@ -307,12 +307,14 @@ projects:
     language: Python
     type: Framework
     repo: "fastapi/fastapi"
+    pypi: "fastapi"
     stackoverflow: "fastapi"
 
   - name: Flask
     language: Python
     type: Framework
     repo: "pallets/flask"
+    pypi: "Flask"
     stackoverflow: "flask"
 
   - name: Flask PyMongo
@@ -325,12 +327,14 @@ projects:
     language: JavaScript
     type: AI
     repo: "flowiseai/flowise"
+    npm: "flowise"
     stackoverflow: "flowise"
 
   - name: FormIO
     language: JavaScript
     type: Other
     repo: "formio/formio"
+    npm: "formio"
     stackoverflow: "formio"
 
   - name: GORM
@@ -379,6 +383,7 @@ projects:
     language: Python
     type: AI
     repo: "deepset-ai/haystack"
+    pypi: "farm-haystack"
     stackoverflow: "haystack"
 
   - name: MongoDB Extension for Hibernate
@@ -397,6 +402,7 @@ projects:
     language: JavaScript
     type: Framework
     repo: "keystonejs/keystone"
+    npm: "keystone"
     stackoverflow: "keystonejs"
 
   - name: Langgraph
