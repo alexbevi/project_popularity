@@ -17,7 +17,38 @@ function pkgSourceUrl(r){
     if(r.go) return `https://pkg.go.dev/${encodeURIComponent(r.go)}`;
     if(r.repo) return `https://github.com/${r.repo}`;
   }catch(e){/* ignore */}
-  return '#';
+  // fallback heuristics
+  const h = heuristicPackageUrl(r);
+  return h || '#';
+}
+
+// slugify project name into a package id guess
+function slugifyName(name){
+  if(!name) return '';
+  return name.trim().toLowerCase().replace(/\s+/g,'-').replace(/[()\[\],]/g,'').replace(/[^a-z0-9\-_.@]/g,'');
+}
+
+// Heuristic package URL generation when explicit package IDs are missing.
+function heuristicPackageUrl(r){
+  try{
+    // PyPI for Python projects
+    if(r.language === 'Python'){
+      const pkg = r.pypi || slugifyName(r.name);
+      if(pkg) return `https://pypi.org/project/${encodeURIComponent(pkg)}/`;
+    }
+    // npm for JavaScript projects
+    if(r.language === 'JavaScript' || r.language === 'TypeScript'){
+      const pkg = r.npm || slugifyName(r.name);
+      if(pkg) return `https://www.npmjs.com/package/${encodeURIComponent(pkg)}`;
+    }
+    // Maven: try to search by artifact using repo name when maven info absent
+    if(r.language === 'Java' && r.repo){
+      const parts = (r.repo || '').split('/');
+      const artifact = parts[parts.length-1];
+      if(artifact) return `https://search.maven.org/search?q=a:%22${encodeURIComponent(artifact)}%22`;
+    }
+  }catch(e){}
+  return null;
 }
 
 function stackOverflowUrl(r){
