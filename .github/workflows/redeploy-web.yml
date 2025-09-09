@@ -18,11 +18,13 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Ensure generated data exists
+      - name: Check for generated data
+        id: check_data
         run: |
-          if [ ! -f data/popularity.json ]; then
-            echo "data/popularity.json not found — nothing to deploy" >&2
-            exit 1
+          if [ -f data/popularity.json ]; then
+            echo "data_present=true" >> $GITHUB_OUTPUT
+          else
+            echo "data_present=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Prepare output branch worktree
@@ -47,13 +49,23 @@ jobs:
           mkdir -p "$WT_DIR"
           # Copy web directory contents
           rsync -a --delete --exclude='.git' web/ "$WT_DIR/"
-          # Ensure the generated data is included at the repo root on the output branch
-          cp data/popularity.json "$WT_DIR/popularity.json"
+          # Ensure the generated data is included at the repo root on the output branch (if present)
+          if [ -f data/popularity.json ]; then
+            cp data/popularity.json "$WT_DIR/popularity.json"
+            echo "including data in deploy"
+          else
+            echo "no generated data found; deploying UI only"
+          fi
 
           # Commit and push
           cd "$WT_DIR"
           git add -A
-          git commit -m "${{ github.event.inputs.message }}" || echo "No changes to commit"
+          # If data was present, use the provided message; otherwise annotate.
+          if [ -f "$WT_DIR/popularity.json" ]; then
+            git commit -m "${{ github.event.inputs.message }}" || echo "No changes to commit"
+          else
+            git commit -m "${{ github.event.inputs.message }} (UI only, no data present)" || echo "No changes to commit"
+          fi
           git push origin ${OUTPUT_BRANCH} --force
 
       - name: Finish
