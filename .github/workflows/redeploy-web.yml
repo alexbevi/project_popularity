@@ -1,0 +1,60 @@
+name: Redeploy web UI and data
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Commit message for the output branch'
+        required: false
+        default: 'Redeploy web UI and popularity data'
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Ensure generated data exists
+        run: |
+          if [ ! -f data/popularity.json ]; then
+            echo "data/popularity.json not found — nothing to deploy" >&2
+            exit 1
+          fi
+
+      - name: Prepare output branch worktree
+        env:
+          OUTPUT_BRANCH: output
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Create a worktree for the output branch (create branch if missing)
+          WT_DIR="/tmp/output"
+          rm -rf "$WT_DIR"
+          if git show-ref --verify --quiet refs/heads/${OUTPUT_BRANCH}; then
+            git worktree add "$WT_DIR" ${OUTPUT_BRANCH}
+          else
+            git worktree add -b ${OUTPUT_BRANCH} "$WT_DIR"
+          fi
+
+          # Clean and copy files we want to publish (web UI + generated data)
+          rm -rf "$WT_DIR"/*
+          mkdir -p "$WT_DIR"
+          # Copy web directory contents
+          rsync -a --delete --exclude='.git' web/ "$WT_DIR/"
+          # Ensure the generated data is included at the repo root on the output branch
+          cp data/popularity.json "$WT_DIR/popularity.json"
+
+          # Commit and push
+          cd "$WT_DIR"
+          git add -A
+          git commit -m "${{ github.event.inputs.message }}" || echo "No changes to commit"
+          git push origin ${OUTPUT_BRANCH} --force
+
+      - name: Finish
+        run: echo "Redeploy complete"
