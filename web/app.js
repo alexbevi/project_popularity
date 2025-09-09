@@ -128,6 +128,18 @@ function renderTable(rows){
   const relFreqTd = document.createElement('td');
   relFreqTd.textContent = r.release_frequency_per_year ? Number(r.release_frequency_per_year).toFixed(2) : '';
 
+  const dependentsTd = document.createElement('td');
+  if(r.dependents){
+    const depLink = document.createElement('a');
+    depLink.href = `https://github.com/${r.repo}/network/dependents`;
+    depLink.target = '_blank';
+    depLink.rel = 'noopener noreferrer';
+    depLink.textContent = fmtNumber(r.dependents);
+    dependentsTd.appendChild(depLink);
+  } else {
+    dependentsTd.textContent = fmtNumber(r.dependents || 0);
+  }
+
   const contributors = document.createElement('td');
   if(r.repo){
     const cLink = document.createElement('a');

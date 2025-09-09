@@ -3,7 +3,8 @@
     "weekly_downloads": 0.45,
     "stars": 0.45,
   "forks": 0.10,
-  "release_frequency": 0.10
+  "release_frequency": 0.10,
+  "dependents": 0.05
   },
   "output": {
     "json": "data/popularity.json",

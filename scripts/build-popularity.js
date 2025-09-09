@@ -3,7 +3,7 @@ import path from "path";
 import yaml from "js-yaml";
 import axios from "axios";
 
-import { fetchGitHub } from "./fetchers/github.js";
+import { fetchGitHub, fetchGitHubDependents } from "./fetchers/github.js";
 import { fetchNpm } from "./fetchers/npm.js";
 import { fetchNuGet } from "./fetchers/nuget.js";
 import { fetchRubyGems } from "./fetchers/rubygems.js";
@@ -53,13 +53,14 @@ if (singleRepo) {
 
 function log10(x) { return Math.log10(x); }
 
-function computeIndex({ stars=0, forks=0, weekly_downloads=0, release_frequency=0 }, weights) {
+function computeIndex({ stars=0, forks=0, weekly_downloads=0, release_frequency=0, dependents=0 }, weights) {
   const s = log10(1 + stars);
   const f = log10(1 + forks);
   const d = log10(1 + weekly_downloads);
   const rf = log10(1 + (release_frequency || 0));
-  // include release_frequency weight if present
-  return (weights.stars * s) + (weights.forks * f) + (weights.weekly_downloads * d) + ((weights.release_frequency || 0) * rf);
+  const dep = log10(1 + (dependents || 0));
+  // include release_frequency and dependents weight if present
+  return (weights.stars * s) + (weights.forks * f) + (weights.weekly_downloads * d) + ((weights.release_frequency || 0) * rf) + ((weights.dependents || 0) * dep);
 }
 
 async function safe(fn, fallback = {}) {
@@ -85,6 +86,18 @@ async function fetchMetrics(p) {
     safe(() => { if (verbose && (p.go || p.language === 'Go')) console.log(`[build] fetchGo ${p.go || p.repo}`); return (p.go || p.language === 'Go') ? fetchGo(p.go || p.repo) : { weekly_downloads: 0 }; })
   ]);
 
+  // fetch dependents (best-effort). Use p.package_id if provided to scope package dependents where supported.
+  let dependents_res = { dependents_count: 0 };
+  try {
+    if (p.repo) {
+      const d = await safe(() => fetchGitHubDependents(p.repo, p.package_id));
+      if (d && typeof d === 'number') dependents_res.dependents_count = d;
+      else if (d && d._dependents_error) dependents_res._dependents_error = d._dependents_error;
+    }
+  } catch (e) {
+    dependents_res._dependents_error = e?.message || String(e);
+  }
+
   // pick the max weekly_downloads across ecosystems (a project may publish in more than one)
   const weekly_downloads = Math.max(
     npm.weekly_downloads || 0,
@@ -102,6 +115,7 @@ async function fetchMetrics(p) {
     forks: gh.forks || 0,
     weekly_downloads,
   release_frequency: gh.release_frequency_per_year || 0,
+  dependents: dependents_res.dependents_count || 0,
   sources: { gh, npm, nuget, rubygems, crates, pypi, maven, packagist, stackoverflow, discussions, go }
   };
 }

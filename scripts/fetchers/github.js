@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function fetchGitHub(repo) {
+export async function fetchGitHub(repo, package_id) {
   const base = `https://api.github.com/repos/${repo}`;
   const headers = {};
   if (process.env.GH_TOKEN) headers.Authorization = `Bearer ${process.env.GH_TOKEN}`;
@@ -120,8 +120,39 @@ export async function fetchGitHub(repo) {
     avg_pr_merge_days,
     merged_prs_last_6mo,
     releases_count,
-    release_frequency_per_year,
+  release_frequency_per_year,
+    dependents_count: 0,
     default_branch: data.default_branch,
     pushed_at: data.pushed_at
   };
+}
+
+// Attempt to fetch dependents count by scraping the GitHub network dependents page.
+// If package_id is supplied, prefer the package dependents listing when applicable.
+export async function fetchGitHubDependents(repo, package_id) {
+  const headers = { 'Accept': 'text/html' };
+  if (process.env.GH_TOKEN) headers.Authorization = `Bearer ${process.env.GH_TOKEN}`;
+  try {
+    // If package_id provided, try the package dependents URL first (best-effort)
+    if (package_id) {
+      // package dependents page pattern (works for some ecosystems)
+      const pkgUrl = `https://github.com/${repo}/network/dependents?dependent_type=PACKAGE&package_id=${encodeURIComponent(package_id)}`;
+      const resp = await axios.get(pkgUrl, { headers, timeout: 15000 });
+      const html = resp.data || '';
+      const m = html.match(/aria-label="Dependents"[^>]*>\s*([0-9,]+)\s*</i) || html.match(/(\d[\d,]*)\s+dependents/i);
+      if (m) return Number(String(m[1]).replace(/,/g, ''));
+      // fallback: try the generic dependents page
+    }
+
+    const url = `https://github.com/${repo}/network/dependents`;
+    const resp = await axios.get(url, { headers, timeout: 15000 });
+    const html = resp.data || '';
+    // look for counts like "123 dependents" or aria-label="Dependents" 123
+    const m = html.match(/(\d[\d,]*)\s+dependents/i) || html.match(/aria-label="Dependents"[^>]*>\s*([0-9,]+)\s*</i);
+    if (m) return Number(String(m[1]).replace(/,/g, ''));
+    return 0;
+  } catch (e) {
+    console.warn(`[fetchGitHubDependents] dependents fetch failed for ${repo}: ${e?.message || e}`);
+    return { _dependents_error: e?.message || String(e) };
+  }
 }
