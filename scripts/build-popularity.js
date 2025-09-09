@@ -185,5 +185,13 @@ function groupAndSort(rows) {
   fs.mkdirSync(path.join(__dirname, "../data"), { recursive: true });
   fs.writeFileSync(path.join(__dirname, "../" + cfg.output.json), JSON.stringify(output, null, 2));
 
-  console.log(`Wrote ${output.length} rows to ${cfg.output.json}`);
+  // Also copy the generated JSON into the web folder so the SPA can load it (prevents 404s when serving web/)
+  try {
+    const webDir = path.join(__dirname, "../web");
+    fs.mkdirSync(webDir, { recursive: true });
+    fs.writeFileSync(path.join(webDir, path.basename(cfg.output.json)), JSON.stringify(output, null, 2));
+    console.log(`Wrote ${output.length} rows to ${cfg.output.json} and copied to web/${path.basename(cfg.output.json)}`);
+  } catch (e) {
+    console.warn(`[build] failed to copy output to web/: ${e?.message || e}`);
+  }
 })();
