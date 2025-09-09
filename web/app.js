@@ -1,4 +1,5 @@
-const dataUrl = './popularity.json';
+// Load the generated output from the repo's data folder
+const dataUrl = '../data/popularity.json';
 
 function $id(id){return document.getElementById(id)}
 function fmtNumber(n){if(n===undefined||n===null||n==='')return ''; return new Intl.NumberFormat().format(n)}

@@ -166,7 +166,8 @@ function groupAndSort(rows) {
   stackoverflow_recent_questions_last_6mo: m.sources?.stackoverflow?.recent_questions_last_6mo ?? 0,
   discussions_count: m.sources?.discussions?.discussions_count ?? 0,
   discussions_recent_activity_last_6mo: m.sources?.discussions?.recent_activity_last_6mo ?? 0,
-      weekly_downloads: m.weekly_downloads,
+  weekly_downloads: m.weekly_downloads,
+  dependents: m.dependents || 0,
       index: Number(index.toFixed(6))
     });
   }
