@@ -128,7 +128,17 @@ function renderTable(rows){
   const relFreqTd = document.createElement('td');
   relFreqTd.textContent = r.release_frequency_per_year ? Number(r.release_frequency_per_year).toFixed(2) : '';
 
-  const contributors = document.createElement('td'); contributors.textContent = fmtNumber(r.contributors_count);
+  const contributors = document.createElement('td');
+  if(r.repo){
+    const cLink = document.createElement('a');
+    cLink.href = `https://github.com/${r.repo}/graphs/contributors`;
+    cLink.target = '_blank';
+    cLink.rel = 'noopener noreferrer';
+    cLink.textContent = fmtNumber(r.contributors_count);
+    contributors.appendChild(cLink);
+  } else {
+    contributors.textContent = fmtNumber(r.contributors_count);
+  }
 
   tr.appendChild(language); tr.appendChild(type); tr.appendChild(index); tr.appendChild(stars); tr.appendChild(weekly); tr.appendChild(so); tr.appendChild(disc); tr.appendChild(releasesTd); tr.appendChild(relFreqTd); tr.appendChild(contributors);
 

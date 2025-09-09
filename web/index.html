@@ -31,6 +31,24 @@
       <button id="clear">Clear</button>
     </div>
 
+    <!-- Intro / legend inserted by agent: explains columns and index calc -->
+    <section id="intro" class="intro">
+      <p>
+        This table aggregates community adoption and engagement signals for each project. Columns show raw signals (stars, weekly downloads, StackOverflow questions, GitHub discussions, releases, and contributors). Click any number to open the underlying source page.
+      </p>
+      <p>
+        Index calculation: signals are log-scaled and combined using configurable weights (see <code>config/popularity.config.json</code>) to produce a single "Index" score used for ranking. The index includes repository signals (stars, forks), package ecosystem activity (weekly downloads), and release cadence where available.
+      </p>
+      <ul class="legend">
+        <li><strong>Stars</strong> — GitHub stars (popularity)</li>
+        <li><strong>Weekly downloads</strong> — package ecosystem downloads (when available)</li>
+        <li><strong>SO recent</strong> — StackOverflow questions in the last 6 months</li>
+        <li><strong>Discussions recent</strong> — GitHub discussions activity in the last 6 months</li>
+        <li><strong>Releases</strong> / <strong>Releases / yr</strong> — release counts and cadence</li>
+        <li><strong>Contributors</strong> — unique contributors (click to view contributors graph)</li>
+      </ul>
+    </section>
+
     <div id="status" class="status">Loading data…</div>
 
     <div class="table-wrap">
