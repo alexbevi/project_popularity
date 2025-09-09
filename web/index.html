@@ -37,7 +37,9 @@
         This table aggregates community adoption and engagement signals for each project. Columns show raw signals (stars, weekly downloads, StackOverflow questions, GitHub discussions, releases, and contributors). Click any number to open the underlying source page.
       </p>
       <p>
-        Index calculation: signals are log-scaled and combined using configurable weights (see <code>config/popularity.config.json</code>) to produce a single "Index" score used for ranking. The index includes repository signals (stars, forks), package ecosystem activity (weekly downloads), and release cadence where available.
+        Index calculation: signals are log-scaled and combined using configurable weights (see <code>config/popularity.config.json</code>). Current weights:
+        <strong>weekly_downloads</strong> = 0.45, <strong>stars</strong> = 0.45, <strong>forks</strong> = 0.10, <strong>release_frequency</strong> = 0.10, <strong>dependents</strong> = 0.05.
+        The resulting "Index" score is used for ranking and combines repository signals (stars, forks), package ecosystem activity (weekly downloads), release cadence, and dependents where available.
       </p>
       <ul class="legend">
         <li><strong>Stars</strong> — GitHub stars (popularity)</li>

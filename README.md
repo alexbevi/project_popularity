@@ -12,9 +12,17 @@ Formula (implemented in `scripts/build-popularity.js`):
 index = weights.weekly_downloads * log10(1 + weekly_downloads)
 	+ weights.stars * log10(1 + stars)
 	+ weights.forks * log10(1 + forks)
+	+ weights.release_frequency * log10(1 + release_frequency)
+	+ weights.dependents * log10(1 + dependents)
 ```
 
-Default weights are in `config/popularity.config.json` (current defaults are 0.45 for downloads, 0.45 for stars, 0.10 for forks).
+Default weights are in `config/popularity.config.json`. Current defaults:
+
+- weekly_downloads: 0.45
+- stars: 0.45
+- forks: 0.10
+- release_frequency: 0.10
+- dependents: 0.05
 
 Implementation note: the orchestrator picks the max `weekly_downloads` across registries when a project is published to multiple ecosystems.
 
