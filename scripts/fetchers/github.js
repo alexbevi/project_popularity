@@ -130,29 +130,88 @@ export async function fetchGitHub(repo, package_id) {
 // Attempt to fetch dependents count by scraping the GitHub network dependents page.
 // If package_id is supplied, prefer the package dependents listing when applicable.
 export async function fetchGitHubDependents(repo, package_id) {
-  const headers = { 'Accept': 'text/html' };
+  const verbose = process.env.LOG_VERBOSE === '1';
+  const headers = {
+    'Accept': 'text/html',
+    'User-Agent': 'project-popularity-fetcher/1.0 (+https://github.com)'
+  };
   if (process.env.GH_TOKEN) headers.Authorization = `Bearer ${process.env.GH_TOKEN}`;
+
+  // small helper: fetch with one retry
+  const fetchHtml = async (url) => {
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        if (verbose) console.log(`[fetchGitHubDependents] GET ${url} (attempt ${attempt})`);
+        const resp = await axios.get(url, { headers, timeout: 15000 });
+        return resp.data || '';
+      } catch (err) {
+        if (attempt === 2) throw err;
+        if (verbose) console.warn(`[fetchGitHubDependents] retryable error for ${url}: ${err?.message || err}`);
+        // small backoff
+        await new Promise(r => setTimeout(r, 400));
+      }
+    }
+    return '';
+  };
+
   try {
+    let html = '';
     // If package_id provided, try the package dependents URL first (best-effort)
     if (package_id) {
-      // package dependents page pattern (works for some ecosystems)
       const pkgUrl = `https://github.com/${repo}/network/dependents?dependent_type=PACKAGE&package_id=${encodeURIComponent(package_id)}`;
-      const resp = await axios.get(pkgUrl, { headers, timeout: 15000 });
-      const html = resp.data || '';
-      const m = html.match(/aria-label="Dependents"[^>]*>\s*([0-9,]+)\s*</i) || html.match(/(\d[\d,]*)\s+dependents/i);
-      if (m) return Number(String(m[1]).replace(/,/g, ''));
-      // fallback: try the generic dependents page
+      try {
+        html = await fetchHtml(pkgUrl);
+      } catch (e) {
+        if (verbose) console.warn(`[fetchGitHubDependents] package dependents fetch failed for ${repo}: ${e?.message || e}`);
+        html = '';
+      }
     }
 
-    const url = `https://github.com/${repo}/network/dependents`;
-    const resp = await axios.get(url, { headers, timeout: 15000 });
-    const html = resp.data || '';
-    // look for counts like "123 dependents" or aria-label="Dependents" 123
-    const m = html.match(/(\d[\d,]*)\s+dependents/i) || html.match(/aria-label="Dependents"[^>]*>\s*([0-9,]+)\s*</i);
-    if (m) return Number(String(m[1]).replace(/,/g, ''));
+    // fallback to generic dependents page if package-specific page didn't yield HTML
+    if (!html) {
+      const url = `https://github.com/${repo}/network/dependents`;
+      try {
+        html = await fetchHtml(url);
+      } catch (e) {
+        if (verbose) console.warn(`[fetchGitHubDependents] generic dependents fetch failed for ${repo}: ${e?.message || e}`);
+        html = '';
+      }
+    }
+
+    if (!html) return 0;
+
+    // try several regex patterns to catch different GitHub markup variants
+    const patterns = [
+      /aria-label=["']?Dependents["']?[^>]*>\s*([0-9,]+)/i,
+      />([0-9][0-9,]*)<\/a>\s*dependents/i,
+  /(\d[\d,]*)\s+dependents/i,
+  /(\d[\d,]*)\s+Repositories/i,
+      /<summary[^>]*>\s*Dependents\s*<span[^>]*>\s*([0-9,]+)\s*<\/span>/i,
+      /<span[^>]*class=["'][^"'>]*(?:Counter|num|text-bold)[^"'>]*["'][^>]*>\s*([0-9,]+)\s*<\/span>/i,
+      /"dependents"\s*:\s*"?([0-9,]+)"?/i
+    ];
+
+    for (const pat of patterns) {
+      const m = html.match(pat);
+      if (m && m[1]) {
+        const n = Number(String(m[1]).replace(/,/g, ''));
+        if (!Number.isNaN(n)) return n;
+      }
+    }
+
+    // last-resort: look for any number near the word 'dependents'
+    const m2 = html.match(/([0-9,]{1,15})[^]{0,120}?dependents/i) || html.match(/dependents[^]{0,120}?([0-9,]{1,15})/i);
+    if (m2 && m2[1]) {
+      const n = Number(String(m2[1]).replace(/,/g, ''));
+      if (!Number.isNaN(n)) return n;
+    }
+
+    if (verbose) {
+      console.warn(`[fetchGitHubDependents] no dependents count found for ${repo}; sample HTML start:\n${String(html).slice(0,2000)}`);
+    }
     return 0;
   } catch (e) {
     console.warn(`[fetchGitHubDependents] dependents fetch failed for ${repo}: ${e?.message || e}`);
-    return { _dependents_error: e?.message || String(e) };
+    return 0;
   }
 }

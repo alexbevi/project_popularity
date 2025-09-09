@@ -90,9 +90,14 @@ async function fetchMetrics(p) {
   let dependents_res = { dependents_count: 0 };
   try {
     if (p.repo) {
-      const d = await safe(() => fetchGitHubDependents(p.repo, p.package_id));
-      if (d && typeof d === 'number') dependents_res.dependents_count = d;
-      else if (d && d._dependents_error) dependents_res._dependents_error = d._dependents_error;
+      // verbose log so we can see dependents scraping activity
+      const d = await safe(() => { if (verbose) console.log(`[build] fetchGitHubDependents ${p.repo} ${p.package_id ? '(' + p.package_id + ')' : ''}`); return fetchGitHubDependents(p.repo, p.package_id); });
+      // treat numeric 0 as a valid result (don't rely on truthiness)
+      if (typeof d === 'number') {
+        dependents_res.dependents_count = d;
+      } else if (d && (d._dependents_error || d._error)) {
+        dependents_res._dependents_error = d._dependents_error || d._error;
+      }
     }
   } catch (e) {
     dependents_res._dependents_error = e?.message || String(e);
