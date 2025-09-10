@@ -46,6 +46,11 @@ button#clear{padding:8px 10px;border-radius:12px;border:1px solid var(--table-bo
 table{width:100%;border-collapse:separate;border-spacing:0}
 th,td{padding:12px 14px;border-bottom:1px solid var(--table-border);text-align:left}
 th{background:transparent;font-weight:700;color:var(--muted);font-size:13px}
+/* Sort indicator styles */
+th.sorted{background:linear-gradient(90deg, rgba(0,168,107,0.06), transparent);color:var(--text);}
+th.sorted::after{content:'';display:inline-block;margin-left:8px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--muted);vertical-align:middle}
+th.sorted.asc::after{border-top-color:var(--muted);transform:rotate(180deg);margin-top:-2px}
+th.sorted.desc::after{border-top-color:var(--muted);}
 tbody tr:hover{background:var(--row-hover)}
 a{color:var(--accent);text-decoration:none}
 

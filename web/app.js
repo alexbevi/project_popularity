@@ -262,14 +262,27 @@ initTheme();
       const curDir = document.body.getAttribute('data-sort-dir') || 'desc';
       if(curKey === key) {
         // toggle
-        document.body.setAttribute('data-sort-dir', curDir === 'asc' ? 'desc' : 'asc');
+        const newDir = curDir === 'asc' ? 'desc' : 'asc';
+        document.body.setAttribute('data-sort-dir', newDir);
+        // update header visuals
+        updateSortHeaderState(key, newDir);
       } else {
         document.body.setAttribute('data-sort-key', key);
         document.body.setAttribute('data-sort-dir', 'desc');
+        updateSortHeaderState(key, 'desc');
       }
       applyFilters(data);
     });
   });
+
+  // initialize header visuals
+  updateSortHeaderState(document.body.getAttribute('data-sort-key') || 'index', document.body.getAttribute('data-sort-dir') || 'desc');
+
+  function updateSortHeaderState(activeKey, dir){
+    ths.forEach(t=>{ t.classList.remove('sorted','asc','desc'); });
+    const active = document.querySelector(`th[data-key="${activeKey}"]`);
+    if(active){ active.classList.add('sorted'); active.classList.add(dir === 'asc' ? 'asc' : 'desc'); }
+  }
 
   applyFilters(data);
 })();
