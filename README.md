@@ -2,6 +2,8 @@
 
 Nightly automation that ranks MongoDB-adjacent projects by a simple, cross-ecosystem Popularity Index.
 
+Current deployment is at https://alexbevi.com/project_popularity/.
+
 ## Popularity Index (current logic)
 
 The index combines three signals: weekly downloads, GitHub stars, and GitHub forks. Each value is log-transformed to reduce skew and then weighted.
