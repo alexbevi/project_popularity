@@ -51,11 +51,12 @@
       <h3>How the Popularity Index is calculated</h3>
       <p>The index combines log-scaled signals into a single score. Each signal is transformed using <code>log10(1 + value)</code> to reduce skew, then multiplied by its configured weight.</p>
       <div class="weights">
-        <div class="item">weekly_downloads: 0.45</div>
-        <div class="item">stars: 0.45</div>
-        <div class="item">forks: 0.10</div>
-        <div class="item">release_frequency: 0.10</div>
-        <div class="item">dependents: 0.05</div>
+  <div class="item">weekly_downloads: 0.45</div>
+  <div class="item">stars: 0.45</div>
+  <div class="item">forks: 0.20</div>
+  <div class="item">merged_prs_last_6mo: 0.30</div>
+  <div class="item">release_frequency: 0.10</div>
+  <div class="item">dependents: 0.05</div>
       </div>
       <p style="margin-top:8px;color:var(--muted)"><code>Formula: index = Σ weight * log10(1 + signal)</code>. See <a href="https://github.com/alexbevi/project_popularity/blob/main/config/popularity.config.json"><code>config/popularity.config.json</code></a> for current weights.</p>
     </section>
@@ -66,18 +67,20 @@
       <table id="results">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Language</th>
-            <th>Type</th>
-            <th>Index</th>
-            <th>Stars</th>
-            <th>Weekly downloads</th>
-            <th>SO recent (6mo)</th>
-            <th>Discussions recent (6mo)</th>
-            <th>Releases</th>
-            <th>Releases / yr</th>
-            <th>Dependents</th>
-            <th>Contributors</th>
+            <th data-key="name">Name</th>
+            <th data-key="language">Language</th>
+            <th data-key="type">Type</th>
+            <th data-key="index">Index</th>
+            <th data-key="stars">Stars</th>
+            <th data-key="forks">Forks</th>
+            <th data-key="merged_prs_last_6mo">Merged PRs (6mo)</th>
+            <th data-key="weekly_downloads">Weekly downloads</th>
+            <th data-key="stackoverflow_recent_questions_last_6mo">SO recent (6mo)</th>
+            <th data-key="discussions_recent_activity_last_6mo">Discussions recent (6mo)</th>
+            <th data-key="releases_count">Releases</th>
+            <th data-key="release_frequency_per_year">Releases / yr</th>
+            <th data-key="dependents">Dependents</th>
+            <th data-key="contributors_count">Contributors</th>
           </tr>
         </thead>
         <tbody></tbody>

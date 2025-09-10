@@ -2,9 +2,10 @@
   "weights": {
     "weekly_downloads": 0.45,
     "stars": 0.45,
-  "forks": 0.10,
-  "release_frequency": 0.10,
-  "dependents": 0.05
+    "forks": 0.20,
+    "merged_prs_last_6mo": 0.30,
+    "release_frequency": 0.10,
+    "dependents": 0.05
   },
   "output": {
     "json": "data/popularity.json",

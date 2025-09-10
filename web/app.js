@@ -124,8 +124,10 @@ function renderTable(rows){
 
     const language = document.createElement('td'); language.textContent = r.language || '';
     const type = document.createElement('td'); type.textContent = r.type || '';
-    const index = document.createElement('td'); index.textContent = (r.index===undefined||r.index===null)?'':Number(r.index).toFixed(6);
-    const stars = document.createElement('td'); stars.textContent = fmtNumber(r.stars);
+  const index = document.createElement('td'); index.textContent = (r.index===undefined||r.index===null)?'':Number(r.index).toFixed(6);
+  const stars = document.createElement('td'); stars.textContent = fmtNumber(r.stars);
+  const forksTd = document.createElement('td'); forksTd.textContent = fmtNumber(r.forks);
+  const mergedPrsTd = document.createElement('td'); mergedPrsTd.textContent = fmtNumber(r.merged_prs_last_6mo || 0);
   const weekly = document.createElement('td');
   const weeklyLink = document.createElement('a');
   weeklyLink.href = pkgSourceUrl(r);
@@ -184,7 +186,19 @@ function renderTable(rows){
     contributors.textContent = fmtNumber(r.contributors_count);
   }
 
-  tr.appendChild(language); tr.appendChild(type); tr.appendChild(index); tr.appendChild(stars); tr.appendChild(weekly); tr.appendChild(so); tr.appendChild(disc); tr.appendChild(releasesTd); tr.appendChild(relFreqTd); tr.appendChild(dependentsTd); tr.appendChild(contributors);
+  tr.appendChild(language);
+  tr.appendChild(type);
+  tr.appendChild(index);
+  tr.appendChild(stars);
+  tr.appendChild(forksTd);
+  tr.appendChild(mergedPrsTd);
+  tr.appendChild(weekly);
+  tr.appendChild(so);
+  tr.appendChild(disc);
+  tr.appendChild(releasesTd);
+  tr.appendChild(relFreqTd);
+  tr.appendChild(dependentsTd);
+  tr.appendChild(contributors);
 
     tbody.appendChild(tr);
   }
@@ -194,11 +208,27 @@ function applyFilters(data){
   const lang = $id('filter-language').value;
   const type = $id('filter-type').value;
   const q = $id('filter-search').value.trim().toLowerCase();
-  let rows = data.slice().sort((a,b)=> (b.index||0)-(a.index||0));
+  let rows = data.slice();
+  // apply current sort state if present
+  const currentSortKey = document.body.getAttribute('data-sort-key') || 'index';
+  const currentSortDir = document.body.getAttribute('data-sort-dir') || 'desc';
+  rows.sort((a,b)=> compareRows(a,b,currentSortKey,currentSortDir));
   if(lang) rows = rows.filter(r=>r.language===lang);
   if(type) rows = rows.filter(r=>r.type===type);
   if(q) rows = rows.filter(r=> (r.name||'').toLowerCase().includes(q) || (r.repo||'').toLowerCase().includes(q));
   renderTable(rows);
+}
+
+function compareRows(a,b,key,dir){
+  const av = (a && a[key] !== undefined && a[key] !== null) ? a[key] : '';
+  const bv = (b && b[key] !== undefined && b[key] !== null) ? b[key] : '';
+  // numeric compare when both look like numbers
+  const an = Number(av);
+  const bn = Number(bv);
+  let cmp = 0;
+  if(!isNaN(an) && !isNaN(bn)) cmp = an - bn;
+  else cmp = String(av).localeCompare(String(bv));
+  return dir === 'asc' ? cmp : -cmp;
 }
 
 initTheme();
@@ -219,6 +249,27 @@ initTheme();
   typeSel.addEventListener('change',()=>applyFilters(data));
   search.addEventListener('input',()=>applyFilters(data));
   clear.addEventListener('click',()=>{ langSel.value=''; typeSel.value=''; search.value=''; applyFilters(data); });
+
+  // setup sortable headers: th[data-key]
+  document.body.setAttribute('data-sort-key', 'index');
+  document.body.setAttribute('data-sort-dir', 'desc');
+  const ths = document.querySelectorAll('th[data-key]');
+  ths.forEach(th => {
+    th.style.cursor = 'pointer';
+    th.addEventListener('click', ()=>{
+      const key = th.getAttribute('data-key');
+      const curKey = document.body.getAttribute('data-sort-key');
+      const curDir = document.body.getAttribute('data-sort-dir') || 'desc';
+      if(curKey === key) {
+        // toggle
+        document.body.setAttribute('data-sort-dir', curDir === 'asc' ? 'desc' : 'asc');
+      } else {
+        document.body.setAttribute('data-sort-key', key);
+        document.body.setAttribute('data-sort-dir', 'desc');
+      }
+      applyFilters(data);
+    });
+  });
 
   applyFilters(data);
 })();

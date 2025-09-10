@@ -29,7 +29,7 @@ projects:
     repo: "mongodb/mongo-csharp-driver"
     nuget: "MongoDB.Driver"
     package_id: "UGFja2FnZS0xNTY4MDUzMzI%3D"
-    stackoverflow: "mongodb"
+    stackoverflow: "mongodb-.net-driver"
 
   - name: Mongoid
     language: Ruby
@@ -277,7 +277,7 @@ projects:
     type: Framework
     repo: "tokio-rs/axum"
     crates: "axum"
-    stackoverflow: "axum"
+    stackoverflow: "rust-axum"
 
   - name: cryomongo
     language: Crystal

@@ -53,14 +53,20 @@ if (singleRepo) {
 
 function log10(x) { return Math.log10(x); }
 
-function computeIndex({ stars=0, forks=0, weekly_downloads=0, release_frequency=0, dependents=0 }, weights) {
+function computeIndex({ stars=0, forks=0, weekly_downloads=0, release_frequency=0, dependents=0, merged_prs_last_6mo=0 }, weights) {
   const s = log10(1 + stars);
   const f = log10(1 + forks);
   const d = log10(1 + weekly_downloads);
   const rf = log10(1 + (release_frequency || 0));
   const dep = log10(1 + (dependents || 0));
-  // include release_frequency and dependents weight if present
-  return (weights.stars * s) + (weights.forks * f) + (weights.weekly_downloads * d) + ((weights.release_frequency || 0) * rf) + ((weights.dependents || 0) * dep);
+  const mpr = log10(1 + (merged_prs_last_6mo || 0));
+  // include new merged_prs_last_6mo weight if present
+  return (weights.stars * s)
+    + (weights.forks * f)
+    + (weights.weekly_downloads * d)
+    + ((weights.merged_prs_last_6mo || 0) * mpr)
+    + ((weights.release_frequency || 0) * rf)
+    + ((weights.dependents || 0) * dep);
 }
 
 async function safe(fn, fallback = {}) {
@@ -121,6 +127,7 @@ async function fetchMetrics(p) {
   return {
     stars: gh.stars || 0,
     forks: gh.forks || 0,
+  merged_prs_last_6mo: gh.merged_prs_last_6mo || 0,
     weekly_downloads,
   release_frequency: gh.release_frequency_per_year || 0,
   dependents: dependents_res.dependents_count || 0,
