@@ -75,8 +75,8 @@ projects:
     repo: "mongodb/mongo-java-driver"
     maven:
       group: "org.mongodb"
-      artifact: "mongodb-driver"
-    stackoverflow: "mongodb"
+      artifact: "mongodb-driver-sync"
+    stackoverflow: "mongodb java"
 
   - name: mongo-python-driver
     language: Python
@@ -84,14 +84,14 @@ projects:
     repo: "mongodb/mongo-python-driver"
     pypi: "pymongo"
     package_id: "UGFja2FnZS01MjQ3ODA0NA%3D%3D"
-    stackoverflow: "mongodb"
+    stackoverflow: "mongodb python"
 
   - name: mongo-go-driver
     language: Go
     type: Driver
     repo: "mongodb/mongo-go-driver"
     go: "go.mongodb.org/mongo-driver"
-    stackoverflow: "mongodb"
+    stackoverflow: "mongodb go"
 
   - name: drizzle-orm
     language: JavaScript
@@ -711,11 +711,17 @@ projects:
     language: Java
     type: Library
     repo: "avi-sanwal/quartz-mongodb"
+    maven:
+      group: "com.novemberain"
+      artifact: "quartz-mongodb"
     stackoverflow: "quartz-scheduler"
 
   - name: Quartz Scheduler
     language: Java
     type: Library
+    maven:
+      group: "org.quartz-scheduler"
+      artifact: "quartz"
     repo: "quartz-scheduler/quartz"
     stackoverflow: "quartz-scheduler"
 
@@ -723,6 +729,9 @@ projects:
     language: Kotlin
     type: Driver
     repo: "Litote/kmongo"
+    maven:
+      group: "org.litote.kmongo"
+      artifact: "kmongo"
     stackoverflow: "kmongo"
 
 
