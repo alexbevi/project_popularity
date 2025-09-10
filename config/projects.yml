@@ -17,6 +17,7 @@ projects:
     language: Java
     type: Framework
     repo: "spring-projects/spring-data-mongodb"
+    package_id: "UGFja2FnZS0xODAwNzIyMDI%3D"
     maven:
       group: "org.springframework.data"
       artifact: "spring-data-mongodb"
@@ -27,6 +28,7 @@ projects:
     type: Driver
     repo: "mongodb/mongo-csharp-driver"
     nuget: "MongoDB.Driver"
+    package_id: "UGFja2FnZS0xNTY4MDUzMzI%3D"
     stackoverflow: "mongodb"
 
   - name: Mongoid
@@ -48,6 +50,7 @@ projects:
     type: Driver
     repo: "mongodb/mongo-rust-driver"
     crates: "mongodb"
+    package_id: "UGFja2FnZS0zMjE2OTgyMTk5"
     stackoverflow: "mongodb"
 
   # Additional repos synced from alexbevi/scrape_dependents/repos.json
@@ -56,6 +59,7 @@ projects:
     type: Driver
     repo: "mongodb/mongo-ruby-driver"
     rubygems: "mongo"
+    package_id: "UGFja2FnZS0xMDQwOQ%3D%3D"
     stackoverflow: "mongodb"
 
   - name: node-mongodb-native
@@ -78,6 +82,7 @@ projects:
     language: Python
     type: Driver
     repo: "mongodb/mongo-python-driver"
+    package_id: "UGFja2FnZS01MjQ3ODA0NA%3D%3D"
     stackoverflow: "mongodb"
 
   - name: mongo-go-driver
@@ -141,6 +146,7 @@ projects:
     type: ODM
     repo: "mongomapper/mongomapper"
     rubygems: "mongomapper"
+    package_id: "UGFja2FnZS0xNzU0"
     stackoverflow: "mongomapper"
 
   - name: beanie
@@ -200,6 +206,7 @@ projects:
     type: Driver
     repo: "mongodb/mongo-php-library"
     packagist: "mongodb/mongo-php-library"
+    package_id: "UGFja2FnZS01NDM1MTQ3ODc%3D"
     stackoverflow: "mongodb"
 
   - name: laravel-mongodb
@@ -214,6 +221,7 @@ projects:
     type: Framework
     repo: "mongodb/mongo-efcore-provider"
     nuget: "MongoDB.EntityFrameworkCore"
+    package_id: "UGFja2FnZS00MDk5MTY0NzQy"
     stackoverflow: "mongodb"
 
   - name: DoctrineMongoDBBundle
@@ -252,7 +260,7 @@ projects:
   - name: Agno
     language: Python
     type: AI
-    repo: "agno-io/agno"
+    repo: "agno-agi/agno"
     stackoverflow: "agno"
 
   - name: Apache Beam
@@ -270,7 +278,7 @@ projects:
   - name: cryomongo
     language: Crystal
     type: Library
-    repo: "cryomongo"
+    repo: "elbywan/cryomongo"
     stackoverflow: "cryomongo"
 
   - name: Dart Driver
@@ -346,8 +354,8 @@ projects:
   - name: GORM for MongoDB
     language: Java
     type: Framework
-    repo: "gorm-mongodb"
-    stackoverflow: "gorm"
+    repo: "jkuehn/gorm-mongodb"
+    stackoverflow: "gorm mongodb"
 
   - name: Gotham
     language: Rust
@@ -364,7 +372,7 @@ projects:
   - name: Hangfire.Mongo
     language: C#
     type: Library
-    repo: "Hangfire.Mongo"
+    repo: "gottscj/Hangfire.Mongo"
     stackoverflow: "hangfire"
 
   - name: Haskell Driver
@@ -485,7 +493,7 @@ projects:
 
   - name: ODMantic
     language: Python
-    type: ORM/ODM
+    type: ODM
     repo: "art049/odmantic"
     stackoverflow: "odmantic"
 
@@ -648,6 +656,7 @@ projects:
   - name: n8n
     language: JavaScript
     type: AI
+    npm: "n8n"
     repo: "n8n-io/n8n"
     stackoverflow: "n8n"
 
@@ -687,3 +696,4 @@ projects:
     type: Driver
     repo: "OpenKitten/MongoKitten"
     stackoverflow: "mongokitten"
+    package_id: "UGFja2FnZS0yMDk4MjcxMTI%3D"

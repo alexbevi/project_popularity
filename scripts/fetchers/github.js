@@ -158,7 +158,11 @@ export async function fetchGitHubDependents(repo, package_id) {
     let html = '';
     // If package_id provided, try the package dependents URL first (best-effort)
     if (package_id) {
-      const pkgUrl = `https://github.com/${repo}/network/dependents?dependent_type=PACKAGE&package_id=${encodeURIComponent(package_id)}`;
+      // package_id in config may already be percent-encoded; decode first to avoid double-encoding
+      let pid = package_id;
+      try { pid = decodeURIComponent(String(package_id)); } catch (e) { /* ignore decode errors */ }
+      const pkgUrl = `https://github.com/${repo}/network/dependents?dependent_type=PACKAGE&package_id=${encodeURIComponent(pid)}`;
+      if (verbose) console.log(`[fetchGitHubDependents] trying package-scoped dependents URL: ${pkgUrl}`);
       try {
         html = await fetchHtml(pkgUrl);
       } catch (e) {
@@ -195,7 +199,7 @@ export async function fetchGitHubDependents(repo, package_id) {
       const m = html.match(pat);
       if (m && m[1]) {
         const n = Number(String(m[1]).replace(/,/g, ''));
-        if (!Number.isNaN(n)) return n;
+        if (!Number.isNaN(n)) return { dependents_count: n };
       }
     }
 
@@ -203,15 +207,15 @@ export async function fetchGitHubDependents(repo, package_id) {
     const m2 = html.match(/([0-9,]{1,15})[^]{0,120}?dependents/i) || html.match(/dependents[^]{0,120}?([0-9,]{1,15})/i);
     if (m2 && m2[1]) {
       const n = Number(String(m2[1]).replace(/,/g, ''));
-      if (!Number.isNaN(n)) return n;
+      if (!Number.isNaN(n)) return { dependents_count: n };
     }
 
     if (verbose) {
       console.warn(`[fetchGitHubDependents] no dependents count found for ${repo}; sample HTML start:\n${String(html).slice(0,2000)}`);
     }
-    return 0;
+    return { dependents_count: 0 };
   } catch (e) {
     console.warn(`[fetchGitHubDependents] dependents fetch failed for ${repo}: ${e?.message || e}`);
-    return 0;
+    return { dependents_count: 0, _error: e?.message || String(e) };
   }
 }
