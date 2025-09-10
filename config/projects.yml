@@ -45,7 +45,7 @@ projects:
     pypi: "motor"
     stackoverflow: "motor"
 
-  - name: mongodb Rust driver
+  - name: MongoDB Rust driver
     language: Rust
     type: Driver
     repo: "mongodb/mongo-rust-driver"
@@ -82,6 +82,7 @@ projects:
     language: Python
     type: Driver
     repo: "mongodb/mongo-python-driver"
+    pypi: "pymongo"
     package_id: "UGFja2FnZS01MjQ3ODA0NA%3D%3D"
     stackoverflow: "mongodb"
 
@@ -188,7 +189,7 @@ projects:
     type: Framework
     repo: "MorphiaOrg/morphia"
     maven:
-      group: "dev.morphia"
+      group: "dev.morphia.morphia"
       artifact: "morphia-core"
     stackoverflow: "morphia"
 
@@ -205,7 +206,7 @@ projects:
     language: PHP
     type: Driver
     repo: "mongodb/mongo-php-library"
-    packagist: "mongodb/mongo-php-library"
+    packagist: "mongodb/mongodb"
     package_id: "UGFja2FnZS01NDM1MTQ3ODc%3D"
     stackoverflow: "mongodb"
 
@@ -249,6 +250,7 @@ projects:
     language: Rust
     type: Framework
     repo: "actix/actix-web"
+    crates: "actix"
     stackoverflow: "actix"
 
   - name: Aeria
@@ -261,6 +263,7 @@ projects:
     language: Python
     type: AI
     repo: "agno-agi/agno"
+    pypi: "agno"
     stackoverflow: "agno"
 
   - name: Apache Beam
@@ -273,6 +276,7 @@ projects:
     language: Rust
     type: Framework
     repo: "tokio-rs/axum"
+    crates: "axum"
     stackoverflow: "axum"
 
   - name: cryomongo
@@ -290,6 +294,7 @@ projects:
   - name: Diesel
     language: Rust
     type: ORM
+    crates: "diesel"
     repo: "diesel-rs/diesel"
     stackoverflow: "diesel"
 
@@ -299,16 +304,18 @@ projects:
     repo: "zookzook/elixir-mongodb-driver"
     stackoverflow: "elixir"
 
-  - name: Elsa Workflows
+  - name: Elsa
     language: C#
     type: Library
     repo: "elsa-workflows/elsa-core"
+    nuget: "Elsa"
     stackoverflow: "elsa-workflows"
 
   - name: Entity Framework Core
     language: C#
     type: Framework
     repo: "dotnet/efcore"
+    nuget: "Microsoft.EntityFrameworkCore"
     stackoverflow: "entity-framework-core"
 
   - name: FastAPI
@@ -328,6 +335,7 @@ projects:
   - name: Flask PyMongo
     language: Python
     type: Framework
+    pypi: "Flask-PyMongo"
     repo: "mongodb-labs/flask-pymongo"
     stackoverflow: "flask-pymongo"
 
@@ -361,17 +369,20 @@ projects:
     language: Rust
     type: Framework
     repo: "gotham-rs/gotham"
+    crates: "gotham"
     stackoverflow: "gotham"
 
   - name: Hangfire
     language: C#
     type: Library
     repo: "HangfireIO/Hangfire"
+    nuget: "Hangfire"
     stackoverflow: "hangfire"
 
   - name: Hangfire.Mongo
     language: C#
     type: Library
+    nuget: "Hangfire.Mongo"
     repo: "gottscj/Hangfire.Mongo"
     stackoverflow: "hangfire"
 
@@ -423,11 +434,13 @@ projects:
     language: PHP
     type: Framework
     repo: "laravel/laravel"
+    packagist: "laravel/laravel"
     stackoverflow: "laravel"
 
   - name: Loco
     language: Rust
     type: Framework
+    crates: "loco"
     repo: "loco-rs/loco"
     stackoverflow: "loco"
 
@@ -435,12 +448,14 @@ projects:
     language: C#
     type: Framework
     repo: "MassTransit/MassTransit"
+    nuget: "MassTransit"
     stackoverflow: "masstransit"
 
   - name: Meteor
     language: JavaScript
     type: Framework
     repo: "meteor/meteor"
+    npm: "meteor"
     stackoverflow: "meteor"
 
   - name: mgo
@@ -459,12 +474,14 @@ projects:
     language: JavaScript
     type: ORM
     repo: "mikro-orm/mikro-orm"
+    npm: "mikro-orm"
     stackoverflow: "mikroorm"
 
   - name: Monarch
     language: JavaScript
     type: ORM
     repo: "monarch-orm/monarch"
+    npm: "monarch-orm"
     stackoverflow: "monarch"
 
   - name: mongolite
@@ -489,24 +506,28 @@ projects:
     language: C#
     type: Library
     repo: "OData/AspNetCoreOData"
+    nuget: "Microsoft.OData.Core"
     stackoverflow: "odata"
 
   - name: ODMantic
     language: Python
     type: ODM
     repo: "art049/odmantic"
+    pypi: "odmantic"
     stackoverflow: "odmantic"
 
   - name: Papr
     language: JavaScript
     type: Library
     repo: "plexinc/papr"
+    npm: "papr"
     stackoverflow: "papr"
 
   - name: Pavex
     language: Rust
     type: Framework
     repo: "LukeMathWalker/pavex"
+    crates: "pavex"
     stackoverflow: "pavex"
 
   - name: Perl Driver
@@ -518,6 +539,7 @@ projects:
   - name: Poem
     language: Rust
     type: Framework
+    crates: "poem"
     repo: "poem-web/poem"
     stackoverflow: "poem"
 
@@ -525,6 +547,7 @@ projects:
     language: Python
     type: ODM
     repo: "mongodb/pymodm"
+    pypi: "pymodm"
     stackoverflow: "pymodm"
 
   - name: Quarkus
@@ -537,6 +560,7 @@ projects:
     language: JavaScript
     type: Framework
     repo: "redwoodjs/graphql"
+    npm: "@redwoodjs/cli"
     stackoverflow: "redwoodjs"
 
   - name: RESTHeart
@@ -549,12 +573,14 @@ projects:
     language: Rust
     type: Framework
     repo: "SergioBenitez/rocket"
+    crates: "rocket"
     stackoverflow: "rocket"
 
   - name: RxDB
     language: JavaScript
     type: Other
     repo: "pubkey/rxdb"
+    npm: "rxdb"
     stackoverflow: "rxdb"
 
   - name: Sails
@@ -562,21 +588,25 @@ projects:
     type: Framework
     repo: "balderdashy/sails"
     stackoverflow: "sailsjs"
+    npm: "sails"
 
   - name: Sails MongoDB
     language: JavaScript
     type: Library
     repo: "balderdashy/sails-mongo"
+    npm: "sails-mongo"
     stackoverflow: "sailsjs"
 
   - name: Salvo
     language: Rust
     type: Framework
+    crates: "salvo"
     repo: "salvo-rs/salvo"
     stackoverflow: "salvo"
 
   - name: Sea-ORM
     language: Rust
+    crates: "sea-orm"
     type: ORM
     repo: "SeaQL/sea-orm"
     stackoverflow: "sea-orm"
@@ -591,11 +621,13 @@ projects:
     language: PHP
     type: Framework
     repo: "symfony/symfony"
+    packagist: "symfony/symfony"
     stackoverflow: "symfony"
 
   - name: Thruster
     language: Rust
     type: Framework
+    crates: "thruster"
     repo: "thruster-rs/thruster"
     stackoverflow: "thruster"
 
@@ -603,11 +635,13 @@ projects:
     language: Rust
     type: Framework
     repo: "http-rs/tide"
+    crates: "tide"
     stackoverflow: "tide"
 
   - name: Toasty
     language: Rust
     type: ORM
+    crates: "toasty"
     repo: "tokio-rs/toasty"
     stackoverflow: "toasty"
 
@@ -615,10 +649,12 @@ projects:
     language: JavaScript
     type: Library
     repo: "unjs/unstorage"
+    npm: "unstorage"
     stackoverflow: "unstorage"
 
   - name: Warp
     language: Rust
+    crates: "warp"
     type: Framework
     repo: "seanmonstar/warp"
     stackoverflow: "warp"
@@ -627,6 +663,7 @@ projects:
     language: JavaScript
     type: ORM
     repo: "balderdashy/waterline"
+    npm: "waterline"
     stackoverflow: "waterline"
 
   - name: Zig Driver
@@ -635,22 +672,25 @@ projects:
     repo: "softprops/zig-mongodb"
     stackoverflow: "zig"
 
-  - name: Parse Server
+  - name: Parse Server SDK
     language: JavaScript
     type: Framework
-    repo: "parse-community/parse-server"
+    repo: "parse-community/Parse-SDK-JS"
     stackoverflow: "parse-server"
+    npm: "parse"
 
   - name: PowerSync
     language: JavaScript
     type: Framework
     repo: "powersync-ja/powersync-service"
+    npm: "powersync"
     stackoverflow: "powersync"
 
   - name: Mongeese
     language: JavaScript
     type: Other
     repo: "michael-nwuju/mongeese"
+    npm: "mongeese-cli"
     stackoverflow: "mongeese"
 
   - name: n8n
@@ -663,6 +703,7 @@ projects:
   - name: Litestar
     language: Python
     type: Framework
+    pypi: "litestar"
     repo: "litestar-org/litestar"
     stackoverflow: "litestar"
 
