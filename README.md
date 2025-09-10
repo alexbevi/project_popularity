@@ -24,6 +24,18 @@ Default weights are in `config/popularity.config.json`. Current defaults:
 - release_frequency: 0.10
 - dependents: 0.05
 
+> **Note (index calculation)**
+>
+> The Popularity Index uses log-scaling to reduce the influence of outliers. Each signal is transformed as `log10(1 + value)` and multiplied by its configured weight. The sum of these weighted, log-transformed signals is the final index.
+>
+> Example (rounded):
+>
+> - weekly_downloads = 100000 -> log10(1 + 100000) ≈ 5.00
+> - stars = 2000 -> log10(1 + 2000) ≈ 3.30
+> - forks = 300 -> log10(1 + 300) ≈ 2.48
+>
+> With weights weekly_downloads:0.45, stars:0.45, forks:0.10 the index ≈ 0.45*5.00 + 0.45*3.30 + 0.10*2.48 = 2.25 + 1.485 + 0.248 = 3.983
+
 Implementation note: the orchestrator picks the max `weekly_downloads` across registries when a project is published to multiple ecosystems.
 
 ## New developer engagement fields

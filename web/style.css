@@ -53,3 +53,10 @@ a{color:var(--accent);text-decoration:none}
 td.index-cell{font-weight:700;color:var(--accent)}
 
 @media (max-width:900px){.controls{flex-direction:column;align-items:stretch}th,td{font-size:13px;padding:8px}}
+
+/* Admonition / callout */
+.admonition{border-left:4px solid var(--accent);background:linear-gradient(90deg, rgba(0,0,0,0.02), transparent);padding:12px 16px;border-radius:8px;margin:12px 0;color:var(--text)}
+.admonition h3{margin:0 0 6px 0;font-size:15px}
+.admonition p{margin:0 0 6px 0;color:var(--muted)}
+.admonition .weights{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.admonition .weights .item{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--text);border:1px solid var(--table-border)}

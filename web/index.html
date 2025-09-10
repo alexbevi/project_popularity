@@ -52,6 +52,19 @@
       </ul>
     </section>
 
+    <section class="admonition" aria-label="Index calculation">
+      <h3>How the Popularity Index is calculated</h3>
+      <p>The index combines log-scaled signals into a single score. Each signal is transformed using <code>log10(1 + value)</code> to reduce skew, then multiplied by its configured weight.</p>
+      <div class="weights">
+        <div class="item">weekly_downloads: 0.45</div>
+        <div class="item">stars: 0.45</div>
+        <div class="item">forks: 0.10</div>
+        <div class="item">release_frequency: 0.10</div>
+        <div class="item">dependents: 0.05</div>
+      </div>
+      <p style="margin-top:8px;color:var(--muted)">Formula: index = Σ weight * log10(1 + signal). See <code>config/popularity.config.json</code> for current weights.</p>
+    </section>
+
     <div id="status" class="status">Loading data…</div>
 
     <div class="table-wrap">
