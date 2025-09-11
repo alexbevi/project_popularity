@@ -509,6 +509,13 @@ projects:
     nuget: "Microsoft.OData.Core"
     stackoverflow: "odata"
 
+  - name: MongoDB.AspNetCore.OData
+    language: C#
+    type: Library
+    repo: "mongodb/mongo-aspnetcore-odata"
+    nuget: "MongoDB.AspNetCore.OData"
+    stackoverflow: "odata"
+
   - name: ODMantic
     language: Python
     type: ODM
