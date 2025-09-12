@@ -456,6 +456,7 @@ projects:
     type: Framework
     repo: "meteor/meteor"
     npm: "meteor"
+    package_id: "UGFja2FnZS0xNTAwNDA0Mw%3D%3D"
     stackoverflow: "meteor"
 
   - name: mgo
