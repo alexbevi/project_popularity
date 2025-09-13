@@ -51,12 +51,7 @@
       <h3>How the Popularity Index is calculated</h3>
       <p>The index combines log-scaled signals into a single score. Each signal is transformed using <code>log10(1 + value)</code> to reduce skew, then multiplied by its configured weight.</p>
       <div class="weights">
-                <div class="item">weekly_downloads: 0.3</div>
-        <div class="item">stars: 0.45</div>
-        <div class="item">forks: 0.2</div>
-        <div class="item">merged_prs_last_6mo: 0.3</div>
-        <div class="item">release_frequency: 0.1</div>
-        <div class="item">dependents: 0.45</div>
+        <!-- WEIGHTS_INJECT -->
       </div>
       <p style="margin-top:8px;color:var(--muted)"><code>Formula: index = Σ weight * log10(1 + signal)</code>. See <a href="https://github.com/alexbevi/project_popularity/blob/main/config/popularity.config.json"><code>config/popularity.config.json</code></a> for current weights.</p>
     </section>
