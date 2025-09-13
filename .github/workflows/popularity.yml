@@ -34,8 +34,6 @@ jobs:
   scrape:
     needs: matrix-prepare
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -61,46 +59,12 @@ jobs:
             echo "[]" > "data/popularity.${{ matrix.owner }}.${{ matrix.repo }}.json" ;
             echo "Scrape failed for ${{ matrix.repo_full }}, wrote empty artifact and continuing";
           )
-      - name: Commit per-repo artifact to output branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          # fetch latest output branch if present
-          git fetch origin output || true
-          if git rev-parse --verify origin/output >/dev/null 2>&1; then
-            git checkout output
-            git pull --ff-only origin output || true
-          else
-            git checkout --orphan output
-            git rm -rf . || true
-          fi
-          mkdir -p data
-          # The scrape script should have written the file into data/
-          FILE=data/popularity.${{ matrix.owner }}.${{ matrix.repo }}.json
-          if [ ! -f "$FILE" ]; then
-            echo "Warning: expected $FILE missing; writing empty array placeholder"
-            echo "[]" > "$FILE"
-          fi
-          git add "$FILE"
-          if git diff --staged --quiet; then
-            echo "No changes to commit for $FILE"
-          else
-            git commit -m "chore(popularity): add/update ${{ matrix.repo_full }} snapshot"
-          fi
-          # push with a few retries to reduce race failures
-          for i in 1 2 3; do
-            if git push origin output; then
-              echo "Pushed output branch"
-              break
-            else
-              echo "Push failed, retrying... ($i)";
-              git fetch origin output || true
-              git pull --rebase origin output || true
-            fi
-          done
+      - name: Upload per-repo artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: per-repo-popularity-${{ matrix.owner }}-${{ matrix.repo }}
+          path: |
+            data/popularity.${{ matrix.owner }}.${{ matrix.repo }}.json
 
   aggregate:
     needs: scrape
@@ -109,23 +73,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Checkout output branch
-        run: |
-          set -euo pipefail
-          git fetch origin output || true
-          if git rev-parse --verify origin/output >/dev/null 2>&1; then
-            git checkout output
-            git pull --ff-only origin output || true
-          else
-            git checkout --orphan output
-            git rm -rf . || true
-          fi
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
       - name: Install deps
         run: npm ci
-      - name: Aggregate artifacts from output branch into data/popularity.json
+      - name: Download per-repo artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./
+      - name: Aggregate artifacts into data/popularity.json
         run: |
           node scripts/aggregate-artifacts.cjs
       - name: Generate output README
