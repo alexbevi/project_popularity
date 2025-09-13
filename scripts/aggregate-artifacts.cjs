@@ -5,6 +5,53 @@ const path = require('path');
 const repoRoot = path.resolve(__dirname, '..');
 const dataDir = path.join(repoRoot, 'data');
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+// artifact downloads sometimes place files under an artifact-named directory
+// e.g. ./per-repo-popularity-xxx/data/popularity.owner.repo.json
+// find all popularity.*.json files anywhere under the repo root and copy them into data/
+function walkSync(dir, cb) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const ent of entries) {
+    const full = path.join(dir, ent.name);
+    if (ent.isDirectory()) {
+      // avoid recursing into .git
+      if (ent.name === '.git') continue;
+      try { walkSync(full, cb); } catch (e) { /* ignore */ }
+    } else if (ent.isFile()) {
+      cb(full);
+    }
+  }
+}
+
+const popularityPattern = /^popularity\..+\.json$/;
+const found = [];
+try {
+  walkSync(repoRoot, pth => {
+    const name = path.basename(pth);
+    if (popularityPattern.test(name)) found.push(pth);
+  });
+} catch (e) {
+  console.warn('error scanning workspace for popularity files', e && e.message);
+}
+
+console.log('Found', found.length, 'popularity.*.json files in workspace');
+for (const src of found) {
+  const dest = path.join(dataDir, path.basename(src));
+  try {
+    if (fs.existsSync(dest)) {
+      const sStat = fs.statSync(src);
+      const dStat = fs.statSync(dest);
+      if ((sStat.mtimeMs || 0) <= (dStat.mtimeMs || 0)) {
+        // existing dest is newer or equal; skip
+        console.log('Skipping copy (dest newer):', path.basename(src));
+        continue;
+      }
+    }
+    fs.copyFileSync(src, dest);
+    console.log('Copied', src, '->', dest);
+  } catch (e) {
+    console.warn('failed to copy', src, e && e.message);
+  }
+}
 
 // find all per-repo popularity files in data/ directory
 const files = fs.readdirSync(dataDir).filter(f => f.startsWith('popularity.') && f.endsWith('.json'));
