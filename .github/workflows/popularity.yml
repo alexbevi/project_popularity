@@ -2,6 +2,11 @@ name: Popularity Index
 
 on:
   workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Limit number of projects to scrape (0 = all)'
+        required: false
+        default: '0'
   schedule:
     - cron: "17 3 * * *"  # 03:17 UTC daily
 
@@ -21,7 +26,14 @@ jobs:
       - name: Generate matrix from projects.yml
         id: set-matrix
         run: |
-          node scripts/matrix-from-projects.cjs > matrix.json
+          LIMIT="${{ github.event.inputs.limit || '0' }}"
+          if [ -n "$LIMIT" ] && [ "$LIMIT" != "0" ]; then
+            echo "Applying project limit: $LIMIT (first $LIMIT projects)"
+            node scripts/matrix-from-projects.cjs --limit "$LIMIT" > matrix.json
+          else
+            echo "No project limit applied (using all projects)"
+            node scripts/matrix-from-projects.cjs > matrix.json
+          fi
           echo "matrix<<EOF" >> "$GITHUB_OUTPUT"
           cat matrix.json >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"

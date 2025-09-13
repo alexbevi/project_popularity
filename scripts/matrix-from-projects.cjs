@@ -25,4 +25,25 @@ for (const r of repos) {
   uniq.push(r);
 }
 
-console.log(JSON.stringify(uniq));
+// parse CLI args for --limit / -n
+let limit = 0;
+const argv = process.argv.slice(2);
+for (let i = 0; i < argv.length; i++) {
+  const a = argv[i];
+  if (a === '--limit' || a === '-n') {
+    const v = argv[i+1];
+    if (v) {
+      limit = parseInt(v, 10) || 0;
+      i++;
+    }
+  } else if (a.startsWith('--limit=')) {
+    limit = parseInt(a.split('=')[1], 10) || 0;
+  }
+}
+
+let out = uniq;
+if (limit > 0) {
+  out = uniq.slice(0, limit);
+}
+
+console.log(JSON.stringify(out));
