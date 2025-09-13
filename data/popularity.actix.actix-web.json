@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Actix",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "actix/actix-web",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "actix",
+    "pypi": null,
+    "maven": null,
+    "stars": 23557,
+    "forks": 1783,
+    "contributors_count": 398,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 5.749916363536155,
+    "merged_prs_last_6mo": 84,
+    "releases_count": 100,
+    "release_frequency_per_year": 28.065448516373447,
+    "stackoverflow_total_questions": 534,
+    "stackoverflow_recent_questions_last_6mo": 8,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 246947,
+    "dependents": 71392,
+    "index": 7.144831,
+    "timestamp": "2025-09-13T11:59:40.905Z"
+  }
+]

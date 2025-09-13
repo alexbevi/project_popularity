@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Redwood",
+    "language": "JavaScript",
+    "type": "Framework",
+    "repo": "redwoodjs/graphql",
+    "npm": "@redwoodjs/cli",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 17662,
+    "forks": 1016,
+    "contributors_count": 466,
+    "closed_issues": 2158,
+    "avg_pr_merge_days": 3.1457430868368372,
+    "merged_prs_last_6mo": 74,
+    "releases_count": 100,
+    "release_frequency_per_year": 45.40562435452853,
+    "stackoverflow_total_questions": 28,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 13990,
+    "dependents": 5587,
+    "index": 6.171839,
+    "timestamp": "2025-09-13T12:00:20.860Z"
+  }
+]

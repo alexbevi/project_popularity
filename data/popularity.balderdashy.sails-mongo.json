@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Sails MongoDB",
+    "language": "JavaScript",
+    "type": "Library",
+    "repo": "balderdashy/sails-mongo",
+    "npm": "sails-mongo",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 411,
+    "forks": 259,
+    "contributors_count": 67,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 43.91107793209874,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 7,
+    "release_frequency_per_year": 0.8104386418913672,
+    "stackoverflow_total_questions": 6557,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 2922,
+    "dependents": 8006,
+    "index": 4.481787,
+    "timestamp": "2025-09-13T12:00:28.501Z"
+  }
+]

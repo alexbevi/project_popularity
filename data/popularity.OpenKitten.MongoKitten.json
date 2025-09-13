@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MongoKitten",
+    "language": "Swift",
+    "type": "Driver",
+    "repo": "OpenKitten/MongoKitten",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 746,
+    "forks": 109,
+    "contributors_count": 40,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 11.631942810457522,
+    "merged_prs_last_6mo": 4,
+    "releases_count": 100,
+    "release_frequency_per_year": 12.117327225776913,
+    "stackoverflow_total_questions": 17,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 147,
+    "index": 2.999366,
+    "timestamp": "2025-09-13T12:00:23.210Z"
+  }
+]

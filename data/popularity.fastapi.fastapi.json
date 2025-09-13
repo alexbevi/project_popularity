@@ -1,0 +1,30 @@
+[
+  {
+    "name": "FastAPI",
+    "language": "Python",
+    "type": "Framework",
+    "repo": "fastapi/fastapi",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "fastapi",
+    "maven": null,
+    "stars": 89436,
+    "forks": 7868,
+    "contributors_count": 834,
+    "closed_issues": 3418,
+    "avg_pr_merge_days": 2.9739187068424355,
+    "merged_prs_last_6mo": 59,
+    "releases_count": 100,
+    "release_frequency_per_year": 25.774828544333776,
+    "stackoverflow_total_questions": 7662,
+    "stackoverflow_recent_questions_last_6mo": 199,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 4,
+    "weekly_downloads": 31983855,
+    "dependents": 820518,
+    "index": 8.596404,
+    "timestamp": "2025-09-13T11:59:15.243Z"
+  }
+]

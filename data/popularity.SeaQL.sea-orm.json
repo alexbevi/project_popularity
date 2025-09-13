@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Sea-ORM",
+    "language": "Rust",
+    "type": "ORM",
+    "repo": "SeaQL/sea-orm",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "sea-orm",
+    "pypi": null,
+    "maven": null,
+    "stars": 8687,
+    "forks": 607,
+    "contributors_count": 246,
+    "closed_issues": 762,
+    "avg_pr_merge_days": 8.67808273512276,
+    "merged_prs_last_6mo": 63,
+    "releases_count": 81,
+    "release_frequency_per_year": 19.785303425589415,
+    "stackoverflow_total_questions": 47,
+    "stackoverflow_recent_questions_last_6mo": 6,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 2,
+    "weekly_downloads": 198316,
+    "dependents": 6393,
+    "index": 6.30473,
+    "timestamp": "2025-09-13T12:00:11.777Z"
+  }
+]

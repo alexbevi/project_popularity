@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Spring Boot",
+    "language": "Java",
+    "type": "Framework",
+    "repo": "spring-projects/spring-boot",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 78364,
+    "forks": 41485,
+    "contributors_count": 1479,
+    "closed_issues": 38925,
+    "avg_pr_merge_days": null,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 100,
+    "release_frequency_per_year": 40.14451291919669,
+    "stackoverflow_total_questions": 152316,
+    "stackoverflow_recent_questions_last_6mo": 1000,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 20,
+    "index": 3.882365,
+    "timestamp": "2025-09-13T12:00:00.029Z"
+  }
+]

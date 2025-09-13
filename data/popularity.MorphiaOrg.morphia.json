@@ -1,0 +1,33 @@
+[
+  {
+    "name": "morphia",
+    "language": "Java",
+    "type": "Framework",
+    "repo": "MorphiaOrg/morphia",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": {
+      "group": "dev.morphia.morphia",
+      "artifact": "morphia-core"
+    },
+    "stars": 1676,
+    "forks": 453,
+    "contributors_count": 75,
+    "closed_issues": 1785,
+    "avg_pr_merge_days": 0.7614165380658439,
+    "merged_prs_last_6mo": 90,
+    "releases_count": 73,
+    "release_frequency_per_year": 6.255374959174986,
+    "stackoverflow_total_questions": 868,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 0,
+    "dependents": 322,
+    "index": 3.785371,
+    "timestamp": "2025-09-13T11:59:06.087Z"
+  }
+]
