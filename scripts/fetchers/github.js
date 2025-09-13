@@ -1,4 +1,5 @@
 import axios from "axios";
+import { httpGet } from '../http-retry.mjs';
 
 export async function fetchGitHub(repo, package_id) {
   const base = `https://api.github.com/repos/${repo}`;
@@ -7,7 +8,7 @@ export async function fetchGitHub(repo, package_id) {
 
   let data;
   try {
-    const resp = await axios.get(base, { headers, timeout: 15000 });
+    const resp = await httpGet(base, { headers, responseType: 'json' });
     data = resp.data;
   } catch (e) {
     console.warn(`[fetchGitHub] repo fetch failed for ${repo}: ${e?.message || e}`);
@@ -31,8 +32,8 @@ export async function fetchGitHub(repo, package_id) {
   // fetch contributors (simple count)
   let contributors_count = 0;
   try {
-    const contribUrl = `${base}/contributors?per_page=1&anon=1`;
-    const resp = await axios.get(contribUrl, { headers, timeout: 15000 });
+  const contribUrl = `${base}/contributors?per_page=1&anon=1`;
+  const resp = await httpGet(contribUrl, { headers, responseType: 'json' });
     // GitHub returns Link header for pagination; if present, estimate total from it
     const link = resp.headers.link || "";
     if (link) {
@@ -52,8 +53,8 @@ export async function fetchGitHub(repo, package_id) {
   try {
     const repoQuery = `repo:${repo} is:issue`;
     const closedQ = encodeURIComponent(`${repoQuery} is:closed`);
-    const closedUrl = `https://api.github.com/search/issues?q=${closedQ}`;
-    const closedResp = await axios.get(closedUrl, { headers, timeout: 15000 });
+  const closedUrl = `https://api.github.com/search/issues?q=${closedQ}`;
+  const closedResp = await httpGet(closedUrl, { headers, responseType: 'json' });
     closed_issues = closedResp.data.total_count || 0;
   } catch (e) {
   closed_issues = 0;
@@ -64,8 +65,8 @@ export async function fetchGitHub(repo, package_id) {
   let avg_pr_merge_days = null;
   let merged_prs_last_6mo = 0;
   try {
-    const pullsUrl = `${base}/pulls?state=closed&per_page=100`;
-    const pullsResp = await axios.get(pullsUrl, { headers, timeout: 15000 });
+  const pullsUrl = `${base}/pulls?state=closed&per_page=100`;
+  const pullsResp = await httpGet(pullsUrl, { headers, responseType: 'json' });
     const pulls = pullsResp.data || [];
     const merged = pulls.filter(p => p.merged_at);
     if (merged.length > 0) {
@@ -93,8 +94,8 @@ export async function fetchGitHub(repo, package_id) {
   let releases_count = 0;
   let release_frequency_per_year = null;
   try {
-    const relUrl = `${base}/releases?per_page=100`;
-    const relResp = await axios.get(relUrl, { headers, timeout: 15000 });
+  const relUrl = `${base}/releases?per_page=100`;
+  const relResp = await httpGet(relUrl, { headers, responseType: 'json' });
     const releases = relResp.data || [];
     releases_count = releases.length;
     if (releases_count > 1) {
@@ -138,21 +139,16 @@ export async function fetchGitHubDependents(repo, package_id) {
   if (process.env.GH_TOKEN) headers.Authorization = `Bearer ${process.env.GH_TOKEN}`;
 
   // small helper: fetch with one retry
-  const fetchHtml = async (url) => {
-    for (let attempt = 1; attempt <= 2; attempt++) {
+    const fetchHtml = async (url) => {
+      if (verbose) console.log(`[fetchGitHubDependents] GET ${url}`);
       try {
-        if (verbose) console.log(`[fetchGitHubDependents] GET ${url} (attempt ${attempt})`);
-        const resp = await axios.get(url, { headers, timeout: 15000 });
+        const resp = await httpGet(url, { headers, responseType: 'text' });
         return resp.data || '';
       } catch (err) {
-        if (attempt === 2) throw err;
-        if (verbose) console.warn(`[fetchGitHubDependents] retryable error for ${url}: ${err?.message || err}`);
-        // small backoff
-        await new Promise(r => setTimeout(r, 400));
+        if (verbose) console.warn(`[fetchGitHubDependents] error for ${url}: ${err?.message || err}`);
+        return '';
       }
-    }
-    return '';
-  };
+    };
 
   try {
     let html = '';

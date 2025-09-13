@@ -6,67 +6,97 @@ on:
     - cron: "17 3 * * *"  # 03:17 UTC daily
 
 jobs:
-  build:
+  matrix-prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci
+      - name: Generate matrix from projects.yml
+        id: set-matrix
+        run: |
+          node scripts/matrix-from-projects.cjs > matrix.json
+          echo "::set-output name=matrix::$(cat matrix.json)"
+
+  scrape:
+    needs: matrix-prepare
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.matrix-prepare.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci
+      - name: Scrape single project
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOG_VERBOSE: 1
+          OWNER: ${{ matrix.owner }}
+          REPO: ${{ matrix.repo }}
+        run: |
+          # run build for a single repo and write per-repo JSON (wrapper script)
+          node scripts/scrape-single.cjs "${{ matrix.owner }}" "${{ matrix.repo }}" "${{ matrix.repo_full }}"
+      - name: Upload per-repo artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: per-repo-popularity-${{ matrix.owner }}-${{ matrix.repo }}
+          path: |
+            data/popularity.${{ matrix.owner }}.${{ matrix.repo }}.json
+
+  aggregate:
+    needs: scrape
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-
+          node-version: '20'
       - name: Install deps
         run: npm ci
-
-      - name: Build popularity data
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LOG_VERBOSE: 1
-        run: node scripts/build-popularity.js
-
+      - name: Download per-repo artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./
+      - name: Aggregate artifacts into data/popularity.json
+        run: |
+          node scripts/aggregate-artifacts.cjs
       - name: Generate output README
         run: node scripts/generate-readme.js
-
       - name: Push data to output branch
         env:
           OUTPUT_BRANCH: output
           GIT_EMAIL: actions@github.com
           GIT_NAME: github-actions
         run: |
-          # configure git
           git config user.email "$GIT_EMAIL"
           git config user.name "$GIT_NAME"
-
-          # create an orphan branch so it contains only generated data
           git checkout --orphan $OUTPUT_BRANCH
-
-          # ensure index is empty
           git rm -rf --cached . || true
-
-          # copy data and web output to a temp location, remove everything except .git, then move files to repo root
           TMP_DIR=$(mktemp -d)
           cp -R data "$TMP_DIR" || true
           cp -R web "$TMP_DIR" || true
-
-          # remove all files and dirs except .git
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + || true
-
-          # move web files contents into repo root (so the SPA is served from root)
           if [ -d "$TMP_DIR/web" ]; then
             cp -R "$TMP_DIR/web/." . || true
           fi
-          # move data directory into ./data at repo root
           if [ -d "$TMP_DIR/data" ]; then
             mkdir -p data
             cp -R "$TMP_DIR/data/." ./data || true
           fi
-          # also copy the main JSON into repo root as popularity.json for the SPA
           if [ -f ./data/popularity.json ]; then cp ./data/popularity.json ./popularity.json || true; fi
           rm -rf "$TMP_DIR"
-
-          # stage and commit only the generated files at repo root
           git add --all
           if git diff --staged --quiet; then
             echo "No changes to commit"

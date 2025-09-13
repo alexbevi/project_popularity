@@ -135,6 +135,44 @@ async function fetchMetrics(p) {
   };
 }
 
+// buildSingle: given a repo string 'owner/name' return the same output row used in the full run
+export async function buildSingle(repoFull) {
+  const weights = cfg.weights;
+  const p = projects.find(pp => pp.repo === repoFull || (pp.repo && pp.repo.toLowerCase() === repoFull.toLowerCase()));
+  if (!p) {
+    throw new Error(`buildSingle: project ${repoFull} not found in config`);
+  }
+  const m = await fetchMetrics(p);
+  const index = computeIndex(m, weights);
+  return {
+    name: p.name,
+    language: p.language,
+    type: p.type,
+    repo: p.repo,
+    npm: p.npm || null,
+    nuget: p.nuget || null,
+    rubygems: p.rubygems || null,
+    crates: p.crates || null,
+    pypi: p.pypi || null,
+    maven: p.maven || null,
+    stars: m.stars,
+    forks: m.forks,
+    contributors_count: m.sources?.gh?.contributors_count ?? 0,
+    closed_issues: m.sources?.gh?.closed_issues ?? 0,
+    avg_pr_merge_days: m.sources?.gh?.avg_pr_merge_days ?? null,
+    merged_prs_last_6mo: m.sources?.gh?.merged_prs_last_6mo ?? 0,
+    releases_count: m.sources?.gh?.releases_count ?? 0,
+    release_frequency_per_year: m.sources?.gh?.release_frequency_per_year ?? null,
+    stackoverflow_total_questions: m.sources?.stackoverflow?.total_questions ?? 0,
+    stackoverflow_recent_questions_last_6mo: m.sources?.stackoverflow?.recent_questions_last_6mo ?? 0,
+    discussions_count: m.sources?.discussions?.discussions_count ?? 0,
+    discussions_recent_activity_last_6mo: m.sources?.discussions?.recent_activity_last_6mo ?? 0,
+    weekly_downloads: m.weekly_downloads,
+    dependents: m.dependents || 0,
+    index: Number(index.toFixed(6))
+  };
+}
+
 function groupAndSort(rows) {
   // group by language + type; sort within groups by index desc
   const groups = {};
@@ -149,7 +187,7 @@ function groupAndSort(rows) {
   return groups;
 }
 
-(async () => {
+async function main() {
   const weights = cfg.weights;
 
   const results = [];
@@ -200,4 +238,9 @@ function groupAndSort(rows) {
   fs.mkdirSync(path.dirname(path.join(__dirname, "../" + cfg.output.json)), { recursive: true });
   fs.writeFileSync(path.join(__dirname, "../" + cfg.output.json), JSON.stringify(output, null, 2));
   console.log(`Wrote ${output.length} rows to ${cfg.output.json}`);
-})();
+}
+
+// Only run main when executed directly (not when imported)
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(e => { console.error(e && e.stack || e); process.exit(1); });
+}
