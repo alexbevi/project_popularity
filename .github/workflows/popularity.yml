@@ -35,6 +35,7 @@ jobs:
     needs: matrix-prepare
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include: ${{ fromJson(needs.matrix-prepare.outputs.matrix) }}
     steps:
@@ -53,7 +54,11 @@ jobs:
           REPO: ${{ matrix.repo }}
         run: |
           # run build for a single repo and write per-repo JSON (wrapper script)
-          node scripts/scrape-single.cjs "${{ matrix.owner }}" "${{ matrix.repo }}" "${{ matrix.repo_full }}"
+          # If the scraper fails, write an empty array file so aggregation can continue and do not fail the job
+          node scripts/scrape-single.cjs "${{ matrix.owner }}" "${{ matrix.repo }}" "${{ matrix.repo_full }}" || (
+            echo "[]" > "data/popularity.${{ matrix.owner }}.${{ matrix.repo }}.json" ;
+            echo "Scrape failed for ${{ matrix.repo_full }}, wrote empty artifact and continuing";
+          )
       - name: Upload per-repo artifact
         uses: actions/upload-artifact@v4
         with:
