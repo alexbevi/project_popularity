@@ -22,13 +22,16 @@ jobs:
         id: set-matrix
         run: |
           node scripts/matrix-from-projects.cjs > matrix.json
-          echo "::set-output name=matrix::$(cat matrix.json)"
+          echo "matrix<<EOF" >> "$GITHUB_OUTPUT"
+          cat matrix.json >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
 
   scrape:
     needs: matrix-prepare
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ fromJson(needs.matrix-prepare.outputs.matrix) }}
+      matrix:
+        include: ${{ fromJson(needs.matrix-prepare.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
