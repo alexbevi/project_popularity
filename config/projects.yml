@@ -755,3 +755,15 @@ projects:
     repo: "OpenKitten/MongoKitten"
     stackoverflow: "mongokitten"
     package_id: "UGFja2FnZS0yMDk4MjcxMTI%3D"
+
+  - name: Play Framework
+    language: Scala
+    type: Framework
+    repo: "playframework/playframework"
+    stackoverflow: "playframework scala"
+
+  - name: Akka
+    language: Scala
+    type: Framework
+    repo: "akka/akka"
+    stackoverflow: "akka scala"
