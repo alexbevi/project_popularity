@@ -1,0 +1,30 @@
+[
+  {
+    "name": ".NET Aspire",
+    "language": "C#",
+    "type": "Framework",
+    "repo": "dotnet/aspire",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 4846,
+    "forks": 690,
+    "contributors_count": 209,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 0.8386570299919486,
+    "merged_prs_last_6mo": 92,
+    "releases_count": 24,
+    "release_frequency_per_year": 13.324485556733043,
+    "stackoverflow_total_questions": 195,
+    "stackoverflow_recent_questions_last_6mo": 42,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 6,
+    "weekly_downloads": 0,
+    "dependents": 1256,
+    "index": 4.327212,
+    "timestamp": "2025-09-20T03:39:12.763Z"
+  }
+]

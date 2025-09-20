@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Akka",
+    "language": "Scala",
+    "type": "Framework",
+    "repo": "akka/akka",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 13214,
+    "forks": 3585,
+    "contributors_count": 1061,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 6.149924342105264,
+    "merged_prs_last_6mo": 84,
+    "releases_count": 73,
+    "release_frequency_per_year": 11.703754405397374,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 19,
+    "index": 3.840085,
+    "timestamp": "2025-09-20T03:38:57.659Z"
+  }
+]

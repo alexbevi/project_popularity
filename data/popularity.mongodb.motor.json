@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Motor",
+    "language": "Python",
+    "type": "ODM",
+    "repo": "mongodb/motor",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "motor",
+    "maven": null,
+    "stars": 2511,
+    "forks": 215,
+    "contributors_count": 57,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.9059389172335603,
+    "merged_prs_last_6mo": 17,
+    "releases_count": 22,
+    "release_frequency_per_year": 4.0567864273976335,
+    "stackoverflow_total_questions": 439,
+    "stackoverflow_recent_questions_last_6mo": 5,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 2001621,
+    "dependents": 125749,
+    "index": 6.629062,
+    "timestamp": "2025-09-20T03:38:30.065Z"
+  }
+]

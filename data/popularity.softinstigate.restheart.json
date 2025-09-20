@@ -1,0 +1,30 @@
+[
+  {
+    "name": "RESTHeart",
+    "language": "Java",
+    "type": "Framework",
+    "repo": "softinstigate/restheart",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 859,
+    "forks": 170,
+    "contributors_count": 42,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 7.539134440813362,
+    "merged_prs_last_6mo": 1,
+    "releases_count": 100,
+    "release_frequency_per_year": 28.586950711397705,
+    "stackoverflow_total_questions": 114,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 13,
+    "discussions_recent_activity_last_6mo": 3,
+    "weekly_downloads": 0,
+    "dependents": 6,
+    "index": 2.384837,
+    "timestamp": "2025-09-20T03:39:22.127Z"
+  }
+]

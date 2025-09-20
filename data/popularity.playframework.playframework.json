@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Play Framework",
+    "language": "Scala",
+    "type": "Framework",
+    "repo": "playframework/playframework",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 12585,
+    "forks": 4077,
+    "contributors_count": 989,
+    "closed_issues": 3396,
+    "avg_pr_merge_days": 1.0660774782135078,
+    "merged_prs_last_6mo": 85,
+    "releases_count": 100,
+    "release_frequency_per_year": 11.757012049584967,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 19,
+    "index": 3.843427,
+    "timestamp": "2025-09-20T03:39:44.912Z"
+  }
+]

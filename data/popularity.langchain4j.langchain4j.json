@@ -1,0 +1,33 @@
+[
+  {
+    "name": "langchain4j",
+    "language": "Java",
+    "type": "AI",
+    "repo": "langchain4j/langchain4j",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": {
+      "group": "dev.langchain4j",
+      "artifact": "langchain4j"
+    },
+    "stars": 9049,
+    "forks": 1669,
+    "contributors_count": 270,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 3.4263710352639887,
+    "merged_prs_last_6mo": 94,
+    "releases_count": 52,
+    "release_frequency_per_year": 23.195923306674626,
+    "stackoverflow_total_questions": 37,
+    "stackoverflow_recent_questions_last_6mo": 8,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 0,
+    "dependents": 1580,
+    "index": 4.596246,
+    "timestamp": "2025-09-20T03:39:17.347Z"
+  }
+]

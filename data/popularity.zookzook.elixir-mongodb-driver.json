@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Elixir Driver",
+    "language": "Elixir",
+    "type": "Library",
+    "repo": "zookzook/elixir-mongodb-driver",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 265,
+    "forks": 71,
+    "contributors_count": 101,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 11.068959307992206,
+    "merged_prs_last_6mo": 7,
+    "releases_count": 41,
+    "release_frequency_per_year": 6.514898346543341,
+    "stackoverflow_total_questions": 9655,
+    "stackoverflow_recent_questions_last_6mo": 13,
+    "discussions_count": 5,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 1.821183,
+    "timestamp": "2025-09-20T03:39:58.835Z"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Rocket",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "SergioBenitez/rocket",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "rocket",
+    "pypi": null,
+    "maven": null,
+    "stars": 25383,
+    "forks": 1613,
+    "contributors_count": 311,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 53.125997781635796,
+    "merged_prs_last_6mo": 4,
+    "releases_count": 57,
+    "release_frequency_per_year": 7.687142941471693,
+    "stackoverflow_total_questions": 34,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 171221,
+    "dependents": 33874,
+    "index": 6.535725,
+    "timestamp": "2025-09-20T03:39:43.657Z"
+  }
+]

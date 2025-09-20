@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Tide",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "http-rs/tide",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "tide",
+    "pypi": null,
+    "maven": null,
+    "stars": 5120,
+    "forks": 329,
+    "contributors_count": 137,
+    "closed_issues": 247,
+    "avg_pr_merge_days": 38.846600771604926,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 18,
+    "release_frequency_per_year": 8.571947123385833,
+    "stackoverflow_total_questions": 724,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 5,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 48103,
+    "dependents": 4859,
+    "index": 5.334653,
+    "timestamp": "2025-09-20T03:39:42.969Z"
+  }
+]

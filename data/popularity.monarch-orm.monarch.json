@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Monarch",
+    "language": "JavaScript",
+    "type": "ORM",
+    "repo": "monarch-orm/monarch",
+    "npm": "monarch-orm",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 30,
+    "forks": 3,
+    "contributors_count": 4,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.506932519640853,
+    "merged_prs_last_6mo": 3,
+    "releases_count": 15,
+    "release_frequency_per_year": 25.063855743204606,
+    "stackoverflow_total_questions": 10,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 2,
+    "dependents": 10,
+    "index": 1.72551,
+    "timestamp": "2025-09-20T03:39:18.333Z"
+  }
+]

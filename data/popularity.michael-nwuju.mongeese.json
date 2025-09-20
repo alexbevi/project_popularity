@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Mongeese",
+    "language": "JavaScript",
+    "type": "Other",
+    "repo": "michael-nwuju/mongeese",
+    "npm": "mongeese-cli",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 8,
+    "forks": 0,
+    "contributors_count": 1,
+    "closed_issues": 1,
+    "avg_pr_merge_days": 0.0006539351851851851,
+    "merged_prs_last_6mo": 18,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 85,
+    "dependents": 0,
+    "index": 1.393385,
+    "timestamp": "2025-09-20T03:39:51.059Z"
+  }
+]

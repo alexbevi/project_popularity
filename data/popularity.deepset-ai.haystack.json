@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Haystack",
+    "language": "Python",
+    "type": "AI",
+    "repo": "deepset-ai/haystack",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "farm-haystack",
+    "maven": null,
+    "stars": 22680,
+    "forks": 2385,
+    "contributors_count": 302,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.624421169108669,
+    "merged_prs_last_6mo": 91,
+    "releases_count": 100,
+    "release_frequency_per_year": 72.59561029543853,
+    "stackoverflow_total_questions": 79,
+    "stackoverflow_recent_questions_last_6mo": 3,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 24407,
+    "dependents": 1181,
+    "index": 6.110341,
+    "timestamp": "2025-09-20T03:39:59.770Z"
+  }
+]
