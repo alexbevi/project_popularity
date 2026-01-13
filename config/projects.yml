@@ -38,6 +38,34 @@ projects:
     rubygems: "mongoid"
     stackoverflow: "mongoid"
 
+  - name: Ruby AI eXtensions
+    language: Ruby
+    type: AI
+    repo: "OlympiaAI/raix"
+    rubygems: "raix"
+    stackoverflow: "raix"  
+    
+  - name: Boxcars
+    language: Ruby
+    type: AI
+    repo: "BoxcarsAI/boxcars"
+    rubygems: "boxcars"
+    stackoverflow: "boxcars"      
+
+  - name: Langchain.rb
+    language: Ruby
+    type: AI
+    repo: "patterns-ai-core/langchainrb"
+    rubygems: "langchainrb"
+    stackoverflow: "langchainrb"      
+
+  - name: Active Agents
+    language: Ruby
+    type: AI
+    repo: "activeagents/activeagent"
+    rubygems: "activeagent"
+    stackoverflow: "activeagent"    
+
   - name: Motor
     language: Python
     type: ODM
