@@ -1,69 +1,65 @@
 # Popularity Tracker
 
-Nightly automation that ranks MongoDB-adjacent projects by a simple, cross-ecosystem Popularity Index.
+Automation that ranks MongoDB-adjacent projects with a cross-ecosystem Popularity Index and publishes a static web view + JSON data.
 
-Current deployment is at https://alexbevi.com/project_popularity/.
+Current deployment: https://alexbevi.com/project_popularity/
 
-## Popularity Index (current logic)
+## How It Works
 
-The index combines three signals: weekly downloads, GitHub stars, and GitHub forks. Each value is log-transformed to reduce skew and then weighted.
+1. Read project definitions from `config/projects.yml`.
+2. Fetch metrics from GitHub and package ecosystems (`scripts/fetchers/*`).
+3. Compute index scores in `scripts/build-popularity.js`.
+4. Aggregate per-repo artifacts into `data/popularity.json`.
+5. Publish generated assets to the `output` branch via GitHub Actions.
 
-Formula (implemented in `scripts/build-popularity.js`):
+## Popularity Index
 
+Implemented in `scripts/build-popularity.js`:
+
+```text
+index =
+  weights.stars * log10(1 + stars) +
+  weights.forks * log10(1 + forks) +
+  weights.weekly_downloads * log10(1 + weekly_downloads) +
+  weights.merged_prs_last_6mo * log10(1 + merged_prs_last_6mo) +
+  weights.release_frequency * log10(1 + release_frequency) +
+  weights.dependents * log10(1 + dependents)
 ```
-index = weights.weekly_downloads * log10(1 + weekly_downloads)
-	+ weights.stars * log10(1 + stars)
-	+ weights.forks * log10(1 + forks)
-	+ weights.release_frequency * log10(1 + release_frequency)
-	+ weights.dependents * log10(1 + dependents)
-```
 
-Default weights are in `config/popularity.config.json`. Current defaults:
+Current weights from `config/popularity.config.json`:
 
-- weekly_downloads: 0.45
-- stars: 0.45
-- forks: 0.10
-- release_frequency: 0.10
-- dependents: 0.05
+- `weekly_downloads`: `0.30`
+- `stars`: `0.45`
+- `forks`: `0.20`
+- `merged_prs_last_6mo`: `0.30`
+- `release_frequency`: `0.10`
+- `dependents`: `0.45`
 
-> **Note (index calculation)**
->
-> The Popularity Index uses log-scaling to reduce the influence of outliers. Each signal is transformed as `log10(1 + value)` and multiplied by its configured weight. The sum of these weighted, log-transformed signals is the final index.
->
-> Example (rounded):
->
-> - weekly_downloads = 100000 -> log10(1 + 100000) ≈ 5.00
-> - stars = 2000 -> log10(1 + 2000) ≈ 3.30
-> - forks = 300 -> log10(1 + 300) ≈ 2.48
->
-> With weights weekly_downloads:0.45, stars:0.45, forks:0.10 the index ≈ 0.45*5.00 + 0.45*3.30 + 0.10*2.48 = 2.25 + 1.485 + 0.248 = 3.983
+Notes:
 
-Implementation note: the orchestrator picks the max `weekly_downloads` across registries when a project is published to multiple ecosystems.
+- Each signal is log-scaled with `log10(1 + value)` to reduce outlier skew.
+- For multi-ecosystem projects, `weekly_downloads` is the max value across available registries.
 
-## New developer engagement fields
+## Data Fields
 
-The GitHub fetcher now collects additional signals that help indicate maintenance and community engagement. These appear under the top-level JSON rows (when available):
+Common fields in output rows include:
 
-- `contributors_count` — approximate number of contributors
-- `closed_issues` — total closed issues (from GitHub search)
-- `avg_pr_merge_days` — average time from PR creation to merge (days)
-- `merged_prs_last_6mo` — number of merged PRs in the last 6 months
-- `releases_count` — number of tagged releases
-- `release_frequency_per_year` — estimated releases/year (based on published dates)
-
-These are optional enrichment fields used for analysis and not currently part of the index calculation. They are useful for classifying projects as "actively maintained" vs "abandoned".
+- Identity: `name`, `language`, `type`, `repo`
+- Core metrics: `stars`, `forks`, `weekly_downloads`, `dependents`
+- Engagement metrics: `contributors_count`, `closed_issues`, `avg_pr_merge_days`, `merged_prs_last_6mo`, `releases_count`, `release_frequency_per_year`
+- Community metrics: `stackoverflow_total_questions`, `stackoverflow_recent_questions_last_6mo`, `discussions_count`, `discussions_recent_activity_last_6mo`
+- Score: `index`
 
 ## Outputs
 
-The build now produces JSON-only output:
+Generated artifacts:
 
-- `data/popularity.json` — array of ranked rows with the index and engagement fields.
+- `data/popularity.json` (canonical ranked dataset)
+- `data/popularity.<owner>.<repo>.json` (per-repo scrape artifacts in CI)
+- `data/README.md` (table generated from `data/popularity.json`)
+- `web/index.html` (generated from `web/index.template.html` by weight injection)
 
-If a CSV file from previous runs exists (`data/popularity.csv`), it will no longer be re-generated; delete it if you want to remove stale artifacts.
-
-## Run locally
-
-Install and run the build script (recommended to set a GitHub token to avoid rate limits):
+## Run Locally
 
 ```bash
 npm ci
@@ -71,27 +67,58 @@ export GH_TOKEN=ghp_yourtoken
 node scripts/build-popularity.js
 ```
 
+Useful commands:
+
+```bash
+# Build one project (matches name/repo substring)
+node scripts/build-popularity.js --repo=mongoose
+
+# Inject current weights into web/index.html
+node scripts/inject-weights.cjs
+
+# Regenerate data README table
+node scripts/generate-readme.js
+```
+
 Notes:
-- `GH_TOKEN` increases GitHub API rate limits and avoids 403 responses during fetches.
-- The fetchers are tolerant of failures and will log warnings. Missing data results in sensible defaults so the pipeline completes.
 
-## Add / update projects
+- `GH_TOKEN` is recommended to reduce GitHub API rate-limit failures.
+- Fetchers are best-effort; missing sources fall back to zeros so runs can complete.
 
-Edit `config/projects.yml` and add or update entries. Supply any registry IDs you have (npm, nuget, rubygems, crates, pypi, maven).
+## Add or Update Projects
 
-## CI
+Edit `config/projects.yml`.
 
-GitHub Actions runs nightly and auto-commits updates to `data/popularity.json`.
+Required fields:
 
-## CI output branch
+- `name`
+- `language`
+- `type`
+- `repo` (`owner/repo`)
 
-The workflow pushes generated data to a dedicated orphan branch (by default named `output`). The branch contains only the generated files (they are placed at the repository root on that branch), so it does not include the project source files. This branch is force-updated by the workflow when there are changes.
+Optional ecosystem fields:
 
-If you prefer the generated files to live under a `data/` folder on the `output` branch instead of the repository root, update the workflow or tell me and I can change it.
+- `npm`, `nuget`, `rubygems`, `crates`, `pypi`, `packagist`, `go`
+- `maven: { group, artifact }`
+- `stackoverflow`
+- `package_id` (for package-scoped dependents where supported)
 
-## Extending the project
+## CI/CD
 
-- To add more signals (Stack Overflow, GitHub Discussions), add a new fetcher under `scripts/fetchers/` that returns the expected shape and include it in the orchestrator.
-- For large repositories, consider adding pagination to contributor/PR fetches for more accurate counts.
+Main workflow: `.github/workflows/popularity.yml`
 
+- Scheduled daily at `03:17 UTC` and runnable manually.
+- Builds a matrix from `projects.yml`.
+- Runs `scripts/scrape-single.cjs` per repo.
+- Aggregates artifacts via `scripts/aggregate-artifacts.cjs`.
+- Generates `data/README.md`.
+- Force-pushes generated assets to the `output` branch.
+
+Redeploy helper workflow: `.github/workflows/redeploy-web.yml`
+
+- Manually republishes web assets (and `popularity.json` if present) to `output`.
+
+## Maintenance
+
+See `AGENTS.md` for repository operating rules and the required documentation-update contract when behavior changes.
 
