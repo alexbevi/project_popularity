@@ -117,3 +117,4 @@ Optional ecosystem fields:
 ## Change Log
 
 - 2026-02-20: Initial `AGENTS.md` created from a full repository scan.
+- 2026-02-20: Web filters now sync with URL query params (`language`, `type`, `search`) and are restored on load.

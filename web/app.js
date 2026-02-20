@@ -63,6 +63,57 @@ function discussionsUrl(r){
   return '#';
 }
 
+const FILTER_QUERY_KEYS = {
+  language: 'language',
+  type: 'type',
+  search: 'search'
+};
+
+function readFiltersFromUrl(){
+  const params = new URLSearchParams(window.location.search);
+  return {
+    language: (params.get(FILTER_QUERY_KEYS.language) || '').trim(),
+    type: (params.get(FILTER_QUERY_KEYS.type) || '').trim(),
+    search: (params.get(FILTER_QUERY_KEYS.search) || '').trim()
+  };
+}
+
+function resolveSelectValue(selectEl, requested){
+  if(!requested) return '';
+  const values = Array.from(selectEl.options).map(o => o.value);
+  if(values.includes(requested)) return requested;
+  const lower = requested.toLowerCase();
+  return values.find(v => String(v).toLowerCase() === lower) || '';
+}
+
+function applyFiltersFromUrl(langSel, typeSel, searchInput){
+  const fromUrl = readFiltersFromUrl();
+  langSel.value = resolveSelectValue(langSel, fromUrl.language);
+  typeSel.value = resolveSelectValue(typeSel, fromUrl.type);
+  searchInput.value = fromUrl.search;
+}
+
+function writeFiltersToUrl({ language = '', type = '', search = '' }){
+  const url = new URL(window.location.href);
+  const params = url.searchParams;
+
+  if(language) params.set(FILTER_QUERY_KEYS.language, language);
+  else params.delete(FILTER_QUERY_KEYS.language);
+
+  if(type) params.set(FILTER_QUERY_KEYS.type, type);
+  else params.delete(FILTER_QUERY_KEYS.type);
+
+  if(search) params.set(FILTER_QUERY_KEYS.search, search);
+  else params.delete(FILTER_QUERY_KEYS.search);
+
+  const nextSearch = params.toString();
+  const nextUrl = `${url.pathname}${nextSearch ? `?${nextSearch}` : ''}${url.hash}`;
+  const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+  if(nextUrl !== currentUrl) {
+    window.history.replaceState(null, '', nextUrl);
+  }
+}
+
 async function loadData(){
   const status = $id('status');
   try{
@@ -204,10 +255,11 @@ function renderTable(rows){
   }
 }
 
-function applyFilters(data){
+function applyFilters(data, { syncUrl = true } = {}){
   const lang = $id('filter-language').value;
   const type = $id('filter-type').value;
-  const q = $id('filter-search').value.trim().toLowerCase();
+  const rawSearch = $id('filter-search').value.trim();
+  const q = rawSearch.toLowerCase();
   let rows = data.slice();
   // apply current sort state if present
   const currentSortKey = document.body.getAttribute('data-sort-key') || 'index';
@@ -217,6 +269,9 @@ function applyFilters(data){
   if(type) rows = rows.filter(r=>r.type===type);
   if(q) rows = rows.filter(r=> (r.name||'').toLowerCase().includes(q) || (r.repo||'').toLowerCase().includes(q));
   renderTable(rows);
+  if(syncUrl) {
+    writeFiltersToUrl({ language: lang, type, search: rawSearch });
+  }
 }
 
 function compareRows(a,b,key,dir){
@@ -250,6 +305,9 @@ initTheme();
   search.addEventListener('input',()=>applyFilters(data));
   clear.addEventListener('click',()=>{ langSel.value=''; typeSel.value=''; search.value=''; applyFilters(data); });
 
+  // Restore filter controls from URL query params before first render.
+  applyFiltersFromUrl(langSel, typeSel, search);
+
   // setup sortable headers: th[data-key]
   document.body.setAttribute('data-sort-key', 'index');
   document.body.setAttribute('data-sort-dir', 'desc');
@@ -273,6 +331,11 @@ initTheme();
       }
       applyFilters(data);
     });
+  });
+
+  window.addEventListener('popstate', ()=>{
+    applyFiltersFromUrl(langSel, typeSel, search);
+    applyFilters(data, { syncUrl: false });
   });
 
   // initialize header visuals
