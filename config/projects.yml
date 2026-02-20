@@ -149,6 +149,13 @@ projects:
     go: "github.com/tmc/langchaingo"
     stackoverflow: "langchaingo"
 
+  - name: langchain
+    language: Python
+    type: AI
+    repo: "langchain-ai/langchain"
+    pypi: "langchain"
+    stackoverflow: "langchain"
+
   - name: langchainjs
     language: JavaScript
     type: AI
