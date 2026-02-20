@@ -802,3 +802,11 @@ projects:
     type: Framework
     repo: "akka/akka"
     stackoverflow: "akka scala"
+
+  - name: n8n
+    language: Other
+    type: AI
+    npm: "n8n"
+    repo: "n8n-io/n8n"
+    stackoverflow: "n8n"
+    
