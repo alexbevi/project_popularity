@@ -1,0 +1,33 @@
+[
+  {
+    "name": "KMongo",
+    "language": "Kotlin",
+    "type": "Driver",
+    "repo": "Litote/kmongo",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": {
+      "group": "org.litote.kmongo",
+      "artifact": "kmongo"
+    },
+    "stars": 776,
+    "forks": 77,
+    "contributors_count": 41,
+    "closed_issues": 332,
+    "avg_pr_merge_days": 7.516694958847735,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 65,
+    "release_frequency_per_year": 7.215333473216532,
+    "stackoverflow_total_questions": 37,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 1.770571,
+    "timestamp": "2026-02-22T05:00:11.452Z"
+  }
+]

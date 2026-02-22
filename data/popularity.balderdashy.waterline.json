@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Waterline",
+    "language": "JavaScript",
+    "type": "ORM",
+    "repo": "balderdashy/waterline",
+    "npm": "waterline",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 5410,
+    "forks": 597,
+    "contributors_count": 135,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 19.193780555555545,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 16,
+    "release_frequency_per_year": 5.118940370129887,
+    "stackoverflow_total_questions": 1223,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 30648,
+    "dependents": 12000,
+    "index": 5.495555,
+    "timestamp": "2026-02-22T05:00:24.894Z"
+  }
+]

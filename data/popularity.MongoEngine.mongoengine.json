@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongoengine",
+    "language": "Python",
+    "type": "ODM",
+    "repo": "MongoEngine/mongoengine",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "mongoengine",
+    "maven": null,
+    "stars": 4354,
+    "forks": 1234,
+    "contributors_count": 401,
+    "closed_issues": 1411,
+    "avg_pr_merge_days": 19.590725033068786,
+    "merged_prs_last_6mo": 3,
+    "releases_count": 46,
+    "release_frequency_per_year": 4.978220702806438,
+    "stackoverflow_total_questions": 1818,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 472718,
+    "dependents": 27443,
+    "index": 6.213836,
+    "timestamp": "2026-02-22T04:59:21.543Z"
+  }
+]

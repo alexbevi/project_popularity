@@ -1,0 +1,30 @@
+[
+  {
+    "name": "PowerSync",
+    "language": "JavaScript",
+    "type": "Framework",
+    "repo": "powersync-ja/powersync-service",
+    "npm": "powersync",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 309,
+    "forks": 40,
+    "contributors_count": 21,
+    "closed_issues": 31,
+    "avg_pr_merge_days": 3.700922894620812,
+    "merged_prs_last_6mo": 84,
+    "releases_count": 100,
+    "release_frequency_per_year": 507.8512108087196,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 23,
+    "discussions_recent_activity_last_6mo": 17,
+    "weekly_downloads": 486,
+    "dependents": 4,
+    "index": 3.413949,
+    "timestamp": "2026-02-22T05:00:24.802Z"
+  }
+]

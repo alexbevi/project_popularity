@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Flask PyMongo",
+    "language": "Python",
+    "type": "Framework",
+    "repo": "mongodb-labs/flask-pymongo",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "Flask-PyMongo",
+    "maven": null,
+    "stars": 724,
+    "forks": 178,
+    "contributors_count": 41,
+    "closed_issues": 101,
+    "avg_pr_merge_days": 102.84418113425924,
+    "merged_prs_last_6mo": 25,
+    "releases_count": 2,
+    "release_frequency_per_year": 4036.7892548768787,
+    "stackoverflow_total_questions": 79,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 34332,
+    "index": 4.563899,
+    "timestamp": "2026-02-22T05:00:37.412Z"
+  }
+]

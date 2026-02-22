@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Flask",
+    "language": "Python",
+    "type": "Framework",
+    "repo": "pallets/flask",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "Flask",
+    "maven": null,
+    "stars": 71250,
+    "forks": 16725,
+    "contributors_count": 862,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 23.54992019980507,
+    "merged_prs_last_6mo": 14,
+    "releases_count": 38,
+    "release_frequency_per_year": 4.860901661010175,
+    "stackoverflow_total_questions": 55579,
+    "stackoverflow_recent_questions_last_6mo": 64,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 2719207,
+    "index": 6.353557,
+    "timestamp": "2026-02-22T04:59:52.273Z"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "langchaingo",
+    "language": "Go",
+    "type": "AI",
+    "repo": "tmc/langchaingo",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 8679,
+    "forks": 1040,
+    "contributors_count": 184,
+    "closed_issues": 212,
+    "avg_pr_merge_days": 10.162151289682535,
+    "merged_prs_last_6mo": 26,
+    "releases_count": 21,
+    "release_frequency_per_year": 11.329306755111137,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 0,
+    "dependents": 1723,
+    "index": 4.370769,
+    "timestamp": "2026-02-22T04:59:14.507Z"
+  }
+]

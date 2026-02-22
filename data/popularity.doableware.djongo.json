@@ -1,0 +1,30 @@
+[
+  {
+    "name": "djongo",
+    "language": "Python",
+    "type": "Framework",
+    "repo": "doableware/djongo",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "djongo",
+    "maven": null,
+    "stars": 1940,
+    "forks": 358,
+    "contributors_count": 52,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 37.63660276813271,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 1,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 263,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 19097,
+    "dependents": 12563,
+    "index": 5.119534,
+    "timestamp": "2026-02-22T04:59:29.785Z"
+  }
+]

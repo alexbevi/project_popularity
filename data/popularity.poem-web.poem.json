@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Poem",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "poem-web/poem",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "poem",
+    "pypi": null,
+    "maven": null,
+    "stars": 4350,
+    "forks": 348,
+    "contributors_count": 145,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 6.786249002234991,
+    "merged_prs_last_6mo": 18,
+    "releases_count": 2,
+    "release_frequency_per_year": 46.16106991827582,
+    "stackoverflow_total_questions": 8,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 75462,
+    "dependents": 2276,
+    "index": 5.671048,
+    "timestamp": "2026-02-22T05:00:06.011Z"
+  }
+]

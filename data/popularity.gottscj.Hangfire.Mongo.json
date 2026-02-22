@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Hangfire.Mongo",
+    "language": "C#",
+    "type": "Library",
+    "repo": "gottscj/Hangfire.Mongo",
+    "npm": null,
+    "nuget": "Hangfire.Mongo",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 277,
+    "forks": 87,
+    "contributors_count": 35,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 2.2042880077658307,
+    "merged_prs_last_6mo": 8,
+    "releases_count": 89,
+    "release_frequency_per_year": 7.95120948632714,
+    "stackoverflow_total_questions": 1369,
+    "stackoverflow_recent_questions_last_6mo": 2,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 234920,
+    "dependents": 627,
+    "index": 4.740536,
+    "timestamp": "2026-02-22T04:59:38.563Z"
+  }
+]

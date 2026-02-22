@@ -1,0 +1,30 @@
+[
+  {
+    "name": "PyMODM",
+    "language": "Python",
+    "type": "ODM",
+    "repo": "mongodb/pymodm",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "pymodm",
+    "maven": null,
+    "stars": 350,
+    "forks": 62,
+    "contributors_count": 18,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 7.359653635116598,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 26,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 3783,
+    "dependents": 0,
+    "index": 2.578642,
+    "timestamp": "2026-02-22T04:59:26.816Z"
+  }
+]

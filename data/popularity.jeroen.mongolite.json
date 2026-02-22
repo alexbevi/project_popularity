@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongolite",
+    "language": "R",
+    "type": "Driver",
+    "repo": "jeroen/mongolite",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 288,
+    "forks": 66,
+    "contributors_count": 9,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 20.44556597222222,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 26,
+    "release_frequency_per_year": 2.6536585421387344,
+    "stackoverflow_total_questions": 102,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 1.528892,
+    "timestamp": "2026-02-22T04:59:52.648Z"
+  }
+]

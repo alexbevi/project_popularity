@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Gotham",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "gotham-rs/gotham",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "gotham",
+    "pypi": null,
+    "maven": null,
+    "stars": 2294,
+    "forks": 124,
+    "contributors_count": 58,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 13.543913917824067,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 14,
+    "release_frequency_per_year": 2.0983534053744903,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 6,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 6671,
+    "dependents": 2064,
+    "index": 4.619838,
+    "timestamp": "2026-02-22T04:59:38.053Z"
+  }
+]

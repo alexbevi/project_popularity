@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Quartz MongoDB",
+    "language": "Java",
+    "type": "Library",
+    "repo": "avi-sanwal/quartz-mongodb",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": {
+      "group": "com.novemberain",
+      "artifact": "quartz-mongodb"
+    },
+    "stars": 1,
+    "forks": 4,
+    "contributors_count": 61,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 10.944761777574268,
+    "merged_prs_last_6mo": 12,
+    "releases_count": 12,
+    "release_frequency_per_year": 6.097652069226818,
+    "stackoverflow_total_questions": 3793,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 0.694552,
+    "timestamp": "2026-02-22T05:00:11.473Z"
+  }
+]

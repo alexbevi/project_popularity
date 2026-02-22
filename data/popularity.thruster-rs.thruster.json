@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Thruster",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "thruster-rs/thruster",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "thruster",
+    "pypi": null,
+    "maven": null,
+    "stars": 1077,
+    "forks": 46,
+    "contributors_count": 20,
+    "closed_issues": 67,
+    "avg_pr_merge_days": 1.8460119395711498,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 1,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 3009,
+    "dependents": 952,
+    "index": 4.08326,
+    "timestamp": "2026-02-22T05:00:22.964Z"
+  }
+]

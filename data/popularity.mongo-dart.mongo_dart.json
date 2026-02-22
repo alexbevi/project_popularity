@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongo_dart",
+    "language": "Dart",
+    "type": "Driver",
+    "repo": "mongo-dart/mongo_dart",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 458,
+    "forks": 103,
+    "contributors_count": 52,
+    "closed_issues": 264,
+    "avg_pr_merge_days": 8.713929738562092,
+    "merged_prs_last_6mo": 1,
+    "releases_count": 7,
+    "release_frequency_per_year": 10.136243082768178,
+    "stackoverflow_total_questions": 26,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 6,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 5655,
+    "index": 3.484834,
+    "timestamp": "2026-02-22T05:00:17.158Z"
+  }
+]

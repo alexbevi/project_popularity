@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongo-ruby-driver",
+    "language": "Ruby",
+    "type": "Driver",
+    "repo": "mongodb/mongo-ruby-driver",
+    "npm": null,
+    "nuget": null,
+    "rubygems": "mongo",
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 1435,
+    "forks": 531,
+    "contributors_count": 206,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 12.438411320546745,
+    "merged_prs_last_6mo": 28,
+    "releases_count": 100,
+    "release_frequency_per_year": 9.703650395165553,
+    "stackoverflow_total_questions": 175993,
+    "stackoverflow_recent_questions_last_6mo": 138,
+    "discussions_count": 17,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1888435,
+    "dependents": 22645,
+    "index": 6.350151,
+    "timestamp": "2026-02-22T04:59:11.222Z"
+  }
+]

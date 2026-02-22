@@ -1,0 +1,30 @@
+[
+  {
+    "name": "typeorm",
+    "language": "JavaScript",
+    "type": "ORM",
+    "repo": "typeorm/typeorm",
+    "npm": "typeorm",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 36335,
+    "forks": 6500,
+    "contributors_count": 1229,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 6.569528282288697,
+    "merged_prs_last_6mo": 78,
+    "releases_count": 40,
+    "release_frequency_per_year": 9.198914926455442,
+    "stackoverflow_total_questions": 4730,
+    "stackoverflow_recent_questions_last_6mo": 11,
+    "discussions_count": 2,
+    "discussions_recent_activity_last_6mo": 2,
+    "weekly_downloads": 3247154,
+    "dependents": 429412,
+    "index": 7.973136,
+    "timestamp": "2026-02-22T04:59:42.734Z"
+  }
+]

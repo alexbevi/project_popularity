@@ -1,0 +1,30 @@
+[
+  {
+    "name": "django-mongodb-backend",
+    "language": "Python",
+    "type": "Framework",
+    "repo": "mongodb/django-mongodb-backend",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "django-mongodb-backend",
+    "maven": null,
+    "stars": 214,
+    "forks": 31,
+    "contributors_count": 13,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 4.625830255122145,
+    "merged_prs_last_6mo": 94,
+    "releases_count": 1,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 1,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 3942,
+    "dependents": 58,
+    "index": 3.819576,
+    "timestamp": "2026-02-22T04:59:36.855Z"
+  }
+]

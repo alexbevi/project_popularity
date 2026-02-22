@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongomapper",
+    "language": "Ruby",
+    "type": "ODM",
+    "repo": "mongomapper/mongomapper",
+    "npm": null,
+    "nuget": null,
+    "rubygems": "mongomapper",
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 1605,
+    "forks": 379,
+    "contributors_count": 152,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 49.303829282407406,
+    "merged_prs_last_6mo": 6,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 509,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 2812,
+    "index": 3.764198,
+    "timestamp": "2026-02-22T04:59:28.582Z"
+  }
+]

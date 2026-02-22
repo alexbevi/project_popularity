@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Sails",
+    "language": "JavaScript",
+    "type": "Framework",
+    "repo": "balderdashy/sails",
+    "npm": "sails",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 22851,
+    "forks": 1929,
+    "contributors_count": 290,
+    "closed_issues": 5884,
+    "avg_pr_merge_days": 38.227582147696474,
+    "merged_prs_last_6mo": 4,
+    "releases_count": 44,
+    "release_frequency_per_year": 4.216005921803684,
+    "stackoverflow_total_questions": 6555,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 39302,
+    "dependents": 27520,
+    "index": 6.276229,
+    "timestamp": "2026-02-22T04:59:10.129Z"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "OData",
+    "language": "C#",
+    "type": "Library",
+    "repo": "OData/AspNetCoreOData",
+    "npm": null,
+    "nuget": "Microsoft.OData.Core",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 496,
+    "forks": 181,
+    "contributors_count": 58,
+    "closed_issues": 480,
+    "avg_pr_merge_days": 17.985130565959214,
+    "merged_prs_last_6mo": 12,
+    "releases_count": 49,
+    "release_frequency_per_year": 9.497035841354249,
+    "stackoverflow_total_questions": 7676,
+    "stackoverflow_recent_questions_last_6mo": 20,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 3579264,
+    "dependents": 6833,
+    "index": 5.793406,
+    "timestamp": "2026-02-22T04:59:21.790Z"
+  }
+]

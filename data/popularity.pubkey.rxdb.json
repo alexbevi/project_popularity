@@ -1,0 +1,30 @@
+[
+  {
+    "name": "RxDB",
+    "language": "JavaScript",
+    "type": "Other",
+    "repo": "pubkey/rxdb",
+    "npm": "rxdb",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 23048,
+    "forks": 1148,
+    "contributors_count": 268,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.166991911152726,
+    "merged_prs_last_6mo": 89,
+    "releases_count": 100,
+    "release_frequency_per_year": 51.819247614987994,
+    "stackoverflow_total_questions": 49,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 44550,
+    "dependents": 2056,
+    "index": 6.219422,
+    "timestamp": "2026-02-22T05:00:00.249Z"
+  }
+]

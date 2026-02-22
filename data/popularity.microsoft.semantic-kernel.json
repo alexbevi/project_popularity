@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Microsoft Semantic Kernel",
+    "language": "Multi",
+    "type": "AI",
+    "repo": "microsoft/semantic-kernel",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 27277,
+    "forks": 4465,
+    "contributors_count": 400,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 7.412374542752631,
+    "merged_prs_last_6mo": 81,
+    "releases_count": 100,
+    "release_frequency_per_year": 81.35806737929654,
+    "stackoverflow_total_questions": 77,
+    "stackoverflow_recent_questions_last_6mo": 4,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 2482,
+    "index": 5.019554,
+    "timestamp": "2026-02-22T04:59:36.769Z"
+  }
+]

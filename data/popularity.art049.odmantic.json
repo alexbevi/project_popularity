@@ -1,0 +1,30 @@
+[
+  {
+    "name": "ODMantic",
+    "language": "Python",
+    "type": "ODM",
+    "repo": "art049/odmantic",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "odmantic",
+    "maven": null,
+    "stars": 1167,
+    "forks": 92,
+    "contributors_count": 22,
+    "closed_issues": 91,
+    "avg_pr_merge_days": 38.33648491083676,
+    "merged_prs_last_6mo": 19,
+    "releases_count": 23,
+    "release_frequency_per_year": 4.366954212172393,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 20,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 18364,
+    "dependents": 3568,
+    "index": 5.115171,
+    "timestamp": "2026-02-22T05:00:16.556Z"
+  }
+]

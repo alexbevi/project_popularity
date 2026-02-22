@@ -1,0 +1,30 @@
+[
+  {
+    "name": "DoctrineMongoDBBundle",
+    "language": "PHP",
+    "type": "Framework",
+    "repo": "doctrine/DoctrineMongoDBBundle",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 385,
+    "forks": 230,
+    "contributors_count": 186,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 3.6053933979552473,
+    "merged_prs_last_6mo": 55,
+    "releases_count": 68,
+    "release_frequency_per_year": 5.817070843211498,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 1,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 2501,
+    "index": 3.773732,
+    "timestamp": "2026-02-22T04:59:44.511Z"
+  }
+]

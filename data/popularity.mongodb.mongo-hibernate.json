@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MongoDB Extension for Hibernate",
+    "language": "Java",
+    "type": "Framework",
+    "repo": "mongodb/mongo-hibernate",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 14,
+    "forks": 13,
+    "contributors_count": 7,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 11.7363937471422,
+    "merged_prs_last_6mo": 32,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 95307,
+    "stackoverflow_recent_questions_last_6mo": 101,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 1.214021,
+    "timestamp": "2026-02-22T04:59:49.879Z"
+  }
+]

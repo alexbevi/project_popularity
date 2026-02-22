@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Flowise",
+    "language": "JavaScript",
+    "type": "AI",
+    "repo": "flowiseai/flowise",
+    "npm": "flowise",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 49256,
+    "forks": 23735,
+    "contributors_count": 295,
+    "closed_issues": 1841,
+    "avg_pr_merge_days": 4.872100068818818,
+    "merged_prs_last_6mo": 74,
+    "releases_count": 80,
+    "release_frequency_per_year": 29.80923930229126,
+    "stackoverflow_total_questions": 30,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 1988,
+    "dependents": 0,
+    "index": 4.687669,
+    "timestamp": "2026-02-22T04:59:23.049Z"
+  }
+]

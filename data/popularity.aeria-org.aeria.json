@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Aeria",
+    "language": "JavaScript",
+    "type": "Framework",
+    "repo": "aeria-org/aeria",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 480,
+    "forks": 5,
+    "contributors_count": 5,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.7921350220959589,
+    "merged_prs_last_6mo": 62,
+    "releases_count": 100,
+    "release_frequency_per_year": 230.96251360191624,
+    "stackoverflow_total_questions": 1,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 2.138939,
+    "timestamp": "2026-02-22T04:59:27.803Z"
+  }
+]

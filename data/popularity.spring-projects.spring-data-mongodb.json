@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Spring Data MongoDB",
+    "language": "Java",
+    "type": "Framework",
+    "repo": "spring-projects/spring-data-mongodb",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": {
+      "group": "org.springframework.data",
+      "artifact": "spring-data-mongodb"
+    },
+    "stars": 1671,
+    "forks": 1133,
+    "contributors_count": 227,
+    "closed_issues": 3528,
+    "avg_pr_merge_days": null,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 100,
+    "release_frequency_per_year": 37.541779558818895,
+    "stackoverflow_total_questions": 3320,
+    "stackoverflow_recent_questions_last_6mo": 2,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 29471,
+    "index": 4.231206,
+    "timestamp": "2026-02-22T04:59:10.205Z"
+  }
+]

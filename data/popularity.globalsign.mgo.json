@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mgo",
+    "language": "Go",
+    "type": "Driver",
+    "repo": "globalsign/mgo",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 1969,
+    "forks": 226,
+    "contributors_count": 70,
+    "closed_issues": 154,
+    "avg_pr_merge_days": 10.013409391534392,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 13,
+    "release_frequency_per_year": 14.65296533310779,
+    "stackoverflow_total_questions": 646,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 3885,
+    "index": 3.688451,
+    "timestamp": "2026-02-22T04:59:22.978Z"
+  }
+]

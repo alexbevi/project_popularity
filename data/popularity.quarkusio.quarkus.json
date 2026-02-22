@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Quarkus",
+    "language": "Java",
+    "type": "Framework",
+    "repo": "quarkusio/quarkus",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 15478,
+    "forks": 3077,
+    "contributors_count": 1400,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.0380417309670777,
+    "merged_prs_last_6mo": 72,
+    "releases_count": 100,
+    "release_frequency_per_year": 91.55588606378623,
+    "stackoverflow_total_questions": 4997,
+    "stackoverflow_recent_questions_last_6mo": 56,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 3.338675,
+    "timestamp": "2026-02-22T05:00:04.299Z"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Hangfire",
+    "language": "C#",
+    "type": "Library",
+    "repo": "HangfireIO/Hangfire",
+    "npm": null,
+    "nuget": "Hangfire",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 10015,
+    "forks": 1746,
+    "contributors_count": 178,
+    "closed_issues": 1154,
+    "avg_pr_merge_days": 18.01508727477478,
+    "merged_prs_last_6mo": 3,
+    "releases_count": 100,
+    "release_frequency_per_year": 10.676329231339887,
+    "stackoverflow_total_questions": 1369,
+    "stackoverflow_recent_questions_last_6mo": 2,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1625319,
+    "dependents": 11608,
+    "index": 6.428559,
+    "timestamp": "2026-02-22T04:59:10.438Z"
+  }
+]
