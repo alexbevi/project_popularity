@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Ruby AI eXtensions",
+    "language": "Ruby",
+    "type": "AI",
+    "repo": "OlympiaAI/raix",
+    "npm": null,
+    "nuget": null,
+    "rubygems": "raix",
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 307,
+    "forks": 27,
+    "contributors_count": 15,
+    "closed_issues": 11,
+    "avg_pr_merge_days": 16.003534621578105,
+    "merged_prs_last_6mo": 0,
+    "releases_count": 17,
+    "release_frequency_per_year": 21.126727949811187,
+    "stackoverflow_total_questions": 7,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 5007,
+    "dependents": 17,
+    "index": 3.218543,
+    "timestamp": "2026-03-08T04:53:18.180Z"
+  }
+]

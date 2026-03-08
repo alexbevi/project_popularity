@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongo-php-library",
+    "language": "PHP",
+    "type": "Driver",
+    "repo": "mongodb/mongo-php-library",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 1612,
+    "forks": 263,
+    "contributors_count": 52,
+    "closed_issues": 367,
+    "avg_pr_merge_days": 4.3955838331228945,
+    "merged_prs_last_6mo": 71,
+    "releases_count": 64,
+    "release_frequency_per_year": 5.7301986852032005,
+    "stackoverflow_total_questions": 175984,
+    "stackoverflow_recent_questions_last_6mo": 134,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1214061,
+    "dependents": 22312,
+    "index": 6.349882,
+    "timestamp": "2026-03-08T04:53:24.486Z"
+  }
+]

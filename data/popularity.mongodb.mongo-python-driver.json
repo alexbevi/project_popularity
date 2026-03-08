@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongo-python-driver",
+    "language": "Python",
+    "type": "Driver",
+    "repo": "mongodb/mongo-python-driver",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "pymongo",
+    "maven": null,
+    "stars": 4337,
+    "forks": 1141,
+    "contributors_count": 237,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 3.934713955026454,
+    "merged_prs_last_6mo": 84,
+    "releases_count": 59,
+    "release_frequency_per_year": 8.99019141702757,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 20699023,
+    "dependents": 403959,
+    "index": 7.644734,
+    "timestamp": "2026-03-08T04:54:21.985Z"
+  }
+]

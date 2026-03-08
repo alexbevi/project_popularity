@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Pavex",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "LukeMathWalker/pavex",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "pavex",
+    "pypi": null,
+    "maven": null,
+    "stars": 2033,
+    "forks": 79,
+    "contributors_count": 24,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 4.073819444444445,
+    "merged_prs_last_6mo": 28,
+    "releases_count": 82,
+    "release_frequency_per_year": 44.85176094664256,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1736,
+    "dependents": 37,
+    "index": 4.157073,
+    "timestamp": "2026-03-08T04:54:08.764Z"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "laravel-mongodb",
+    "language": "PHP",
+    "type": "Framework",
+    "repo": "mongodb/laravel-mongodb",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 7087,
+    "forks": 1442,
+    "contributors_count": 215,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 5.3683131135653746,
+    "merged_prs_last_6mo": 19,
+    "releases_count": 100,
+    "release_frequency_per_year": 9.996328318984618,
+    "stackoverflow_total_questions": 175984,
+    "stackoverflow_recent_questions_last_6mo": 134,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 2,
+    "weekly_downloads": 132680,
+    "dependents": 18,
+    "index": 4.971304,
+    "timestamp": "2026-03-08T04:53:43.160Z"
+  }
+]
