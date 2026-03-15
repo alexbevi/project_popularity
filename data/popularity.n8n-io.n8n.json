@@ -1,0 +1,30 @@
+[
+  {
+    "name": "n8n",
+    "language": "JavaScript",
+    "type": "AI",
+    "repo": "n8n-io/n8n",
+    "npm": "n8n",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 179166,
+    "forks": 55789,
+    "contributors_count": 579,
+    "closed_issues": 7901,
+    "avg_pr_merge_days": 0.3118376282909415,
+    "merged_prs_last_6mo": 83,
+    "releases_count": 100,
+    "release_frequency_per_year": 385.13335646424594,
+    "stackoverflow_total_questions": 146,
+    "stackoverflow_recent_questions_last_6mo": 17,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 66941,
+    "dependents": 795,
+    "index": 6.902355,
+    "timestamp": "2026-03-15T05:15:45.423Z"
+  }
+]

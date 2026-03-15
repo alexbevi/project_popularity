@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Parse Server SDK",
+    "language": "JavaScript",
+    "type": "Framework",
+    "repo": "parse-community/Parse-SDK-JS",
+    "npm": "parse",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 1348,
+    "forks": 600,
+    "contributors_count": 120,
+    "closed_issues": 828,
+    "avg_pr_merge_days": 1.5759787326388894,
+    "merged_prs_last_6mo": 80,
+    "releases_count": 100,
+    "release_frequency_per_year": 40.56297099314921,
+    "stackoverflow_total_questions": 1840,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 109653,
+    "dependents": 0,
+    "index": 4.210704,
+    "timestamp": "2026-03-15T05:15:37.438Z"
+  }
+]

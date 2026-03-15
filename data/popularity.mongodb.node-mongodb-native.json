@@ -1,0 +1,30 @@
+[
+  {
+    "name": "node-mongodb-native",
+    "language": "JavaScript",
+    "type": "Driver",
+    "repo": "mongodb/node-mongodb-native",
+    "npm": "mongodb",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 10183,
+    "forks": 1821,
+    "contributors_count": 490,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 9.567327140452138,
+    "merged_prs_last_6mo": 77,
+    "releases_count": 100,
+    "release_frequency_per_year": 19.837994613952027,
+    "stackoverflow_total_questions": 175978,
+    "stackoverflow_recent_questions_last_6mo": 130,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 9503785,
+    "dependents": 5718124,
+    "index": 8.28932,
+    "timestamp": "2026-03-15T05:14:33.528Z"
+  }
+]

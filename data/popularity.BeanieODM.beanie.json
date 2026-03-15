@@ -1,0 +1,30 @@
+[
+  {
+    "name": "beanie",
+    "language": "Python",
+    "type": "ODM",
+    "repo": "BeanieODM/beanie",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "beanie",
+    "maven": null,
+    "stars": 2658,
+    "forks": 282,
+    "contributors_count": 125,
+    "closed_issues": 429,
+    "avg_pr_merge_days": 39.798741365373296,
+    "merged_prs_last_6mo": 27,
+    "releases_count": 100,
+    "release_frequency_per_year": 23.07327234307313,
+    "stackoverflow_total_questions": 22,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 562305,
+    "dependents": 4426,
+    "index": 5.969523,
+    "timestamp": "2026-03-15T05:14:34.459Z"
+  }
+]

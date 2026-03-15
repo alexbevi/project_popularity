@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MassTransit",
+    "language": "C#",
+    "type": "Framework",
+    "repo": "MassTransit/MassTransit",
+    "npm": null,
+    "nuget": "MassTransit",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 7699,
+    "forks": 1954,
+    "contributors_count": 568,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.1696550234936431,
+    "merged_prs_last_6mo": 10,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 2235,
+    "stackoverflow_recent_questions_last_6mo": 12,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 3777536,
+    "dependents": 13246,
+    "index": 6.547683,
+    "timestamp": "2026-03-15T05:15:23.649Z"
+  }
+]

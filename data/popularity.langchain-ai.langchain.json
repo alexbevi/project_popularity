@@ -1,0 +1,30 @@
+[
+  {
+    "name": "langchain",
+    "language": "Python",
+    "type": "AI",
+    "repo": "langchain-ai/langchain",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "langchain",
+    "maven": null,
+    "stars": 129496,
+    "forks": 21341,
+    "contributors_count": 3658,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 0.362169174382716,
+    "merged_prs_last_6mo": 36,
+    "releases_count": 100,
+    "release_frequency_per_year": 318.87392164724446,
+    "stackoverflow_total_questions": 2188,
+    "stackoverflow_recent_questions_last_6mo": 55,
+    "discussions_count": 7,
+    "discussions_recent_activity_last_6mo": 7,
+    "weekly_downloads": 52389695,
+    "dependents": 277470,
+    "index": 8.652544,
+    "timestamp": "2026-03-15T05:15:09.690Z"
+  }
+]

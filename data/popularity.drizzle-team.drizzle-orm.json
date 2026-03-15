@@ -1,0 +1,30 @@
+[
+  {
+    "name": "drizzle-orm",
+    "language": "JavaScript",
+    "type": "ORM",
+    "repo": "drizzle-team/drizzle-orm",
+    "npm": "drizzle-orm",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 33293,
+    "forks": 1245,
+    "contributors_count": 135,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 6.298892895299145,
+    "merged_prs_last_6mo": 43,
+    "releases_count": 100,
+    "release_frequency_per_year": 51.22630840456336,
+    "stackoverflow_total_questions": 102,
+    "stackoverflow_recent_questions_last_6mo": 3,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 5,
+    "weekly_downloads": 4973238,
+    "dependents": 148643,
+    "index": 7.655451,
+    "timestamp": "2026-03-15T05:14:51.929Z"
+  }
+]

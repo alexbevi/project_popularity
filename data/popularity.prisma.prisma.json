@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Prisma MongoDB",
+    "language": "JavaScript",
+    "type": "ORM",
+    "repo": "prisma/prisma",
+    "npm": "prisma",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 45524,
+    "forks": 2108,
+    "contributors_count": 356,
+    "closed_issues": 9439,
+    "avg_pr_merge_days": 2.664643663194444,
+    "merged_prs_last_6mo": 80,
+    "releases_count": 100,
+    "release_frequency_per_year": 30.012534895316094,
+    "stackoverflow_total_questions": 3883,
+    "stackoverflow_recent_questions_last_6mo": 50,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 7824958,
+    "dependents": 765217,
+    "index": 8.198475,
+    "timestamp": "2026-03-15T05:14:35.710Z"
+  }
+]

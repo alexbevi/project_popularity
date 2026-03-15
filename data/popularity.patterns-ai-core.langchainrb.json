@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Langchain.rb",
+    "language": "Ruby",
+    "type": "AI",
+    "repo": "patterns-ai-core/langchainrb",
+    "npm": null,
+    "nuget": null,
+    "rubygems": "langchainrb",
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 1965,
+    "forks": 258,
+    "contributors_count": 112,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 4.988481706532924,
+    "merged_prs_last_6mo": 1,
+    "releases_count": 100,
+    "release_frequency_per_year": 49.993262436144036,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 21,
+    "discussions_recent_activity_last_6mo": 2,
+    "weekly_downloads": 20111,
+    "dependents": 185,
+    "index": 4.53815,
+    "timestamp": "2026-03-15T05:15:00.401Z"
+  }
+]
