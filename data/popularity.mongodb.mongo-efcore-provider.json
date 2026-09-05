@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongo-efcore-provider",
+    "language": "C#",
+    "type": "Framework",
+    "repo": "mongodb/mongo-efcore-provider",
+    "npm": null,
+    "nuget": "MongoDB.EntityFrameworkCore",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 398,
+    "forks": 44,
+    "contributors_count": 14,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 7.229463480750487,
+    "merged_prs_last_6mo": 58,
+    "releases_count": 33,
+    "release_frequency_per_year": 14.317190752113733,
+    "stackoverflow_total_questions": 175172,
+    "stackoverflow_recent_questions_last_6mo": 51,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 35441,
+    "dependents": 1239,
+    "index": 4.907749,
+    "timestamp": "2026-09-05T07:41:12.173Z"
+  }
+]

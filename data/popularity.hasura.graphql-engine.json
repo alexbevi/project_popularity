@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Hasura",
+    "language": "Rust",
+    "type": "Other",
+    "repo": "hasura/graphql-engine",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 32111,
+    "forks": 3051,
+    "contributors_count": 430,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 32.259317129629636,
+    "merged_prs_last_6mo": 1,
+    "releases_count": 100,
+    "release_frequency_per_year": 32.42932290008019,
+    "stackoverflow_total_questions": 730,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 0,
+    "index": 2.967639,
+    "timestamp": "2026-09-05T07:41:26.839Z"
+  }
+]

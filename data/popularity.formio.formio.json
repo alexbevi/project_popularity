@@ -1,0 +1,30 @@
+[
+  {
+    "name": "FormIO",
+    "language": "JavaScript",
+    "type": "Other",
+    "repo": "formio/formio",
+    "npm": "formio",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 2314,
+    "forks": 767,
+    "contributors_count": 88,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 3.162465473948525,
+    "merged_prs_last_6mo": 6,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 177,
+    "stackoverflow_recent_questions_last_6mo": 2,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1569,
+    "dependents": 60,
+    "index": 4.106818,
+    "timestamp": "2026-09-05T07:41:27.948Z"
+  }
+]

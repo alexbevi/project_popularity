@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Entity Framework Core",
+    "language": "C#",
+    "type": "Framework",
+    "repo": "dotnet/efcore",
+    "npm": null,
+    "nuget": "Microsoft.EntityFrameworkCore",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 14787,
+    "forks": 3411,
+    "contributors_count": 466,
+    "closed_issues": 21197,
+    "avg_pr_merge_days": 3.275131969605474,
+    "merged_prs_last_6mo": 92,
+    "releases_count": 100,
+    "release_frequency_per_year": 34.32448133787425,
+    "stackoverflow_total_questions": 23556,
+    "stackoverflow_recent_questions_last_6mo": 35,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 47482405,
+    "dependents": 25,
+    "index": 6.268111,
+    "timestamp": "2026-09-05T07:40:49.599Z"
+  }
+]

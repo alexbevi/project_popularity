@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Warp",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "seanmonstar/warp",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "warp",
+    "pypi": null,
+    "maven": null,
+    "stars": 10365,
+    "forks": 746,
+    "contributors_count": 185,
+    "closed_issues": 495,
+    "avg_pr_merge_days": 30.028924524853803,
+    "merged_prs_last_6mo": 4,
+    "releases_count": 37,
+    "release_frequency_per_year": 5.287913130440948,
+    "stackoverflow_total_questions": 95,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 912559,
+    "dependents": 31113,
+    "index": 6.481139,
+    "timestamp": "2026-09-05T07:41:42.202Z"
+  }
+]

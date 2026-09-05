@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Agno",
+    "language": "Python",
+    "type": "AI",
+    "repo": "agno-agi/agno",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "agno",
+    "maven": null,
+    "stars": 42056,
+    "forks": 5870,
+    "contributors_count": 553,
+    "closed_issues": 2169,
+    "avg_pr_merge_days": 0.60371047008547,
+    "merged_prs_last_6mo": 65,
+    "releases_count": 100,
+    "release_frequency_per_year": 140.13560171925178,
+    "stackoverflow_total_questions": 3,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 402455,
+    "dependents": 2870,
+    "index": 6.832827,
+    "timestamp": "2026-09-05T07:40:37.670Z"
+  }
+]

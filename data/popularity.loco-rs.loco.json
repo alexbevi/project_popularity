@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Loco",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "loco-rs/loco",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "loco",
+    "pypi": null,
+    "maven": null,
+    "stars": 9117,
+    "forks": 425,
+    "contributors_count": 157,
+    "closed_issues": 596,
+    "avg_pr_merge_days": 8.19957729468599,
+    "merged_prs_last_6mo": 14,
+    "releases_count": 10,
+    "release_frequency_per_year": 6.728824611170268,
+    "stackoverflow_total_questions": 3,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 465,
+    "dependents": 13,
+    "index": 4.065749,
+    "timestamp": "2026-09-05T07:41:36.123Z"
+  }
+]

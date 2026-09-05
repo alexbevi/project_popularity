@@ -1,0 +1,30 @@
+[
+  {
+    "name": "langchainjs",
+    "language": "JavaScript",
+    "type": "AI",
+    "repo": "langchain-ai/langchainjs",
+    "npm": "langchain",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 18163,
+    "forks": 3355,
+    "contributors_count": 1116,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.4248783238366574,
+    "merged_prs_last_6mo": 78,
+    "releases_count": 100,
+    "release_frequency_per_year": 677.1193290430112,
+    "stackoverflow_total_questions": 1980,
+    "stackoverflow_recent_questions_last_6mo": 18,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 3030909,
+    "dependents": 52243,
+    "index": 7.541817,
+    "timestamp": "2026-09-05T07:41:10.751Z"
+  }
+]
