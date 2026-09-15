@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Active Agents",
+    "language": "Ruby",
+    "type": "AI",
+    "repo": "activeagents/activeagent",
+    "npm": null,
+    "nuget": null,
+    "rubygems": "activeagent",
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 972,
+    "forks": 85,
+    "contributors_count": 38,
+    "closed_issues": 171,
+    "avg_pr_merge_days": 5.660706583107499,
+    "merged_prs_last_6mo": 59,
+    "releases_count": 23,
+    "release_frequency_per_year": 17.047014496395718,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 7,
+    "discussions_recent_activity_last_6mo": 4,
+    "weekly_downloads": 3136,
+    "dependents": 13,
+    "index": 3.955348,
+    "timestamp": "2026-09-15T08:41:17.206Z"
+  }
+]
