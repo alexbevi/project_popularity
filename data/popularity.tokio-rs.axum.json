@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Axum",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "tokio-rs/axum",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "axum",
+    "pypi": null,
+    "maven": null,
+    "stars": 27176,
+    "forks": 1485,
+    "contributors_count": 454,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 8.566726942039445,
+    "merged_prs_last_6mo": 77,
+    "releases_count": 100,
+    "release_frequency_per_year": 29.720568118149036,
+    "stackoverflow_total_questions": 205,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 92318,
+    "index": 5.580547,
+    "timestamp": "2026-09-19T08:04:07.677Z"
+  }
+]

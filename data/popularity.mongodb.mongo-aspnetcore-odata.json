@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MongoDB.AspNetCore.OData",
+    "language": "C#",
+    "type": "Library",
+    "repo": "mongodb/mongo-aspnetcore-odata",
+    "npm": null,
+    "nuget": "MongoDB.AspNetCore.OData",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 22,
+    "forks": 9,
+    "contributors_count": 5,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 6.424772272272273,
+    "merged_prs_last_6mo": 8,
+    "releases_count": 5,
+    "release_frequency_per_year": 2.251584052053048,
+    "stackoverflow_total_questions": 7632,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 27299,
+    "dependents": 14,
+    "index": 3.01035,
+    "timestamp": "2026-09-19T08:04:30.491Z"
+  }
+]
