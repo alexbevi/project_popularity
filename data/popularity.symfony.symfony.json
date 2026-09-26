@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Symfony",
+    "language": "PHP",
+    "type": "Framework",
+    "repo": "symfony/symfony",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 31162,
+    "forks": 9890,
+    "contributors_count": 4897,
+    "closed_issues": 22172,
+    "avg_pr_merge_days": 0.1996578803265631,
+    "merged_prs_last_6mo": 93,
+    "releases_count": 100,
+    "release_frequency_per_year": 82.27177895176635,
+    "stackoverflow_total_questions": 74098,
+    "stackoverflow_recent_questions_last_6mo": 12,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 1690835,
+    "dependents": 19,
+    "index": 6.059068,
+    "timestamp": "2026-09-26T08:37:41.900Z"
+  }
+]

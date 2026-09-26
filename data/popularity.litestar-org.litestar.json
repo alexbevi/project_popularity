@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Litestar",
+    "language": "Python",
+    "type": "Framework",
+    "repo": "litestar-org/litestar",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "litestar",
+    "maven": null,
+    "stars": 8481,
+    "forks": 654,
+    "contributors_count": 308,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.845676369863014,
+    "merged_prs_last_6mo": 73,
+    "releases_count": 100,
+    "release_frequency_per_year": 28.115446168688685,
+    "stackoverflow_total_questions": 9,
+    "stackoverflow_recent_questions_last_6mo": 1,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 424730,
+    "dependents": 2214,
+    "index": 6.232107,
+    "timestamp": "2026-09-26T08:37:58.914Z"
+  }
+]

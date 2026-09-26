@@ -1,0 +1,30 @@
+[
+  {
+    "name": "GORM",
+    "language": "Go",
+    "type": "Framework",
+    "repo": "go-gorm/gorm",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 39967,
+    "forks": 4191,
+    "contributors_count": 475,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 13.064397702991451,
+    "merged_prs_last_6mo": 7,
+    "releases_count": 12,
+    "release_frequency_per_year": 2.2606508904828404,
+    "stackoverflow_total_questions": 4253,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 28,
+    "index": 3.775591,
+    "timestamp": "2026-09-26T08:37:06.239Z"
+  }
+]

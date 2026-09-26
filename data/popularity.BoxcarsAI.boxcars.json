@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Boxcars",
+    "language": "Ruby",
+    "type": "AI",
+    "repo": "BoxcarsAI/boxcars",
+    "npm": null,
+    "nuget": null,
+    "rubygems": "boxcars",
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 461,
+    "forks": 42,
+    "contributors_count": 19,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 3.6115271686159844,
+    "merged_prs_last_6mo": 14,
+    "releases_count": 0,
+    "release_frequency_per_year": null,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1405,
+    "dependents": 6,
+    "index": 3.2033,
+    "timestamp": "2026-09-26T08:37:06.547Z"
+  }
+]
