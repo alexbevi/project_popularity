@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongoose",
+    "language": "JavaScript",
+    "type": "ODM",
+    "repo": "Automattic/mongoose",
+    "npm": "mongoose",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 27469,
+    "forks": 4050,
+    "contributors_count": 1084,
+    "closed_issues": 11118,
+    "avg_pr_merge_days": 2.544934599509147,
+    "merged_prs_last_6mo": 83,
+    "releases_count": 100,
+    "release_frequency_per_year": 63.28174108929434,
+    "stackoverflow_total_questions": 46575,
+    "stackoverflow_recent_questions_last_6mo": 3,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 8046664,
+    "dependents": 5678358,
+    "index": 8.588176,
+    "timestamp": "2026-10-03T09:09:33.564Z"
+  }
+]

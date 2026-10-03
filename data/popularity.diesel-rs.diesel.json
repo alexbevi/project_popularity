@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Diesel",
+    "language": "Rust",
+    "type": "ORM",
+    "repo": "diesel-rs/diesel",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "diesel",
+    "pypi": null,
+    "maven": null,
+    "stars": 14190,
+    "forks": 1245,
+    "contributors_count": 494,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 5.510322547822549,
+    "merged_prs_last_6mo": 91,
+    "releases_count": 79,
+    "release_frequency_per_year": 7.829756704415559,
+    "stackoverflow_total_questions": 447,
+    "stackoverflow_recent_questions_last_6mo": 2,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 35125,
+    "index": 5.216774,
+    "timestamp": "2026-10-03T09:10:02.687Z"
+  }
+]

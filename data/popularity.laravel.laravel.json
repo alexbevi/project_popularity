@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Laravel",
+    "language": "PHP",
+    "type": "Framework",
+    "repo": "laravel/laravel",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 85046,
+    "forks": 26593,
+    "contributors_count": 864,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 0.4373141891891891,
+    "merged_prs_last_6mo": 32,
+    "releases_count": 100,
+    "release_frequency_per_year": 27.75456342018795,
+    "stackoverflow_total_questions": 212347,
+    "stackoverflow_recent_questions_last_6mo": 66,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1255514,
+    "dependents": 19,
+    "index": 6.119838,
+    "timestamp": "2026-10-03T09:10:45.173Z"
+  }
+]

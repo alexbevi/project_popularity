@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Toasty",
+    "language": "Rust",
+    "type": "ORM",
+    "repo": "tokio-rs/toasty",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "toasty",
+    "pypi": null,
+    "maven": null,
+    "stars": 3206,
+    "forks": 142,
+    "contributors_count": 53,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 2.9226352062289553,
+    "merged_prs_last_6mo": 88,
+    "releases_count": 6,
+    "release_frequency_per_year": 16.344253982920094,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 26,
+    "discussions_recent_activity_last_6mo": 14,
+    "weekly_downloads": 0,
+    "dependents": 43,
+    "index": 3.457098,
+    "timestamp": "2026-10-03T09:11:08.788Z"
+  }
+]

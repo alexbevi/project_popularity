@@ -1,0 +1,30 @@
+[
+  {
+    "name": "langchain-mongodb",
+    "language": "Python",
+    "type": "AI",
+    "repo": "langchain-ai/langchain-mongodb",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "langchain",
+    "maven": null,
+    "stars": 126,
+    "forks": 67,
+    "contributors_count": 21,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 3.5793215460526313,
+    "merged_prs_last_6mo": 70,
+    "releases_count": 37,
+    "release_frequency_per_year": 20.20385903468001,
+    "stackoverflow_total_questions": 1970,
+    "stackoverflow_recent_questions_last_6mo": 11,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 40766314,
+    "dependents": 1222,
+    "index": 5.673665,
+    "timestamp": "2026-10-03T09:10:26.633Z"
+  }
+]
