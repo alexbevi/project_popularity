@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Quartz Scheduler",
+    "language": "Java",
+    "type": "Library",
+    "repo": "quartz-scheduler/quartz",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": {
+      "group": "org.quartz-scheduler",
+      "artifact": "quartz"
+    },
+    "stars": 6754,
+    "forks": 1976,
+    "contributors_count": 108,
+    "closed_issues": 744,
+    "avg_pr_merge_days": 54.9257206284153,
+    "merged_prs_last_6mo": 23,
+    "releases_count": 8,
+    "release_frequency_per_year": 1.196998139590289,
+    "stackoverflow_total_questions": 3779,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 19,
+    "index": 3.416243,
+    "timestamp": "2026-10-10T09:52:21.822Z"
+  }
+]
