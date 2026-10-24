@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Popularity Viewer</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div class="brand">
+        <img src="/driver-compatibility-checker/MongoDB_SpringGreen.png" alt="MongoDB" class="logo" />
+        <h1>Project Popularity</h1>
+      </div>
+      <div class="header-actions">
+        <p class="tagline">Aggregated popularity & engagement signals</p>
+        <button id="theme-toggle" aria-label="Toggle color theme">🌙</button>
+      </div>
+    </header>
+    <div class="controls">
+      <label>Language
+        <select id="filter-language"><option value="">All</option></select>
+      </label>
+      <label>Type
+        <select id="filter-type"><option value="">All</option></select>
+      </label>
+      <label>Search
+        <input id="filter-search" placeholder="search name or repo" />
+      </label>
+      <button id="clear">Clear</button>
+    </div>
+
+    <!-- Intro / legend inserted by agent: explains columns and index calc -->
+    <section id="intro" class="intro">
+      <p>
+        This table aggregates community adoption and engagement signals for each project. Columns show raw signals (stars, weekly downloads, StackOverflow questions, GitHub discussions, releases, and contributors). Click any number to open the underlying source page.
+      </p>
+      <ul class="legend">
+        <li><strong>Stars</strong> — GitHub stars (popularity)</li>
+        <li><strong>Weekly downloads</strong> — package ecosystem downloads (when available)</li>
+        <li><strong>SO recent</strong> — StackOverflow questions in the last 6 months</li>
+        <li><strong>Discussions recent</strong> — GitHub discussions activity in the last 6 months</li>
+        <li><strong>Releases</strong> / <strong>Releases / yr</strong> — release counts and cadence</li>
+        <li><strong>Contributors</strong> — unique contributors (click to view contributors graph)</li>
+      </ul>
+    </section>
+
+    <section class="admonition" aria-label="Index calculation">
+      <h3>How the Popularity Index is calculated</h3>
+      <p>The index combines log-scaled signals into a single score. Each signal is transformed using <code>log10(1 + value)</code> to reduce skew, then multiplied by its configured weight.</p>
+      <div class="weights">
+                <div class="item">weekly_downloads: 0.3</div>
+        <div class="item">stars: 0.45</div>
+        <div class="item">forks: 0.2</div>
+        <div class="item">merged_prs_last_6mo: 0.3</div>
+        <div class="item">release_frequency: 0.1</div>
+        <div class="item">dependents: 0.45</div>
+      </div>
+      <p style="margin-top:8px;color:var(--muted)"><code>Formula: index = Σ weight * log10(1 + signal)</code>. See <a href="https://github.com/alexbevi/project_popularity/blob/main/config/popularity.config.json"><code>config/popularity.config.json</code></a> for current weights.</p>
+    </section>
+
+    <div id="status" class="status">Loading data…</div>
+
+    <div class="table-wrap">
+      <table id="results">
+        <thead>
+          <tr>
+            <th data-key="name">Name</th>
+            <th data-key="language">Language</th>
+            <th data-key="type">Type</th>
+            <th data-key="index">Index</th>
+            <th data-key="stars">Stars</th>
+            <th data-key="forks">Forks</th>
+            <th data-key="merged_prs_last_6mo">Merged PRs (6mo)</th>
+            <th data-key="weekly_downloads">Weekly downloads</th>
+            <th data-key="stackoverflow_recent_questions_last_6mo">SO recent (6mo)</th>
+            <th data-key="discussions_recent_activity_last_6mo">Discussions recent (6mo)</th>
+            <th data-key="releases_count">Releases</th>
+            <th data-key="release_frequency_per_year">Releases / yr</th>
+            <th data-key="dependents">Dependents</th>
+            <th data-key="contributors_count">Contributors</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

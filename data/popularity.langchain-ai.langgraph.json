@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Langgraph",
+    "language": "Multi",
+    "type": "AI",
+    "repo": "langchain-ai/langgraph",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 43805,
+    "forks": 7521,
+    "contributors_count": 292,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 0.5429948988340192,
+    "merged_prs_last_6mo": 54,
+    "releases_count": 100,
+    "release_frequency_per_year": 166.73592510472642,
+    "stackoverflow_total_questions": 142,
+    "stackoverflow_recent_questions_last_6mo": 3,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 45686,
+    "index": 5.705435,
+    "timestamp": "2026-10-24T08:09:02.141Z"
+  }
+]
