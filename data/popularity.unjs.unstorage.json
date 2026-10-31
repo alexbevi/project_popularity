@@ -1,0 +1,30 @@
+[
+  {
+    "name": "unstorage",
+    "language": "JavaScript",
+    "type": "Library",
+    "repo": "unjs/unstorage",
+    "npm": "unstorage",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 2660,
+    "forks": 206,
+    "contributors_count": 112,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 46.70407690854118,
+    "merged_prs_last_6mo": 27,
+    "releases_count": 78,
+    "release_frequency_per_year": 21.443056874679822,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 2,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 24330228,
+    "dependents": 408036,
+    "index": 7.314379,
+    "timestamp": "2026-10-31T09:40:52.230Z"
+  }
+]

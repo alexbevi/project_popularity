@@ -1,0 +1,20 @@
+{
+  "weights": {
+  "weekly_downloads": 0.30,
+    "stars": 0.45,
+    "forks": 0.20,
+    "merged_prs_last_6mo": 0.30,
+    "release_frequency": 0.10,
+  "dependents": 0.45
+  },
+  "output": {
+    "json": "data/popularity.json",
+    "csv": "data/popularity.csv"
+  },
+  "github": {
+    "baseUrl": "https://api.github.com"
+  },
+  "timeouts": {
+    "httpMs": 15000
+  }
+}

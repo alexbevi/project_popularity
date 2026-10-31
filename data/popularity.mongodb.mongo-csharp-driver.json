@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MongoDB.Driver",
+    "language": "C#",
+    "type": "Driver",
+    "repo": "mongodb/mongo-csharp-driver",
+    "npm": null,
+    "nuget": "MongoDB.Driver",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 3248,
+    "forks": 1268,
+    "contributors_count": 154,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 5.421216273397051,
+    "merged_prs_last_6mo": 93,
+    "releases_count": 100,
+    "release_frequency_per_year": 9.95487992377187,
+    "stackoverflow_total_questions": 2706,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 8577804,
+    "dependents": 88894,
+    "index": 7.203886,
+    "timestamp": "2026-10-31T09:39:16.594Z"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Meteor",
+    "language": "JavaScript",
+    "type": "Framework",
+    "repo": "meteor/meteor",
+    "npm": "meteor",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 44792,
+    "forks": 5258,
+    "contributors_count": 996,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 5.254157751501501,
+    "merged_prs_last_6mo": 74,
+    "releases_count": 21,
+    "release_frequency_per_year": 200.51830826361285,
+    "stackoverflow_total_questions": 29005,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 7,
+    "weekly_downloads": 5039,
+    "dependents": 50345,
+    "index": 6.856788,
+    "timestamp": "2026-10-31T09:40:12.963Z"
+  }
+]
