@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Mongoid",
+    "language": "Ruby",
+    "type": "ODM",
+    "repo": "mongodb/mongoid",
+    "npm": null,
+    "nuget": null,
+    "rubygems": "mongoid",
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 3904,
+    "forks": 1391,
+    "contributors_count": 569,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 5.32498688271605,
+    "merged_prs_last_6mo": 53,
+    "releases_count": 100,
+    "release_frequency_per_year": 11.739278341724486,
+    "stackoverflow_total_questions": 4727,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 954485,
+    "dependents": 23917,
+    "index": 6.639547,
+    "timestamp": "2026-11-07T10:09:22.893Z"
+  }
+]

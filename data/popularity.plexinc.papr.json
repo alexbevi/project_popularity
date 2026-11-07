@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Papr",
+    "language": "JavaScript",
+    "type": "Library",
+    "repo": "plexinc/papr",
+    "npm": "papr",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 500,
+    "forks": 24,
+    "contributors_count": 26,
+    "closed_issues": 54,
+    "avg_pr_merge_days": 5.151620053272449,
+    "merged_prs_last_6mo": 61,
+    "releases_count": 12,
+    "release_frequency_per_year": 3.9071822188393353,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 16179,
+    "dependents": 79,
+    "index": 4.2204,
+    "timestamp": "2026-11-07T10:10:35.407Z"
+  }
+]

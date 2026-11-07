@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MongoDB Rust driver",
+    "language": "Rust",
+    "type": "Driver",
+    "repo": "mongodb/mongo-rust-driver",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "mongodb",
+    "pypi": null,
+    "maven": null,
+    "stars": 1520,
+    "forks": 211,
+    "contributors_count": 91,
+    "closed_issues": 210,
+    "avg_pr_merge_days": 1.810046030225628,
+    "merged_prs_last_6mo": 87,
+    "releases_count": 71,
+    "release_frequency_per_year": 10.328243958329532,
+    "stackoverflow_total_questions": 175158,
+    "stackoverflow_recent_questions_last_6mo": 24,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 12033,
+    "index": 4.422171,
+    "timestamp": "2026-11-07T10:09:37.430Z"
+  }
+]
