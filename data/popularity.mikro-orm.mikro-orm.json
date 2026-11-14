@@ -1,0 +1,30 @@
+[
+  {
+    "name": "MikroORM",
+    "language": "JavaScript",
+    "type": "ORM",
+    "repo": "mikro-orm/mikro-orm",
+    "npm": "mikro-orm",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 9273,
+    "forks": 707,
+    "contributors_count": 369,
+    "closed_issues": 3363,
+    "avg_pr_merge_days": 0.18862071513002368,
+    "merged_prs_last_6mo": 94,
+    "releases_count": 100,
+    "release_frequency_per_year": 44.116716377936726,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1229353,
+    "dependents": 16714,
+    "index": 6.841329,
+    "timestamp": "2026-11-14T10:27:44.989Z"
+  }
+]

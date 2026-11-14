@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Salvo",
+    "language": "Rust",
+    "type": "Framework",
+    "repo": "salvo-rs/salvo",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": "salvo",
+    "pypi": null,
+    "maven": null,
+    "stars": 4467,
+    "forks": 275,
+    "contributors_count": 103,
+    "closed_issues": 415,
+    "avg_pr_merge_days": 0.21724479166666652,
+    "merged_prs_last_6mo": 100,
+    "releases_count": 100,
+    "release_frequency_per_year": 30.715930369321065,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 1243,
+    "index": 4.274826,
+    "timestamp": "2026-11-14T10:27:34.297Z"
+  }
+]
