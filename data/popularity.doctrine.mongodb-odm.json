@@ -1,0 +1,30 @@
+[
+  {
+    "name": "doctrine-mongodb-odm",
+    "language": "PHP",
+    "type": "ODM",
+    "repo": "doctrine/mongodb-odm",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 1097,
+    "forks": 511,
+    "contributors_count": 375,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 8.738921167695473,
+    "merged_prs_last_6mo": 69,
+    "releases_count": 100,
+    "release_frequency_per_year": 9.91983135658013,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 510302,
+    "dependents": 3149,
+    "index": 5.854064,
+    "timestamp": "2026-11-21T11:01:48.569Z"
+  }
+]

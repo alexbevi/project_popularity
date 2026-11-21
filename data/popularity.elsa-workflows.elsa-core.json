@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Elsa",
+    "language": "C#",
+    "type": "Library",
+    "repo": "elsa-workflows/elsa-core",
+    "npm": null,
+    "nuget": "Elsa",
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 7940,
+    "forks": 1533,
+    "contributors_count": 363,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 1.5592865065586414,
+    "merged_prs_last_6mo": 96,
+    "releases_count": 100,
+    "release_frequency_per_year": 21.983619272270005,
+    "stackoverflow_total_questions": 109,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 2,
+    "weekly_downloads": 100163,
+    "dependents": 6,
+    "index": 5.00479,
+    "timestamp": "2026-11-21T11:01:34.299Z"
+  }
+]
