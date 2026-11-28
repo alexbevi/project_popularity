@@ -1,0 +1,30 @@
+[
+  {
+    "name": "KeystoneJS",
+    "language": "JavaScript",
+    "type": "Framework",
+    "repo": "keystonejs/keystone",
+    "npm": "keystone",
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 9998,
+    "forks": 1260,
+    "contributors_count": 292,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 5.656050769870996,
+    "merged_prs_last_6mo": 89,
+    "releases_count": 82,
+    "release_frequency_per_year": 14.798823445465647,
+    "stackoverflow_total_questions": 740,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 1843,
+    "dependents": 1445,
+    "index": 5.528063,
+    "timestamp": "2026-11-28T11:45:34.556Z"
+  }
+]

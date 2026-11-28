@@ -1,0 +1,30 @@
+[
+  {
+    "name": "mongo-go-driver",
+    "language": "Go",
+    "type": "Driver",
+    "repo": "mongodb/mongo-go-driver",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 8549,
+    "forks": 948,
+    "contributors_count": 195,
+    "closed_issues": 0,
+    "avg_pr_merge_days": 2.8719305262541024,
+    "merged_prs_last_6mo": 79,
+    "releases_count": 100,
+    "release_frequency_per_year": 17.259591012076843,
+    "stackoverflow_total_questions": 0,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 104687,
+    "index": 5.320868,
+    "timestamp": "2026-11-28T11:45:13.348Z"
+  }
+]

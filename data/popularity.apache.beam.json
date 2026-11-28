@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Apache Beam",
+    "language": "Multi",
+    "type": "Framework",
+    "repo": "apache/beam",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": null,
+    "stars": 8730,
+    "forks": 4764,
+    "contributors_count": 2047,
+    "closed_issues": 5224,
+    "avg_pr_merge_days": 1.2570148420479303,
+    "merged_prs_last_6mo": 85,
+    "releases_count": 63,
+    "release_frequency_per_year": 8.754339358931672,
+    "stackoverflow_total_questions": 4857,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 9704,
+    "index": 4.982509,
+    "timestamp": "2026-11-28T11:45:26.696Z"
+  }
+]

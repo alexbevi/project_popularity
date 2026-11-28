@@ -1,0 +1,33 @@
+[
+  {
+    "name": "mongo-java-driver",
+    "language": "Java",
+    "type": "Driver",
+    "repo": "mongodb/mongo-java-driver",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": null,
+    "maven": {
+      "group": "org.mongodb",
+      "artifact": "mongodb-driver-sync"
+    },
+    "stars": 2662,
+    "forks": 1501,
+    "contributors_count": 251,
+    "closed_issues": 4,
+    "avg_pr_merge_days": 15.863652612433862,
+    "merged_prs_last_6mo": 70,
+    "releases_count": 100,
+    "release_frequency_per_year": 13.12783137191279,
+    "stackoverflow_total_questions": 1043,
+    "stackoverflow_recent_questions_last_6mo": 0,
+    "discussions_count": 0,
+    "discussions_recent_activity_last_6mo": 0,
+    "weekly_downloads": 0,
+    "dependents": 18586,
+    "index": 4.76828,
+    "timestamp": "2026-11-28T11:45:13.977Z"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "llama_index",
+    "language": "Python",
+    "type": "AI",
+    "repo": "run-llama/llama_index",
+    "npm": null,
+    "nuget": null,
+    "rubygems": null,
+    "crates": null,
+    "pypi": "llama-index",
+    "maven": null,
+    "stars": 53032,
+    "forks": 8662,
+    "contributors_count": 2012,
+    "closed_issues": 7106,
+    "avg_pr_merge_days": 0.1806731237816764,
+    "merged_prs_last_6mo": 19,
+    "releases_count": 100,
+    "release_frequency_per_year": 49.915870493326516,
+    "stackoverflow_total_questions": 320,
+    "stackoverflow_recent_questions_last_6mo": 3,
+    "discussions_count": 30,
+    "discussions_recent_activity_last_6mo": 1,
+    "weekly_downloads": 379994,
+    "dependents": 25061,
+    "index": 7.128064,
+    "timestamp": "2026-11-28T11:45:27.555Z"
+  }
+]
